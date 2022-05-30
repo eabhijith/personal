@@ -3,7 +3,7 @@ name: Abhijith's Github Pages Deploy
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs:
   build:
