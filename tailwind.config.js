@@ -3,6 +3,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
     colors: {
       'blue': '#1fb6ff',
       'purple': '#7e5bef',
@@ -20,12 +26,13 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '8xl': '96rem',
-        '9xl': '128rem',
+        '128': '32rem',
+        '144': '36rem',
       },
       borderRadius: {
         '4xl': '2rem',
       }
     }
-  },
+  }
+
 }
