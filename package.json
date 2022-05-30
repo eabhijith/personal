@@ -1,6 +1,6 @@
 {
-  "name": "home",
-  "homepage": "https://eabhijith.github.io/personal/home",
+  "name": "personal",
+  "homepage": "https://eabhijith.github.io/personal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
