@@ -18,7 +18,7 @@ function App() {
 
 
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
-  <img className="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+  <img className="w-full" src="https://images.unsplash.com/photo-1600703136783-bdb5ea365239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVkJTIwZmxvd2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="Sunset in the mountains"/>
   <div className="px-6 py-4">
     <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
     <p className="text-gray-700 text-base">
