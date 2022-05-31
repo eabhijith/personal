@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './App.css';
-import Header from './Components/Header/Header';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -15,6 +14,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
+import Header from './Components/Header/Header';
 import Banner from './Components/Banner/Banner';
 import Error from './Components/Error/Error';
 import {  Route, Routes} from "react-router-dom";
@@ -77,15 +77,11 @@ function App() {
       <CssBaseline />
 
       <Routes>
-            <Route path="/">
-               hi
-             </Route>
              <Route path="/personal" element={<Banner/>}>
                
              </Route>
              <Route path="/about" element={<Header/>}>
              </Route>
-             <Route path="/contact" />
       {/* <Header/>
       <Banner/>
       <Box
