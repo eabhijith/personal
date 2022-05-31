@@ -23,7 +23,7 @@ export default class  Banner extends Component<BannerProps,BannerState> {
           <div>
 
             <div className='container'>
-                <div className='item'>2</div>
+                <div className='item'>Main Content</div>
             </div>
 
             <div className='container'>
