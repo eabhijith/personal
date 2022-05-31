@@ -4,6 +4,7 @@ import  "./Banner.css";
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+
 import Typography from '@mui/material/Typography';
 
 interface BannerProps {
@@ -21,15 +22,13 @@ export default class  Banner extends Component<BannerProps,BannerState> {
     //Define State on To Play Page
     public readonly state: BannerState = {
 	  }
-
-
     
     public render(): JSX.Element {
       return (
           <div>
 
             <div className='container'>
-                  <Card className='item'>
+                  <Card >
       <CardContent>
         <Typography gutterBottom variant="h5" align="center" component="div">
           Welcome to My page
@@ -43,7 +42,7 @@ export default class  Banner extends Component<BannerProps,BannerState> {
 
             <div className='container'>
                 <div className='item item-long right-border-gold hoverblue'>
-                  <Card className='item'>
+                  <Card className='item' >
       <CardContent>
         <Typography gutterBottom variant="h5" align="center" component="div">
           Hey There 
@@ -61,7 +60,6 @@ export default class  Banner extends Component<BannerProps,BannerState> {
                 <div className='item item-long right-border-black hoverblue'>1</div>
                 <div className='item left-border-black hoverblue'>2</div>
             </div>
-              
           </div>
       );
     }
