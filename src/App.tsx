@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import Header from './Components/Header';
+import Header from './Components/Header/Header';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -14,7 +14,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { red } from '@mui/material/colors';
+
+import Banner from './Components/Banner/Banner';
+import Error from './Components/Error/Error';
+import {  Route, Routes} from "react-router-dom";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -24,23 +27,6 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
-
-
-const themeLight = createTheme({
-  palette: {
-    background: {
-      default: "linear-gradient(230deg, #838c4f4a 2.7%, #ded5d521 100%)"
-    }
-  }
-});
-
-const themeDark = createTheme({
-  palette: {
-    background: {
-      default: "skyblue"
-    }
-  }
-});
 
 
 
@@ -63,7 +49,7 @@ function App() {
               }
               :{
                 background: {
-                  default: "gray",
+                  default: "white",
                 }
               }
           ),
@@ -74,7 +60,7 @@ function App() {
   );
   return (
     <div >
-      <Header/>
+      
       {/* <div className='container'>
         <div className='item'>1</div>
         <div className='item'>2</div>
@@ -89,6 +75,19 @@ function App() {
 
       <ThemeProvider theme={theme}>
       <CssBaseline />
+
+      <Routes>
+            <Route path="/">
+               hi
+             </Route>
+             <Route path="/personal" element={<Banner/>}>
+               
+             </Route>
+             <Route path="/about" element={<Header/>}>
+             </Route>
+             <Route path="/contact" />
+      {/* <Header/>
+      <Banner/>
       <Box
         sx={{
           display: 'flex',
@@ -218,7 +217,12 @@ function App() {
         <Item>Item 4</Item>
         <Item>Item 5</Item>
         <Item>Item 6</Item>
-      </Box>
+      </Box> */}
+            <Route />
+            <Route element={<Error/>}/>
+            
+           </Routes>
+
     </ThemeProvider>
 
 
