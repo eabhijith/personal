@@ -1,6 +1,15 @@
 import { Component} from 'react'
 // import 'bulma/css/bulma.min.css';
 import  "./Banner.css";
+
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { shadows } from '@mui/system';
+
 interface BannerProps {
 
 
@@ -17,23 +26,44 @@ export default class  Banner extends Component<BannerProps,BannerState> {
     public readonly state: BannerState = {
 	  }
 
+
     
     public render(): JSX.Element {
       return (
           <div>
 
             <div className='container'>
-                <div className='item'>Main Content</div>
+                  <Card className='item'>
+      <CardContent>
+        <Typography gutterBottom variant="h5" align="center" component="div">
+          Welcome to My page
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" align="center">
+          This is a simple webpage created on github pages for personal use!
+        </Typography>
+      </CardContent>
+    </Card>
             </div>
 
             <div className='container'>
-                <div className='item item-long'>1</div>
-                <div className='item'>2</div>
+                <div className='item item-long right-border-gold hoverblue'>
+                  <Card className='item'>
+      <CardContent>
+        <Typography gutterBottom variant="h5" align="center" component="div">
+          Hey There 
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" align="center">
+          My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume
+        </Typography>
+      </CardContent>
+    </Card>
+                </div>
+                <div className='item left-border-gold hoverblue'>2</div>
             </div>
 
             <div className='container'>
-                <div className='item item-long'>1</div>
-                <div className='item'>2</div>
+                <div className='item item-long right-border-black hoverblue'>1</div>
+                <div className='item left-border-black hoverblue'>2</div>
             </div>
               
           </div>
