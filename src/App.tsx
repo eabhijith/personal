@@ -77,9 +77,9 @@ function App() {
       <CssBaseline />
 
       <Routes>
-             <Route path="/personal" element={<Banner/>}>
-               
-             </Route>
+            <Header/>
+             <Route path="/" element={<Banner/>}/>
+             <Route path="/personal" element={<Banner/>}/>
              <Route path="/about" element={<Header/>}>
              </Route>
       {/* <Header/>
