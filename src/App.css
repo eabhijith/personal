@@ -47,9 +47,9 @@ body {
 }
 
 
-.container {
+/* .container {
   display: grid;
-  height: 100vh;
+  height: 15vh;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
@@ -63,4 +63,4 @@ body {
 
 body {
   font-family: system-ui, sans-serif;
-}
+} */

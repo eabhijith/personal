@@ -17,8 +17,9 @@ import { CardActionArea } from '@mui/material';
 import Header from './Components/Header/Header';
 import Banner from './Components/Banner/Banner';
 import Error from './Components/Error/Error';
+import Navbar from './Components/Navbar/Navbar';
 import {  Route, Routes} from "react-router-dom";
-
+import Home from './Components/Home/Home';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -76,9 +77,9 @@ function App() {
       <ThemeProvider theme={theme}>
       <CssBaseline />
 
+            <Navbar/>
       <Routes>
-            <Header/>
-             <Route path="/" element={<Banner/>}/>
+             <Route path="/" element={<Home/>}/>
              <Route path="/personal" element={<Banner/>}/>
              <Route path="/about" element={<Header/>}>
              </Route>
