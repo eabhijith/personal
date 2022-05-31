@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
+// import { styled } from '@mui/material/styles';
+// import Paper from '@mui/material/Paper';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider  } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
