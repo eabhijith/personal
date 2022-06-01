@@ -27,7 +27,7 @@ export default class  Banner extends Component<BannerProps,BannerState> {
       return (
           <div>
 
-            <div className='container'>
+            <div className='ea-container'>
                   <Card >
       <CardContent>
         <Typography gutterBottom variant="h5" align="center" component="div">
@@ -40,7 +40,7 @@ export default class  Banner extends Component<BannerProps,BannerState> {
     </Card>
             </div>
 
-            <div className='container'>
+            <div className='ea-container'>
                 <div className='item item-long right-border-gold hoverblue'>
                   <Card className='item' >
       <CardContent>
@@ -56,7 +56,7 @@ export default class  Banner extends Component<BannerProps,BannerState> {
                 <div className='item left-border-gold hoverblue'>2</div>
             </div>
 
-            <div className='container'>
+            <div className='ea-container'>
                 <div className='item item-long right-border-black hoverblue'>1</div>
                 <div className='item left-border-black hoverblue'>2</div>
             </div>
