@@ -26,18 +26,25 @@ export default class  Banner extends Component<BannerProps,BannerState> {
     public render(): JSX.Element {
       return (
           <div>
-
             <div className='ea-container'>
-                  <Card >
-      <CardContent>
-        <Typography gutterBottom variant="h5" align="center" component="div">
-          Welcome to My page
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary" align="center">
-          This is a simple webpage created on github pages for personal use!
-        </Typography>
-      </CardContent>
-    </Card>
+                  <Card className='item-long' >
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" align="center" component="div">
+                        Hello 👋🏼
+                      </Typography>
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        My Name is Abhijith and I am developer 
+                      </Typography>
+                    </CardContent>
+                  </Card>
+
+                  <Card className='item' >
+                    <CardContent>
+                    <div className="card_img"> 
+                        <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg" alt="user-image"/>
+                    </div>
+                    </CardContent>
+                  </Card>
             </div>
 
             <div className='ea-container'>
@@ -57,8 +64,8 @@ export default class  Banner extends Component<BannerProps,BannerState> {
             </div>
 
             <div className='ea-container'>
-                <div className='item item-long right-border-black hoverblue'>1</div>
-                <div className='item left-border-black hoverblue'>2</div>
+                <div className='item-hover item-long right-border-black hoverblue'>1</div>
+                <div className='item-hover left-border-black hoverblue'>2</div>
             </div>
           </div>
       );
