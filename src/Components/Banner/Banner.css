@@ -14,8 +14,9 @@ ea-bg-gray {
 }
 
 .ea-bg-bluegradient {
+    padding: 12px 3vw;
     background: linear-gradient(111.55deg, rgba(34, 174, 218, 0.3567) 0%, rgba(91, 188, 219, 0) 100%);
-    padding: 5px 5px 5px 15px;
+    
 }
 
 .spacer {
@@ -27,7 +28,12 @@ ea-bg-gray {
 }
 
 .layer1 {
-    background-image: url('../../../public/layered-waves-haikei.svg');
+    /* background-image: url('../../../public/layered-waves-haikei.svg'); */
+    /* background-image: url('../../../public/BG.svg'); */
+    background-image: url('../../../public/BG1.svg');
+
+    
+    
 }
 
 
@@ -136,6 +142,7 @@ ea-bg-gray {
 @media screen and (min-width : 400px) {
     .item-very-long {
         grid-column: span 3/ auto;
+
     }
 }
 

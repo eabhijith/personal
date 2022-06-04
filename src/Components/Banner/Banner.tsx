@@ -34,7 +34,7 @@ export default class  Banner extends Component<BannerProps,BannerState> {
 
               <div className='ea-container ea-bg-gray '>
 
-              <div className='item-very-long ea-bg-bluegradient'>
+              <div className='item item-very-long ea-bg-bluegradient item-hover'>
 
                 <Typography gutterBottom variant="h5" align="center" component="div">
                         Hello 👋🏼
@@ -55,7 +55,7 @@ export default class  Banner extends Component<BannerProps,BannerState> {
 
               </div>
 
-              <Box className='item-banner ea-bg-bluegradient-light' sx={{  color: 'primary.contrastText', p: 2 }}>
+              <Box className='item-banner ea-bg-bluegradient-light item-hover' sx={{  color: 'primary.contrastText', p: 2 }}>
                         <div className="card_img ea-bg-yellow"> 
                           <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg" alt="user-image"/>
                         </div>
@@ -64,10 +64,10 @@ export default class  Banner extends Component<BannerProps,BannerState> {
 
             </div>
 
-            <div className='ea-container ea-bg-gray '>
+            <div className='ea-container '>
 
               
-              <div className='item-very-long ea-bg-gray'>
+              <div className='item-very-long ea-bg-gray item-hover'>
               <Typography component="div"  variant="body1">
               <Box   sx={{ bgcolor: 'green', color: 'background.paper', p: 2 }}>
                   <Typography gutterBottom variant="h5" align="center" component="div">
