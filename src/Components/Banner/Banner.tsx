@@ -2,7 +2,7 @@ import { Component} from 'react'
 // import 'bulma/css/bulma.min.css';
 import  "./Banner.css";
 
-import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
