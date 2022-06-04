@@ -9,9 +9,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Header from './Components/Header/Header';
 import Banner from './Components/Banner/Banner';
 import Error from './Components/Error/Error';
-import Navbar from './Components/Navbar/Navbar';
+// import Navbar from './Components/Navbar/Navbar';
 import {  Route, Routes} from "react-router-dom";
 import Home from './Components/Home/Home';
+import Sidebar from './Components/Sidebar/Sidebar';
+
 
 // const Item = styled(Paper)(({ theme }) => ({
 //   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -69,7 +71,8 @@ function App() {
       <ThemeProvider theme={theme}>
       <CssBaseline />
 
-            <Navbar/>
+            {/* <Navbar/> */}
+            <Sidebar/>
       <Routes>
              <Route path="/" element={<Home/>}/>
              <Route path="/personal" element={<Banner/>}/>

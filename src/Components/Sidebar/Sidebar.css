@@ -1,0 +1,46 @@
+.ea-sidebar{
+    background-color: rgba(0, 0, 0, 0.205);
+    display: flex;
+    position: fixed;
+    width: 3rem;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -0.45rem;
+    transition: width 200ms ease;
+}
+
+.ea-nav-link {
+    display: flex;
+        align-items: center;
+}
+
+.ea-sidebar-item {
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    padding: 2px 3px 10px 3px;
+}
+
+.ea-sidebar-item:last-child {
+    margin-top: auto;  
+}
+
+.ea-sidebar-item:first-child {
+    margin-top: 1rem;
+}
+
+.ea-sidebar:hover {
+    width: 16rem;
+}
+
+.ea-sidebar:hover .ea-link-text{
+    display: block;
+}
+
+.ea-link-text {
+    display: none;
+}
+
