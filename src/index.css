@@ -17,13 +17,13 @@ code {
 }
 
 body::-webkit-scrollbar {
-  width: 105rem;
+  width: 5rem;
 }
 
 body::-webkit-scrollbar-track {
-  background: red
+  background: #1e1e24;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: red;
+  background: #6649b8;
 }
