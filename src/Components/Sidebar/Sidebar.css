@@ -1,6 +1,6 @@
 .ea-sidebar{
     background-color: rgba(0, 0, 0, 0.205);
-    display: flex;
+    /* display: flex; */
     position: fixed;
     width: 3rem;
     height: 100vh;
