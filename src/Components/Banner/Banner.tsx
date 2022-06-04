@@ -98,14 +98,14 @@ export default class  Banner extends Component<BannerProps,BannerState> {
                     {/* <Box className='item-banner' sx={{ bgcolor: 'info.main', color: 'primary.contrastText', p: 2 }}> */}
                     <Box className='item-banner' sx={{  color: 'primary.contrastText', p: 2 }}>
                         <div className="card_img ea-bg-yellow"> 
-                          <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg" alt="user-image"/>
+                          <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg" alt="user-pic"/>
                         </div>
                     </Box>
                   {/* <Card className='item-banner ea-bg-yellow ea-bg-tranparent' >
 
                     <CardContent>
                     <div className="card_img ea-bg-yellow"> 
-                        <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg" alt="user-image"/>
+                        <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg" alt="user-pic"/>
                     </div>
                     </CardContent>
                   </Card> */}
