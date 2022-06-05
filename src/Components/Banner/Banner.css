@@ -20,20 +20,17 @@ ea-bg-gray {
 }
 
 .spacer {
-    aspect-ratio: 900/450;
+    /* aspect-ratio: 900/450;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .layer1 {
     /* background-image: url('../../../public/layered-waves-haikei.svg'); */
     /* background-image: url('../../../public/BG.svg'); */
-    background-image: url('../../../public/BG1.svg');
-
-    
-    
+    /* background-image: url('../../../public/BG1.svg'); */
 }
 
 
@@ -175,3 +172,4 @@ hoverblue:hover {
 body {
     font-family: system-ui, sans-serif;
 }
+

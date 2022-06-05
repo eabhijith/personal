@@ -1,12 +1,11 @@
 .ea-sidebar{
     background-color: rgba(0, 0, 0, 0.205);
-    /* display: flex; */
+    display: flex;
     position: fixed;
-    width: 3rem;
-    height: 100vh;
+    /* width: 3rem; */
+    
     padding: 0;
     margin: 0;
-    flex-direction: column;
     align-items: center;
     margin-top: -0.45rem;
     transition: width 200ms ease;
@@ -14,7 +13,7 @@
 
 .ea-nav-link {
     display: flex;
-        align-items: center;
+    align-items: center;
 }
 
 .ea-sidebar-item {
@@ -32,15 +31,35 @@
     margin-top: 1rem;
 }
 
-.ea-sidebar:hover {
-    width: 16rem;
-}
-
-.ea-sidebar:hover .ea-link-text{
-    display: block;
-}
-
 .ea-link-text {
     display: none;
 }
 
+
+@media only screen and (min-width: 600px) {
+    .ea-sidebar{
+        height: 100vh;
+        width: 3rem;
+        top:0;
+    flex-direction: column;
+    }
+    .ea-sidebar:hover {
+        width: 16rem;
+    }
+    
+    .ea-sidebar:hover .ea-link-text {
+        display: block;
+    }
+
+
+}
+
+@media only screen and (max-width : 600px) {
+    .ea-sidebar {
+            bottom: 0;
+            width: 100vw;
+            height: 4rem;
+            flex-direction: row;
+            
+        }
+}
