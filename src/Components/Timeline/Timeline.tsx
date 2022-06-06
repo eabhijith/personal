@@ -8,9 +8,16 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
 import TimelineDot from '@mui/lab/TimelineDot';
-import { ReactComponent as Step } from './Assets/_Step.svg';
+// import { ReactComponent as Step } from './Assets/_Step.svg';
+import { ReactComponent as Step } from '../Assets/_Step.svg';
+
+import space from '../Assets/space.jpeg';
+
+
 
 import { ExperienceData } from "../Data/data";
+
+
 
 const Timeline = () => {
 
@@ -56,26 +63,36 @@ const Timeline = () => {
                         <Typography variant="h6" component="span">
                           {`${data.duration} ${data.location}`}
                         </Typography>
-                        <div className='ea-container ea-experience-bg'>
-                          <div className='item left-border-gold item-hover '>
-
-                            <Typography variant="h6" color="text.secondary" align="left">
-                              {data.company}
-                            </Typography>
-                            <Typography variant="subtitle1" color="text.secondary" align="left">
-                              {data.role}
-                            </Typography>
+                        <div className='ea-container'>
+                          <div className='item left-border-gold item-hover ea-container-small'>
+                              <div className='item-row'>
+                                <img className="company-img" src={`${data.logo}`} alt="company" />
+                              </div>
+                              <div className='item-row'>
+                                <div >
+                                <div className='item-row-left'>
+                                  <Typography variant="h6" color="text.secondary" align="left">
+                                      {data.company}
+                                    </Typography>
+                                </div>
+                                <div className='item-row-left'>
+                                    <Typography variant="subtitle1" color="text.secondary" align="left">
+                                      {data.role}
+                                    </Typography>
+                                </div>
+                                </div>
+                              </div>
                           </div>
                           <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
-                              <ul >
+                            <ul >
                               {data.experience.map((data, key) => {
-                                return(
+                                return (
                                   <Typography variant="subtitle1" color="text.secondary" align="left">
                                     <li key={key}>· {data}</li>
                                   </Typography>
-                                    );
-                                  })}
-                                  </ul>
+                                );
+                              })}
+                            </ul>
                           </div>
                         </div>
                       </TimelineContent>
@@ -84,14 +101,14 @@ const Timeline = () => {
                   {/* End : Experience Item 1 */}
                 </div>
 
-                
+
 
               );
 
             })}
 
 
-            
+
           </TimelineContent>
 
         </TimelineItem>

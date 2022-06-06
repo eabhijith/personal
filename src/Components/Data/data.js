@@ -10,6 +10,10 @@ export const ExperienceData = [
 
     role : "Senior Developer Specalist",
 
+    // logo :'space',
+    logo : require('../Assets/zalando.jpg'),
+    
+
     experience : [
       'Lead Salesforce Programme specalist/Architect',
       'Integration Specalist',
@@ -28,6 +32,8 @@ export const ExperienceData = [
 
     role : "Senior Technical Specalist",
 
+    logo : require('../Assets/lemonOne.jpg'),
+
     experience : [
       'MERN full stack developer',
       'Integration Specalist',
@@ -44,6 +50,9 @@ export const ExperienceData = [
     location: "📍Herzogenaurach",
 
     role : "Technology Specalist",
+
+    logo : require('../Assets/adidas.jpg'),
+
 
     experience : [
       'Lead in Adidas Service cloud enterprise application built on Salesforce service cloud platform support. which include supporting the customer support application built for Adidas on different channels like Chat (Adidas bot which is a Customer service chatbot), Auto routing of cases (Omni-Channel), Social (Whats app, facebook, twitter etc..) and others',
@@ -62,6 +71,9 @@ export const ExperienceData = [
     location: "📍Mysuru",
 
     role : "Systems Engineer / Senior Engineer",
+
+    logo : require('../Assets/infosys.jpg'),
+
 
     experience : [
       'Salesforce Administrator, CRM Specialist, Service cloud professional and Database Administrator at Infosys.'

@@ -15,3 +15,30 @@
 .ea-experience-bg:last-child {
     border-bottom: 2px solid #2050E61F;
 }
+
+.ea-container-small {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    grid-gap: 1rem;
+    align-content: space-around;
+}
+
+.item-row {
+    display: flex;
+    justify-content: center;
+    padding: 0 0.25rem;
+    /* flex-direction: row; */
+}
+
+.item-row-left {
+    display: flex;
+    justify-content: left;
+    /* flex-direction: row; */
+}
+
+.company-img {
+    border: 1px solid black;
+    border-radius: 9rem;
+    max-height: 4rem;
+    max-width: 4rem;
+}
