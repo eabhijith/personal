@@ -140,7 +140,7 @@ ea-bg-gray {
     }
     .ea-container  {
         /* padding: 12px 5rem; */
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     .item-very-long {
         grid-column: span 3/ auto;
@@ -160,6 +160,7 @@ ea-bg-gray {
     .item-long {
         grid-column: span 1/ auto;
     }
+    
 
     .item-very-long {
         grid-column: span 1/ auto;

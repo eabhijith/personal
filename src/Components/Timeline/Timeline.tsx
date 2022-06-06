@@ -7,7 +7,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
-
+import TimelineDot from '@mui/lab/TimelineDot';
 import { ReactComponent as Step } from './Assets/_Step.svg';
 
 const Timeline = () => {
@@ -19,14 +19,14 @@ const Timeline = () => {
 
         {/* BEGIN : Time line Experience */}
         <TimelineItem>
-          <TimelineOppositeContent style={{ flex: 0.001 }}/>
+          <TimelineOppositeContent style={{ flex: 0.001 }} />
           {/* Time line Seperator */}
           <TimelineSeparator sx={{ py: "15px" }}>
             {/* <TimelineConnector /> */}
             {/* <TimelineDot>
               <FastfoodIcon />
             </TimelineDot> */}
-              <Step/>
+            <Step />
             <TimelineConnector />
           </TimelineSeparator>
 
@@ -35,12 +35,125 @@ const Timeline = () => {
             <Typography variant="h6" component="span">
               Experience
             </Typography>
-              <div className='item-hover item-long right-border-black hoverblue'>
-              <Typography variant="h6" component="span">
-                My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume
-              </Typography>
-              <br/>
-              </div>
+            {/* Begin : Experience Item 1 */}
+            <Timeline1>
+              <TimelineItem>
+                <TimelineOppositeContent style={{ flex: 0.001 }} />
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Typography variant="h6" component="span">
+                    Aug 2020 - Present 📍Berlin
+                  </Typography>
+                  <div className='ea-container'>
+                    <div className='item left-border-gold item-hover'>
+                    
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Company
+                      </Typography>
+                    </div>
+                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Experience
+                      </Typography>
+                    </div>
+                  </div>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline1>
+            {/* End : Experience Item 1 */}
+
+            {/* Begin : Experience Item 2 */}
+            <Timeline1>
+              <TimelineItem>
+                <TimelineOppositeContent style={{ flex: 0.001 }} />
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Typography variant="h6" component="span">
+                    Aug 2020 - Present 📍Berlin
+                  </Typography>
+                  <div className='ea-container'>
+                    <div className='item left-border-gold item-hover'>
+
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Company
+                      </Typography>
+                    </div>
+                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Experience
+                      </Typography>
+                    </div>
+                  </div>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline1>
+            {/* End : Experience Item 2 */}
+
+            {/* Begin : Experience Item 3 */}
+            <Timeline1>
+              <TimelineItem>
+                <TimelineOppositeContent style={{ flex: 0.001 }} />
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Typography variant="h6" component="span">
+                    Aug 2020 - Present 📍Herzogenaurach
+                  </Typography>
+                  <div className='ea-container'>
+                    <div className='item left-border-gold item-hover'>
+
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Company
+                      </Typography>
+                    </div>
+                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Experience
+                      </Typography>
+                    </div>
+                  </div>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline1>
+            {/* End : Experience Item 3 */}
+
+            {/* Begin : Experience Item 4 */}
+            <Timeline1>
+              <TimelineItem>
+                <TimelineOppositeContent style={{ flex: 0.001 }} />
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Typography variant="h6" component="span">
+                    Aug 2020 - Present 📍Mysuru
+                  </Typography>
+                  <div className='ea-container'>
+                    <div className='item left-border-gold item-hover'>
+
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Company
+                      </Typography>
+                    </div>
+                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
+                      <Typography variant="subtitle1" color="text.secondary" align="center">
+                        Experience
+                      </Typography>
+                    </div>
+                  </div>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline1>
+            {/* End : Experience Item 4 */}
           </TimelineContent>
 
         </TimelineItem>
@@ -64,20 +177,27 @@ const Timeline = () => {
             <Typography variant="h6" component="span">
               Education
             </Typography>
-            <div className='item-hover item-long right-border-black hoverblue'>
-              <Typography variant="h6" component="span">
-                My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume
-              </Typography>
-              <Typography variant="h6" component="span">
-                My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume
-              </Typography>
-              <Typography variant="h6" component="span">
-                My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume
-              </Typography>
-              <Typography variant="h6" component="span">
-                My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume
-              </Typography>
-              <br />
+            <div className='ea-container'>
+              <div className='item left-border-gold item-hover'>
+                <Typography variant="subtitle1" color="text.secondary" align="center">
+                  JNTU Anantapur
+                </Typography>
+              </div>
+              <div className='item left-border-gold item-hover'>
+                <Typography variant="subtitle1" color="text.secondary" align="center">
+                  JNTU Anantapur
+                </Typography>
+              </div>
+              <div className='item left-border-gold item-hover'>
+                <Typography variant="subtitle1" color="text.secondary" align="center">
+                  JNTU Anantapur
+                </Typography>
+              </div>
+              <div className='item left-border-gold item-hover'>
+                <Typography variant="subtitle1" color="text.secondary" align="center">
+                  JNTU Anantapur
+                </Typography>
+              </div>
             </div>
           </TimelineContent>
 
@@ -116,7 +236,7 @@ const Timeline = () => {
         <TimelineItem>
           <TimelineOppositeContent style={{ flex: 0.001 }} />
           {/* Time line Seperator */}
-          <TimelineSeparator sx={{ py: "15px", pt:"27px"}}>
+          <TimelineSeparator sx={{ py: "15px", pt: "27px" }}>
             {/* <TimelineConnector /> */}
             {/* <TimelineDot>
               <FastfoodIcon />
