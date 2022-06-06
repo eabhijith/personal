@@ -2,3 +2,16 @@
     background-color : #1798C1 !important;
     width : 3px !important;
 }
+
+.ea-experience-bg:nth-of-type(odd) {
+    background: #2050E61F;
+}
+
+.ea-experience-bg:nth-of-type(even) {
+    border-left: 2px solid #2050E61F;
+    border-right: 2px solid #2050E61F;
+}
+
+.ea-experience-bg:last-child {
+    border-bottom: 2px solid #2050E61F;
+}

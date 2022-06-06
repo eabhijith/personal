@@ -36,7 +36,7 @@ const Timeline = () => {
               Experience
             </Typography>
             {/* Begin : Experience Item 1 */}
-            <Timeline1>
+            <Timeline1 className="ea-experience-bg">
               <TimelineItem>
                 <TimelineOppositeContent style={{ flex: 0.001 }} />
                 <TimelineSeparator>
@@ -47,8 +47,8 @@ const Timeline = () => {
                   <Typography variant="h6" component="span">
                     Aug 2020 - Present 📍Berlin
                   </Typography>
-                  <div className='ea-container'>
-                    <div className='item left-border-gold item-hover'>
+                  <div className='ea-container ea-experience-bg'>
+                    <div className='item left-border-gold item-hover '>
                     
                       <Typography variant="subtitle1" color="text.secondary" align="center">
                         Company
@@ -66,7 +66,7 @@ const Timeline = () => {
             {/* End : Experience Item 1 */}
 
             {/* Begin : Experience Item 2 */}
-            <Timeline1>
+            <Timeline1 className="ea-experience-bg">
               <TimelineItem>
                 <TimelineOppositeContent style={{ flex: 0.001 }} />
                 <TimelineSeparator>
@@ -96,7 +96,7 @@ const Timeline = () => {
             {/* End : Experience Item 2 */}
 
             {/* Begin : Experience Item 3 */}
-            <Timeline1>
+            <Timeline1 className="ea-experience-bg">
               <TimelineItem>
                 <TimelineOppositeContent style={{ flex: 0.001 }} />
                 <TimelineSeparator>
@@ -126,7 +126,7 @@ const Timeline = () => {
             {/* End : Experience Item 3 */}
 
             {/* Begin : Experience Item 4 */}
-            <Timeline1>
+            <Timeline1 className="ea-experience-bg">
               <TimelineItem>
                 <TimelineOppositeContent style={{ flex: 0.001 }} />
                 <TimelineSeparator>
