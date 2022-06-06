@@ -1,0 +1,9 @@
+
+
+
+/* Large Screen */
+@media screen and (min-width : 600px) {
+    .ea-body {
+        padding: 12px 5rem;
+    }
+}

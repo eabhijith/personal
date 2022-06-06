@@ -7,7 +7,7 @@ const Sidebar = () => {
 
   return (
     // <AppBar position="static" style={{background:'rgba(247,250,252,var(--bg-opacity))'}}>
-    <div className="ea-sidebar-header">
+    <div className="parent ea-sidebar-header">
         <ul className="ea-sidebar">
 
             <li className="ea-sidebar-item">
