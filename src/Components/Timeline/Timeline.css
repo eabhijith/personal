@@ -3,11 +3,11 @@
     width : 3px !important;
 }
 
-.ea-experience-bg:nth-of-type(odd) {
+.ea-experience-bg:nth-of-type(even) {
     background: #2050E61F;
 }
 
-.ea-experience-bg:nth-of-type(even) {
+.ea-experience-bg:nth-of-type(odd) {
     border-left: 2px solid #2050E61F;
     border-right: 2px solid #2050E61F;
 }

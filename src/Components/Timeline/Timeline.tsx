@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import TimelineDot from '@mui/lab/TimelineDot';
 import { ReactComponent as Step } from './Assets/_Step.svg';
 
+import { ExperienceData } from "../Data/data";
+
 const Timeline = () => {
 
   return (
@@ -35,125 +37,61 @@ const Timeline = () => {
             <Typography variant="h6" component="span">
               Experience
             </Typography>
-            {/* Begin : Experience Item 1 */}
-            <Timeline1 className="ea-experience-bg">
-              <TimelineItem>
-                <TimelineOppositeContent style={{ flex: 0.001 }} />
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Typography variant="h6" component="span">
-                    Aug 2020 - Present 📍Berlin
-                  </Typography>
-                  <div className='ea-container ea-experience-bg'>
-                    <div className='item left-border-gold item-hover '>
-                    
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Company
-                      </Typography>
-                    </div>
-                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Experience
-                      </Typography>
-                    </div>
-                  </div>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline1>
-            {/* End : Experience Item 1 */}
 
-            {/* Begin : Experience Item 2 */}
-            <Timeline1 className="ea-experience-bg">
-              <TimelineItem>
-                <TimelineOppositeContent style={{ flex: 0.001 }} />
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Typography variant="h6" component="span">
-                    Aug 2020 - Present 📍Berlin
-                  </Typography>
-                  <div className='ea-container'>
-                    <div className='item left-border-gold item-hover'>
+            {ExperienceData.map((data, key) => {
 
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Company
-                      </Typography>
-                    </div>
-                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Experience
-                      </Typography>
-                    </div>
-                  </div>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline1>
-            {/* End : Experience Item 2 */}
+              return (
 
-            {/* Begin : Experience Item 3 */}
-            <Timeline1 className="ea-experience-bg">
-              <TimelineItem>
-                <TimelineOppositeContent style={{ flex: 0.001 }} />
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Typography variant="h6" component="span">
-                    Aug 2020 - Present 📍Herzogenaurach
-                  </Typography>
-                  <div className='ea-container'>
-                    <div className='item left-border-gold item-hover'>
+                <div key={key} className="ea-experience-bg">
 
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Company
-                      </Typography>
-                    </div>
-                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Experience
-                      </Typography>
-                    </div>
-                  </div>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline1>
-            {/* End : Experience Item 3 */}
+                  {/* Begin : Experience Item 1 */}
+                  <Timeline1 >
+                    <TimelineItem>
+                      <TimelineOppositeContent style={{ flex: 0.001 }} />
+                      <TimelineSeparator>
+                        <TimelineDot />
+                        <TimelineConnector />
+                      </TimelineSeparator>
+                      <TimelineContent>
+                        <Typography variant="h6" component="span">
+                          {`${data.duration} ${data.location}`}
+                        </Typography>
+                        <div className='ea-container ea-experience-bg'>
+                          <div className='item left-border-gold item-hover '>
 
-            {/* Begin : Experience Item 4 */}
-            <Timeline1 className="ea-experience-bg">
-              <TimelineItem>
-                <TimelineOppositeContent style={{ flex: 0.001 }} />
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Typography variant="h6" component="span">
-                    Aug 2020 - Present 📍Mysuru
-                  </Typography>
-                  <div className='ea-container'>
-                    <div className='item left-border-gold item-hover'>
+                            <Typography variant="h6" color="text.secondary" align="left">
+                              {data.company}
+                            </Typography>
+                            <Typography variant="subtitle1" color="text.secondary" align="left">
+                              {data.role}
+                            </Typography>
+                          </div>
+                          <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
+                              <ul >
+                              {data.experience.map((data, key) => {
+                                return(
+                                  <Typography variant="subtitle1" color="text.secondary" align="left">
+                                    <li key={key}>· {data}</li>
+                                  </Typography>
+                                    );
+                                  })}
+                                  </ul>
+                          </div>
+                        </div>
+                      </TimelineContent>
+                    </TimelineItem>
+                  </Timeline1>
+                  {/* End : Experience Item 1 */}
+                </div>
 
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Company
-                      </Typography>
-                    </div>
-                    <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
-                      <Typography variant="subtitle1" color="text.secondary" align="center">
-                        Experience
-                      </Typography>
-                    </div>
-                  </div>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline1>
-            {/* End : Experience Item 4 */}
+                
+
+              );
+
+            })}
+
+
+            
           </TimelineContent>
 
         </TimelineItem>

@@ -57,7 +57,7 @@ ea-bg-gray {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
         /* background: #a4a88f62; */
         font-size: 3rem;
         /* background: #ebebe762; */
