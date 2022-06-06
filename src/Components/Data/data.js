@@ -81,3 +81,256 @@ export const ExperienceData = [
   },
 
 ];
+
+
+export const EducationData = [
+
+  {
+
+    university: "JNTU-Anantapur",
+
+    duration : "Mar 2014",
+
+    course: "Bachelor of Technology, Electrical and Communications Engineering",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+
+  {
+
+    university: "Coursera",
+
+    duration : "Dec 2019",
+
+    course: "CoureEra ML using Tensorflow",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    university: "Coursera",
+
+    duration : "Dec 2019",
+
+    course: "CoureEra ML using Tensorflow",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    university: "Coursera",
+
+    duration : "Dec 2019",
+
+    course: "CoureEra ML using Tensorflow",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    university: "Coursera",
+
+    duration : "Dec 2019",
+
+    course: "CoureEra ML using Tensorflow",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+];
+
+
+export const ToolsData = [
+
+  {
+
+    name: "Figma",
+
+    purpose : "UI Design, prototyping ",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },{
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },{
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+  {
+
+    name: "Salesforce",
+
+    purpose : "Product Development",
+
+    logo : require('../Assets/zalando.jpg'),
+  },
+];
