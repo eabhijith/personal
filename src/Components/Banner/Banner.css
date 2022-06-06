@@ -14,7 +14,7 @@ ea-bg-gray {
 }
 
 .ea-bg-bluegradient {
-    padding: 12px 3vw;
+    /* padding: 12px 3vw; */
     background: linear-gradient(111.55deg, rgba(34, 174, 218, 0.3567) 0%, rgba(91, 188, 219, 0) 100%);
     
 }
@@ -127,6 +127,10 @@ ea-bg-gray {
 
 .left-border-black {
     border-left: 2px solid black;
+}
+
+.item-long {
+    padding: 12px 2vw;
 }
 
 /* Large Screen */
