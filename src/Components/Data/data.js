@@ -84,27 +84,33 @@ export const ExperienceData = [
 
 
 export const EducationData = [
-
   {
-
     university: "JNTU-Anantapur",
 
-    duration : "Mar 2014",
+    duration: "Mar 2014",
 
     course: "Bachelor of Technology, Electrical and Communications Engineering",
 
-    logo : require('../Assets/JNTU.jpg'),
+    logo: require("../Assets/JNTU.jpg"),
   },
 
   {
-
     university: "Coursera",
 
-    duration : "Dec 2019",
+    duration: "Dec 2019",
 
     course: "CoureEra ML using Tensorflow",
 
-    logo : require('../Assets/Courseera.jpg'),
+    logo: require("../Assets/Courseera.jpg"),
+  },
+  {
+    university: "UMKC",
+
+    duration: "  👉🏻 Current",
+
+    course: "Masters in Data science",
+
+    logo: require("../Assets/Courseera.jpg"),
   },
 ];
 
