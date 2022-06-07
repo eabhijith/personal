@@ -1,160 +1,196 @@
 .MuiTimelineConnector-root {
-    background-color : #1798C1 !important;
-    width : 3px !important;
+  background-color: #1798c1 !important;
+  width: 3px !important;
 }
 
 .ea-experience-bg:nth-of-type(even) {
-    /* background: #50545E36; */
-    background:conic-gradient(from 180deg at 50% 50%, rgba(64, 82, 128, 0.28) 0deg, rgba(133, 144, 173, 0.42) 34.37deg, rgba(165, 173, 196, 0.5) 95.62deg, rgba(220, 223, 231, 0.24) 144.38deg, rgba(191, 197, 212, 0.31) 183.86deg, rgba(152, 162, 186, 0.41) 237.77deg, rgba(96, 111, 149, 0.31) 315.64deg, rgba(64, 82, 128, 0.28) 360deg);
+  /* background: #50545E36; */
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(64, 82, 128, 0.28) 0deg,
+    rgba(133, 144, 173, 0.42) 34.37deg,
+    rgba(165, 173, 196, 0.5) 95.62deg,
+    rgba(220, 223, 231, 0.24) 144.38deg,
+    rgba(191, 197, 212, 0.31) 183.86deg,
+    rgba(152, 162, 186, 0.41) 237.77deg,
+    rgba(96, 111, 149, 0.31) 315.64deg,
+    rgba(64, 82, 128, 0.28) 360deg
+  );
 }
 
 .ea-experience-bg:nth-of-type(odd) {
-    border-left: 2px solid #2050E61F;
-    border-right: 2px solid #2050E61F;
-    background: conic-gradient(from 256.31deg at 40.52% 54.78%, rgba(149, 172, 243, 0.21) -16.96deg, rgba(32, 80, 230, 0.04) 3.55deg, rgba(53, 97, 232, 0.2) 29.02deg, #FFF 98.78deg, rgba(253, 253, 255, 0.831514) 110.18deg, rgba(244, 247, 254, 0.262597) 169.04deg, rgba(255, 255, 255, 0.28) 178.12deg, #FFF 286.02deg, rgba(149, 172, 243, 0.21) 343.04deg, rgba(32, 80, 230, 0.04) 363.55deg);
+  border-left: 2px solid #2050e61f;
+  border-right: 2px solid #2050e61f;
+  background: conic-gradient(
+    from 256.31deg at 40.52% 54.78%,
+    rgba(149, 172, 243, 0.21) -16.96deg,
+    rgba(32, 80, 230, 0.04) 3.55deg,
+    rgba(53, 97, 232, 0.2) 29.02deg,
+    #fff 98.78deg,
+    rgba(253, 253, 255, 0.831514) 110.18deg,
+    rgba(244, 247, 254, 0.262597) 169.04deg,
+    rgba(255, 255, 255, 0.28) 178.12deg,
+    #fff 286.02deg,
+    rgba(149, 172, 243, 0.21) 343.04deg,
+    rgba(32, 80, 230, 0.04) 363.55deg
+  );
 }
 
 .ea-experience-bg:last-child {
-    border-bottom: 2px solid #2050E61F;
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
+  border-bottom: 2px solid #2050e61f;
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
 }
 
 .ea-experience-bg:first-of-type {
-    border-top: 2px solid #2050E61F;
-    border-top-right-radius: 3rem;
-    border-top-left-radius: 3rem;
+  border-top: 2px solid #2050e61f;
+  border-top-right-radius: 3rem;
+  border-top-left-radius: 3rem;
 }
 
 .ea-container-small {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
-    grid-gap: 1rem;
-    align-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  grid-gap: 1rem;
+  align-content: space-around;
 }
-
-.MuiTimeline-root  {
-    margin-left : -2rem !important;
-}
-
-
-
 
 /* Large Screen */
-@media screen and (min-width : 600px) {
-    .item-medium {
-            grid-column: span 1/ auto;
-            align-items: center;
-            padding: 0.5rem;
-        }
-        .ea-container-medium {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            grid-gap: 1rem;
-            align-content: space-around;
-            padding: 1.5rem;
-            border-radius: 3rem;
-            background: conic-gradient(from 180deg at 50% 50%, rgba(64, 82, 128, 0.28) 0deg, rgba(133, 144, 173, 0.42) 34.37deg, rgba(165, 173, 196, 0.5) 95.62deg, rgba(220, 223, 231, 0.24) 144.38deg, rgba(191, 197, 212, 0.31) 183.86deg, rgba(152, 162, 186, 0.41) 237.77deg, rgba(96, 111, 149, 0.31) 315.64deg, rgba(64, 82, 128, 0.28) 360deg);
-            /* background : conic-gradient(from 256.31deg at 40.52% 54.78%, rgba(149, 172, 243, 0.21) -16.96deg, rgba(32, 80, 230, 0.04) 3.55deg, rgba(53, 97, 232, 0.2) 29.02deg, #FFF 98.78deg, rgba(253, 253, 255, 0.831514) 110.18deg, rgba(244, 247, 254, 0.262597) 169.04deg, rgba(255, 255, 255, 0.28) 178.12deg, #FFF 286.02deg, rgba(149, 172, 243, 0.21) 343.04deg, rgba(32, 80, 230, 0.04) 363.55deg) */
-        }
-
-}
-
-
-
-/* Small screen */
-@media screen and (max-width : 806px) {
-    .item-medium {
-            grid-column: span 2/ auto;
-            align-items: center;
-            padding: 0.5rem;
-        }
-                .ea-container-medium {
-                    grid-template-columns: auto;
-                }
-}
-
-.ea-container-medium {
+@media screen and (min-width: 600px) {
+  .item-medium {
+    grid-column: span 1 / auto;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .ea-container-medium {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1rem;
     align-content: space-around;
-    padding:1.5rem;
-    border-radius :3rem;
-    background: conic-gradient(from 180deg at 50% 50%, rgba(64, 82, 128, 0.28) 0deg, rgba(133, 144, 173, 0.42) 34.37deg, rgba(165, 173, 196, 0.5) 95.62deg, rgba(220, 223, 231, 0.24) 144.38deg, rgba(191, 197, 212, 0.31) 183.86deg, rgba(152, 162, 186, 0.41) 237.77deg, rgba(96, 111, 149, 0.31) 315.64deg, rgba(64, 82, 128, 0.28) 360deg);
-        /* background : conic-gradient(from 256.31deg at 40.52% 54.78%, rgba(149, 172, 243, 0.21) -16.96deg, rgba(32, 80, 230, 0.04) 3.55deg, rgba(53, 97, 232, 0.2) 29.02deg, #FFF 98.78deg, rgba(253, 253, 255, 0.831514) 110.18deg, rgba(244, 247, 254, 0.262597) 169.04deg, rgba(255, 255, 255, 0.28) 178.12deg, #FFF 286.02deg, rgba(149, 172, 243, 0.21) 343.04deg, rgba(32, 80, 230, 0.04) 363.55deg) */
+    padding: 1.5rem;
+    border-radius: 3rem;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      rgba(64, 82, 128, 0.28) 0deg,
+      rgba(133, 144, 173, 0.42) 34.37deg,
+      rgba(165, 173, 196, 0.5) 95.62deg,
+      rgba(220, 223, 231, 0.24) 144.38deg,
+      rgba(191, 197, 212, 0.31) 183.86deg,
+      rgba(152, 162, 186, 0.41) 237.77deg,
+      rgba(96, 111, 149, 0.31) 315.64deg,
+      rgba(64, 82, 128, 0.28) 360deg
+    );
+    /* background : conic-gradient(from 256.31deg at 40.52% 54.78%, rgba(149, 172, 243, 0.21) -16.96deg, rgba(32, 80, 230, 0.04) 3.55deg, rgba(53, 97, 232, 0.2) 29.02deg, #FFF 98.78deg, rgba(253, 253, 255, 0.831514) 110.18deg, rgba(244, 247, 254, 0.262597) 169.04deg, rgba(255, 255, 255, 0.28) 178.12deg, #FFF 286.02deg, rgba(149, 172, 243, 0.21) 343.04deg, rgba(32, 80, 230, 0.04) 363.55deg) */
+  }
+}
+
+/* Small screen */
+@media screen and (max-width: 806px) {
+  .item-medium {
+    grid-column: span 2 / auto;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .ea-container-medium {
+    grid-template-columns: auto;
+  }
+  .MuiTimeline-root {
+    margin-left: -2rem !important;
+  }
+}
+
+.ea-container-medium {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  align-content: space-around;
+  padding: 1.5rem;
+  border-radius: 3rem;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(64, 82, 128, 0.28) 0deg,
+    rgba(133, 144, 173, 0.42) 34.37deg,
+    rgba(165, 173, 196, 0.5) 95.62deg,
+    rgba(220, 223, 231, 0.24) 144.38deg,
+    rgba(191, 197, 212, 0.31) 183.86deg,
+    rgba(152, 162, 186, 0.41) 237.77deg,
+    rgba(96, 111, 149, 0.31) 315.64deg,
+    rgba(64, 82, 128, 0.28) 360deg
+  );
+  /* background : conic-gradient(from 256.31deg at 40.52% 54.78%, rgba(149, 172, 243, 0.21) -16.96deg, rgba(32, 80, 230, 0.04) 3.55deg, rgba(53, 97, 232, 0.2) 29.02deg, #FFF 98.78deg, rgba(253, 253, 255, 0.831514) 110.18deg, rgba(244, 247, 254, 0.262597) 169.04deg, rgba(255, 255, 255, 0.28) 178.12deg, #FFF 286.02deg, rgba(149, 172, 243, 0.21) 343.04deg, rgba(32, 80, 230, 0.04) 363.55deg) */
 }
 
 .item-full-width {
-    grid-column: span 2/ auto;
-    display:flex;
-    justify-content: center;
+  grid-column: span 2 / auto;
+  display: flex;
+  justify-content: center;
 }
 
 .item-row {
-    display: flex;
-    justify-content: center;
-    padding: 0 0.25rem;
-    /* flex-direction: row; */
+  display: flex;
+  justify-content: center;
+  padding: 0 0.25rem;
+  /* flex-direction: row; */
 }
 
 .item-row-left {
-    display: flex;
-    justify-content: left;
-    /* flex-direction: row; */
+  display: flex;
+  justify-content: left;
+  /* flex-direction: row; */
 }
 
 .company-img {
-    border: 1px solid black;
-    border-radius: 9rem;
-    max-height: 4rem;
-    max-width: 4rem;
+  border: 1px solid black;
+  border-radius: 9rem;
+  max-height: 4rem;
+  max-width: 4rem;
 }
 
 .item-tools {
-    padding: 0.5rem 0 0.5rem 0;
-    display: flex;
-
+  padding: 0.5rem 0 0.5rem 0;
+  display: flex;
 }
 
 .ea-img-tools {
-        /* border-radius: 3rem; */
-        max-height: 4rem;
-        max-width: 4rem;
-        
+  /* border-radius: 3rem; */
+  max-height: 4rem;
+  max-width: 4rem;
 }
 
 .ea-course-name {
-    align-self: center;
-    padding: 0 0 0 1rem;
+  align-self: center;
+  padding: 0 0 0 1rem;
 }
 
 .ea-img-education {
-    max-width: 4rem;
-    max-height: 4rem;
-    padding: 0.5rem 0 0.5rem 0;
+  max-width: 4rem;
+  max-height: 4rem;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 .item-education {
-    padding: 0.5rem;
-    display: flex;
+  padding: 0.5rem;
+  display: flex;
 }
 
 li {
-    font-size: 14px;
-    margin-left: 10px;
-    list-style-type: circle;
+  font-size: 14px;
+  margin-left: 10px;
+  list-style-type: circle;
 }
 
-
 .ea-Timeline-header {
-    /* background-image: url('../../../public/layered-waves-haikei.svg'); */
-    /* background-image: url('../../../public/BG.svg'); */
-    /* background-image: url('../../../public/BG1.svg'); */
-    aspect-ratio: 900/450;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    background: linear-gradient(153.71deg, rgba(177, 177, 231, 0.12) -12.19%, rgba(13, 13, 143, 0.13) 104.27%);
+  /* background-image: url('../../../public/layered-waves-haikei.svg'); */
+  /* background-image: url('../../../public/BG.svg'); */
+  /* background-image: url('../../../public/BG1.svg'); */
+  aspect-ratio: 900/450;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background: linear-gradient(
+    153.71deg,
+    rgba(177, 177, 231, 0.12) -12.19%,
+    rgba(13, 13, 143, 0.13) 104.27%
+  );
 }
