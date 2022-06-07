@@ -33,7 +33,7 @@ export default class Banner extends Component<BannerProps, BannerState> {
             <div className='item right-border-gold item-very-long ea-bg-bluegradient item-hover item-long'>
 
               <Typography gutterBottom variant="h5" align="center" component="div">
-                {BannerContent.title}
+                {BannerContent.title} 
               </Typography>
               <Typography  >
                 {parse(BannerContent.body)}
