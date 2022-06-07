@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import TimelineDot from '@mui/lab/TimelineDot';
 // import { ReactComponent as Step } from './Assets/_Step.svg';
 import { ReactComponent as Step } from '../Assets/_Step.svg';
-
+import Box from '@mui/material/Box';
 
 
 
@@ -64,34 +64,34 @@ const Timeline = () => {
                         </Typography>
                         <div className='ea-container'>
                           <div className='item left-border-gold item-hover ea-container-small'>
-                              <div className='item-row'>
-                                <img className="company-img" src={`${data.logo}`} alt="company" />
-                              </div>
-                              <div className='item-row'>
-                                <div >
+                            <div className='item-row'>
+                              <img className="company-img" src={`${data.logo}`} alt="company" />
+                            </div>
+                            <div className='item-row'>
+                              <div >
                                 <div className='item-row-left'>
                                   <Typography variant="h6" color="text.secondary" align="left">
-                                      {data.company}
-                                    </Typography>
+                                    {data.company}
+                                  </Typography>
                                 </div>
                                 <div className='item-row-left'>
-                                    <Typography variant="subtitle1" color="text.secondary" align="left">
-                                      {data.role}
-                                    </Typography>
-                                </div>
+                                  <Typography variant="subtitle1" color="text.secondary" align="left">
+                                    {data.role}
+                                  </Typography>
                                 </div>
                               </div>
+                            </div>
                           </div>
                           <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
-                            <ul >
-                              {data.experience.map((data, key) => {
-                                return (
-                                  <Typography variant="subtitle1" color="text.secondary" align="left">
-                                    <li key={key}>· {data}</li>
-                                  </Typography>
-                                );
-                              })}
-                            </ul>
+                            <Typography variant="subtitle1" color="text.secondary" align="left">
+                              <ul >
+                                {data.experience.map((data, key) => {
+                                  return (
+                                    <li key={key}>{data}</li>
+                                  );
+                                })}
+                              </ul>
+                            </Typography>
                           </div>
                         </div>
                       </TimelineContent>
@@ -126,10 +126,20 @@ const Timeline = () => {
             </Typography>
             <div className='ea-container'>
               {EducationData.map((data, key) => {
-                return(
-                  <div key={key} className='item left-border-gold item-hover'>
-                    <Typography variant="subtitle1" color="text.secondary" align="center">
-                      {data.university}
+                return (
+                  <div key={key} className='item-education left-border-gold item-hover'>
+                    <div className="item-education ">
+                      <img className="ea-img-education" src={`${data.logo}`} alt="University"  />
+                      <Typography className="ea-course-name" display="block" align="center">
+                        {data.university}
+                      </Typography>
+                    </div>
+                    
+                    <Typography  variant="body2" color="text.secondary" >
+                      {data.course}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" >
+                      {data.duration}
                     </Typography>
                   </div>
                 );
@@ -189,9 +199,15 @@ const Timeline = () => {
             <div className='ea-container'>
               {ToolsData.map((data, key) => {
                 return (
-                  <div key={key} className='item left-border-gold item-hover'>
-                    <Typography variant="subtitle1" color="text.secondary" align="center">
+                  <div key={key} className='item-tools left-border-gold item-hover'>
+                    <div className='item-row'>
+                      <img className="ea-img-tools" src={`${data.logo}`} alt="company" />
+                    </div>
+                    <Typography variant="button" display="block" align="center">
                       {data.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" align="center">
+                      {data.purpose}
                     </Typography>
                   </div>
                 );

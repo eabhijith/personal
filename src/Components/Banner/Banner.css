@@ -91,6 +91,7 @@ ea-bg-gray {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* padding: 0.5rem; */
 }
 
 .item-banner {

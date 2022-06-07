@@ -93,7 +93,7 @@ export const EducationData = [
 
     course: "Bachelor of Technology, Electrical and Communications Engineering",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/JNTU.jpg'),
   },
 
   {
@@ -104,37 +104,7 @@ export const EducationData = [
 
     course: "CoureEra ML using Tensorflow",
 
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    university: "Coursera",
-
-    duration : "Dec 2019",
-
-    course: "CoureEra ML using Tensorflow",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    university: "Coursera",
-
-    duration : "Dec 2019",
-
-    course: "CoureEra ML using Tensorflow",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    university: "Coursera",
-
-    duration : "Dec 2019",
-
-    course: "CoureEra ML using Tensorflow",
-
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Courseera.jpg'),
   },
 ];
 
@@ -147,7 +117,7 @@ export const ToolsData = [
 
     purpose : "UI Design, prototyping ",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Figma.jpg'),
   },
 
   {
@@ -156,181 +126,54 @@ export const ToolsData = [
 
     purpose : "Product Development",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Salesforce.jpg'),
   },
   {
 
-    name: "Salesforce",
+    name: "Jenkins",
 
-    purpose : "Product Development",
+    purpose : "CI/CD pipeline Managment",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Jenkins.jpg'),
   },
   {
 
-    name: "Salesforce",
+    name: "Google colabs",
 
-    purpose : "Product Development",
+    purpose : "ML/ Data processing (cloud jypter notebooks)",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Colab.jpg'),
   },
   {
 
-    name: "Salesforce",
+    name: "R Studio",
 
-    purpose : "Product Development",
+    purpose : "KDD porcessing",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Rstudio.jpg'),
   },
   {
 
-    name: "Salesforce",
+    name: "VS Code",
 
     purpose : "Product Development",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Vscode.jpg'),
   },
   {
 
-    name: "Salesforce",
+    name: "Xcode",
 
-    purpose : "Product Development",
+    purpose : "iOS development",
 
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/xcode.jpg'),
   },
   {
 
-    name: "Salesforce",
+    name: "Jira",
 
-    purpose : "Product Development",
+    purpose : "Project lifecycle managment",
 
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },{
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },{
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
-  },
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/zalando.jpg'),
+    logo : require('../Assets/Jira.jpg'),
   },
 ];
