@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import TimelineDot from '@mui/lab/TimelineDot';
 // import { ReactComponent as Step } from './Assets/_Step.svg';
 import { ReactComponent as Step } from '../Assets/_Step.svg';
-import Box from '@mui/material/Box';
 
 
 
