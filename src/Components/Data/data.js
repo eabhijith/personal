@@ -180,178 +180,65 @@ export const ToolsData = [
 
 
 export const SkillsData = [
+  {
+    type: "Technologies",
+
+    skills: [
+      {
+        values: ["Sales and service clouds"],
+      },
+      {
+        values: ["Experience cloud"],
+      },
+      {
+        values: ["Software Development", "Design Patterns", "Consulting"],
+      },
+      {
+        values: ["Agile/Scrum", "DevOps"],
+      },
+
+      {
+        values: ["GCP/AWS/Jenkins/ Gearset"],
+      },
+
+      {
+        values: ["Prototyping", "Testing"],
+      },
+
+      {
+        values: ["ML Tool kits (Tensorflow,keras,scikitlearn)"],
+      },
+    ],
+  },
 
   {
+    type: "Development",
 
-    type: "Technologies",
-
-    skills :[
+    skills: [
       {
-        values : ['Sales and service clouds']
+        values: ["Webcomponts (React,lwc)"],
       },
       {
-        values : ['Experience cloud']
+        values: ["HTML/CSS/JS (ES7)"],
       },
       {
-        values : [
-          'Software Development',
-          'Design Patterns',
-          'Consulting',
-        ]
+        values: ["Typescript Node Js"],
       },
       {
-        values : [
-          'Agile/Scrum',
-          'DevOps',
-        ]
+        values: ["Matlab", "R"],
       },
 
       {
-        values : ['GCP/AWS/Jenkins/ Gearset']
+        values: ["JAVA", "Apex", "PYTHON", "Go"],
       },
 
       {
-        values : [
-          'Prototyping',
-          'Testing',
-        ]
+        values: ["Mongo", "Express DB"],
       },
 
       {
-        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
+        values: ["Git", "K8 Microser", "Docker"],
       },
-
     ],
   },
-
-
-  {
-
-    type: "Technologies",
-
-    skills :[
-      {
-        values : ['Sales and service clouds']
-      },
-      {
-        values : ['Experience cloud']
-      },
-      {
-        values : [
-          'Software Development',
-          'Design Patterns',
-          'Consulting',
-        ]
-      },
-      {
-        values : [
-          'Agile/Scrum',
-          'DevOps',
-        ]
-      },
-
-      {
-        values : ['GCP/AWS/Jenkins/ Gearset']
-      },
-
-      {
-        values : [
-          'Prototyping',
-          'Testing',
-        ]
-      },
-
-      {
-        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
-      },
-
-    ],
-  },
-{
-
-    type: "Technologies",
-
-    skills :[
-      {
-        values : ['Sales and service clouds']
-      },
-      {
-        values : ['Experience cloud']
-      },
-      {
-        values : [
-          'Software Development',
-          'Design Patterns',
-          'Consulting',
-        ]
-      },
-      {
-        values : [
-          'Agile/Scrum',
-          'DevOps',
-        ]
-      },
-
-      {
-        values : ['GCP/AWS/Jenkins/ Gearset']
-      },
-
-      {
-        values : [
-          'Prototyping',
-          'Testing',
-        ]
-      },
-
-      {
-        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
-      },
-
-    ],
-  },
-
-
-  {
-
-    type: "Technologies",
-
-    skills :[
-      {
-        values : ['Sales and service clouds']
-      },
-      {
-        values : ['Experience cloud']
-      },
-      {
-        values : [
-          'Software Development',
-          'Design Patterns',
-          'Consulting',
-        ]
-      },
-      {
-        values : [
-          'Agile/Scrum',
-          'DevOps',
-        ]
-      },
-
-      {
-        values : ['GCP/AWS/Jenkins/ Gearset']
-      },
-
-      {
-        values : [
-          'Prototyping',
-          'Testing',
-        ]
-      },
-
-      {
-        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
-      },
-
-    ],
-  },
-  
 ];

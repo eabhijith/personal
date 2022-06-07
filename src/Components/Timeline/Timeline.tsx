@@ -123,7 +123,7 @@ const Timeline = () => {
             <Typography variant="h6" component="span">
               Education
             </Typography>
-            <div className='ea-container'>
+            <div className='ea-container-medium'>
               {EducationData.map((data, key) => {
                 return (
                   <div key={key} className='item-education left-border-gold item-hover'>
@@ -221,7 +221,7 @@ const Timeline = () => {
             <Typography variant="h6" component="span">
               Tools
             </Typography>
-            <div className='ea-container'>
+            <div className='ea-container-medium'>
               {ToolsData.map((data, key) => {
                 return (
                   <div key={key} className='item-tools left-border-gold item-hover'>
