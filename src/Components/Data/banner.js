@@ -7,5 +7,5 @@ export const BannerContent = {
                         <li>🔭 I’m currently working on Developing a full stack application for Ecommerce platform</li>
                         <li>🌱 I’m currently learning Python , R (KDD and modelling of models)</li>
                       </ul>`,
-  displayPic: require("../Assets/zalando.jpg"),
+  displayPic: require("../Assets/Dp.jpeg"),
 };
