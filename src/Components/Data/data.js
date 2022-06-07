@@ -177,3 +177,181 @@ export const ToolsData = [
     logo : require('../Assets/Jira.jpg'),
   },
 ];
+
+
+export const SkillsData = [
+
+  {
+
+    type: "Technologies",
+
+    skills :[
+      {
+        values : ['Sales and service clouds']
+      },
+      {
+        values : ['Experience cloud']
+      },
+      {
+        values : [
+          'Software Development',
+          'Design Patterns',
+          'Consulting',
+        ]
+      },
+      {
+        values : [
+          'Agile/Scrum',
+          'DevOps',
+        ]
+      },
+
+      {
+        values : ['GCP/AWS/Jenkins/ Gearset']
+      },
+
+      {
+        values : [
+          'Prototyping',
+          'Testing',
+        ]
+      },
+
+      {
+        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
+      },
+
+    ],
+  },
+
+
+  {
+
+    type: "Technologies",
+
+    skills :[
+      {
+        values : ['Sales and service clouds']
+      },
+      {
+        values : ['Experience cloud']
+      },
+      {
+        values : [
+          'Software Development',
+          'Design Patterns',
+          'Consulting',
+        ]
+      },
+      {
+        values : [
+          'Agile/Scrum',
+          'DevOps',
+        ]
+      },
+
+      {
+        values : ['GCP/AWS/Jenkins/ Gearset']
+      },
+
+      {
+        values : [
+          'Prototyping',
+          'Testing',
+        ]
+      },
+
+      {
+        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
+      },
+
+    ],
+  },
+{
+
+    type: "Technologies",
+
+    skills :[
+      {
+        values : ['Sales and service clouds']
+      },
+      {
+        values : ['Experience cloud']
+      },
+      {
+        values : [
+          'Software Development',
+          'Design Patterns',
+          'Consulting',
+        ]
+      },
+      {
+        values : [
+          'Agile/Scrum',
+          'DevOps',
+        ]
+      },
+
+      {
+        values : ['GCP/AWS/Jenkins/ Gearset']
+      },
+
+      {
+        values : [
+          'Prototyping',
+          'Testing',
+        ]
+      },
+
+      {
+        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
+      },
+
+    ],
+  },
+
+
+  {
+
+    type: "Technologies",
+
+    skills :[
+      {
+        values : ['Sales and service clouds']
+      },
+      {
+        values : ['Experience cloud']
+      },
+      {
+        values : [
+          'Software Development',
+          'Design Patterns',
+          'Consulting',
+        ]
+      },
+      {
+        values : [
+          'Agile/Scrum',
+          'DevOps',
+        ]
+      },
+
+      {
+        values : ['GCP/AWS/Jenkins/ Gearset']
+      },
+
+      {
+        values : [
+          'Prototyping',
+          'Testing',
+        ]
+      },
+
+      {
+        values : ['ML Tool kits (Tensorflow,keras,scikitlearn)']
+      },
+
+    ],
+  },
+  
+];

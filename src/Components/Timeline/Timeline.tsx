@@ -13,7 +13,7 @@ import { ReactComponent as Step } from '../Assets/_Step.svg';
 
 
 
-import { ExperienceData, EducationData, ToolsData } from "../Data/data";
+import { ExperienceData, EducationData, ToolsData, SkillsData } from "../Data/data";
 
 
 
@@ -127,14 +127,14 @@ const Timeline = () => {
               {EducationData.map((data, key) => {
                 return (
                   <div key={key} className='item-education left-border-gold item-hover'>
-                    <div className="item-education ">
-                      <img className="ea-img-education" src={`${data.logo}`} alt="University"  />
+                    <div className="item-education">
+                      <img className="ea-img-education" src={`${data.logo}`} alt="University" />
                       <Typography className="ea-course-name" display="block" align="center">
                         {data.university}
                       </Typography>
                     </div>
-                    
-                    <Typography  variant="body2" color="text.secondary" >
+
+                    <Typography variant="body2" color="text.secondary" >
                       {data.course}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" >
@@ -166,11 +166,37 @@ const Timeline = () => {
             <Typography variant="h6" component="span">
               Skills
             </Typography>
-            <div className='item-hover item-long right-border-black hoverblue'>
-              <Typography variant="h6" component="span">
-                My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume My Name is Abhijith I am creating this page with a simple idea of using this as a personal resume
-              </Typography>
-              <br />
+            <div className='ea-container'>
+              {SkillsData.map((data, key) => {
+                return (
+                  <div key={key} className='ea-container-medium'>
+                    
+                    <div className='item-full-width'>
+                    {data.type}
+                    </div>
+                    {data.skills.map((skills, key) => {
+                      return (
+                        <div className='item-medium left-border-gold item-hover'>
+                          <ul>
+                            <div key={key}>
+
+                              {skills.values.map((data, key) => {
+                                return (
+                                  <li key={key}>
+                                    {data}
+                                  </li>
+                                )
+                              })
+                              }
+                            </div>
+                          </ul>
+                        </div>
+                      );
+                    })}
+
+                  </div>
+                );
+              })}
             </div>
           </TimelineContent>
 
