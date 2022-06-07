@@ -95,7 +95,7 @@
     grid-template-columns: auto;
   }
   .MuiTimeline-root {
-    margin-left: -2rem !important;
+    margin-left: -4rem !important;
   }
 }
 
