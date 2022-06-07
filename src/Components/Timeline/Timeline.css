@@ -21,7 +21,7 @@
 .ea-experience-bg:nth-of-type(odd) {
   border-left: 2px solid #2050e61f;
   border-right: 2px solid #2050e61f;
-  background: conic-gradient(
+  /* background: conic-gradient(
     from 256.31deg at 40.52% 54.78%,
     rgba(149, 172, 243, 0.21) -16.96deg,
     rgba(32, 80, 230, 0.04) 3.55deg,
@@ -32,6 +32,20 @@
     rgba(255, 255, 255, 0.28) 178.12deg,
     #fff 286.02deg,
     rgba(149, 172, 243, 0.21) 343.04deg,
+    rgba(32, 80, 230, 0.04) 363.55deg
+  ); */
+
+  background: conic-gradient(
+    from 160.61deg at 40.52% 54.78%,
+    rgba(101, 125, 202, 0.13) -16.96deg,
+    rgba(32, 80, 230, 0.04) 3.55deg,
+    rgba(67, 101, 205, 0.2) 29.02deg,
+    rgba(75, 96, 164, 0.41) 98.78deg,
+    rgba(68, 99, 196, 0.23) 123.75deg,
+    rgba(244, 247, 254, 0.262597) 169.04deg,
+    rgba(81, 103, 174, 0.15) 178.12deg,
+    rgba(66, 101, 207, 0.28) 286.02deg,
+    rgba(101, 125, 202, 0.13) 343.04deg,
     rgba(32, 80, 230, 0.04) 363.55deg
   );
 }
