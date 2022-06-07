@@ -50,13 +50,13 @@
   );
 }
 
-.ea-experience-bg:last-child {
+div.ea-experience-bg:last-of-type {
   border-bottom: 2px solid #2050e61f;
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
 
-.ea-experience-bg:first-of-type {
+div.ea-experience-bg:first-of-type {
   border-top: 2px solid #2050e61f;
   border-top-right-radius: 3rem;
   border-top-left-radius: 3rem;
@@ -208,3 +208,20 @@ li {
     rgba(13, 13, 143, 0.13) 104.27%
   );
 }
+
+.show-hide-button{
+    background: #12b3debd;
+    transition: all 500ms;
+    margin-top : 3rem;
+}
+
+.show-hide-button:hover{
+    background: #9dad3438;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+}
+
+.ea-btn-show {
+    width:100%;
+}
+

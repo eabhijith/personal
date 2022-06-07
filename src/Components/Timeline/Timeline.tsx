@@ -23,6 +23,10 @@ const Timeline = () => {
   const [stateValues, setStateValues] = React.useState({
     showMore: false,
     showExperience: false,
+    showMoreBtnLable: 'Show More',
+    showLessBtnLable: 'Collapse',
+    showMoreExpericneBtnLable: 'Show More Experience',
+    showLessExpericneBtnLable: 'Collapse Experience',
   });
 
 
@@ -175,8 +179,10 @@ const Timeline = () => {
             {ExperienceData.length > 3 ? 
             (
               <div>
-                  <div className='item-long left-border-gold right-border-black '>
-                    <button onClick={() => setStateValues({ ...stateValues, showExperience: !stateValues.showExperience })} >show More/Less</button>
+                  <div className='item-long left-border-gold right-border-black show-hide-button'>
+                    <button className="ea-btn-show" onClick={() => setStateValues({ ...stateValues, showExperience: !stateValues.showExperience })} >
+                      {stateValues.showExperience ? stateValues.showLessExpericneBtnLable  : stateValues.showMoreExpericneBtnLable}
+                    </button>
                   </div>
               </div>
             )
@@ -328,10 +334,11 @@ const Timeline = () => {
           </TimelineItem>
         </Collapse>
 
-        <div className='item-long left-border-gold right-border-black '>
-          <button onClick={() => setStateValues({ ...stateValues, showMore: !stateValues.showMore })} >show More/Less</button>
+        <div className='item-long left-border-gold right-border-black show-hide-button'>
+          <button className="ea-btn-show" onClick={() => setStateValues({ ...stateValues, showMore: !stateValues.showMore })} >
+            {stateValues.showMore ? stateValues.showLessBtnLable : stateValues.showMoreBtnLable}
+          </button>
         </div>
-
 
       </Timeline1>
     </div>
