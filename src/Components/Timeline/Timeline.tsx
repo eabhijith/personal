@@ -20,7 +20,10 @@ import { ExperienceData, EducationData, ToolsData, SkillsData } from "../Data/da
 
 const Timeline = () => {
 
-  const [showExperience, setshowExperience] = React.useState(false);
+  const [stateValues, setStateValues] = React.useState({
+    showMore: false,
+    showExperience: false,
+  });
 
 
 
@@ -54,59 +57,132 @@ const Timeline = () => {
               return (
 
                 <div key={key} className="ea-experience-bg">
-
-                  {/* Begin : Experience Item 1 */}
-                  <Timeline1 >
-                    <TimelineItem>
-                      <TimelineOppositeContent style={{ flex: 0.001 }} />
-                      <TimelineSeparator>
-                        <TimelineDot />
-                        <TimelineConnector />
-                      </TimelineSeparator>
-                      <TimelineContent>
-                        <Typography variant="h6" component="span">
-                          {`${data.duration} ${data.location}`}
-                        </Typography>
-                        <div className='ea-container'>
-                          <div className='item left-border-gold item-hover ea-container-small'>
-                            <div className='item-row'>
-                              <img className="company-img" src={`${data.logo}`} alt="company" />
-                            </div>
-                            <div className='item-row'>
-                              <div >
-                                <div className='item-row-left'>
-                                  <Typography variant="h6" color="text.secondary" align="left">
-                                    {data.company}
-                                  </Typography>
+                  {key >= 3 ? (
+                    <div>
+                      <Collapse in={stateValues.showExperience}>
+                        {/* Begin : Experience Item 1 */}
+                        <Timeline1 >
+                          <TimelineItem>
+                            <TimelineOppositeContent style={{ flex: 0.001 }} />
+                            <TimelineSeparator>
+                              <TimelineDot />
+                              <TimelineConnector />
+                            </TimelineSeparator>
+                            <TimelineContent>
+                              <Typography variant="h6" component="span">
+                                {`${data.duration} ${data.location}`}
+                              </Typography>
+                              <div className='ea-container'>
+                                <div className='item left-border-gold item-hover ea-container-small'>
+                                  <div className='item-row'>
+                                    <img className="company-img" src={`${data.logo}`} alt="company" />
+                                  </div>
+                                  <div className='item-row'>
+                                    <div >
+                                      <div className='item-row-left'>
+                                        <Typography variant="h6" color="text.secondary" align="left">
+                                          {data.company}
+                                        </Typography>
+                                      </div>
+                                      <div className='item-row-left'>
+                                        <Typography variant="subtitle1" color="text.secondary" align="left">
+                                          {data.role}
+                                        </Typography>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div className='item-row-left'>
+                                <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
                                   <Typography variant="subtitle1" color="text.secondary" align="left">
-                                    {data.role}
+                                    <ul >
+                                      {data.experience.map((data, key) => {
+                                        return (
+                                          <li key={key}>{data}</li>
+                                        );
+                                      })}
+                                    </ul>
                                   </Typography>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                          <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
-                            <Typography variant="subtitle1" color="text.secondary" align="left">
-                              <ul >
-                                {data.experience.map((data, key) => {
-                                  return (
-                                    <li key={key}>{data}</li>
-                                  );
-                                })}
-                              </ul>
-                            </Typography>
-                          </div>
-                        </div>
-                      </TimelineContent>
-                    </TimelineItem>
-                  </Timeline1>
-                  {/* End : Experience Item 1 */}
+                            </TimelineContent>
+                          </TimelineItem>
+                        </Timeline1>
+                        {/* End : Experience Item 1 */}
+                      </Collapse>
+                    </div>
+
+                  ) :
+                    (
+                      <div>
+                        {/* Begin : Experience Item 1 */}
+                        <Timeline1 >
+                          <TimelineItem>
+                            <TimelineOppositeContent style={{ flex: 0.001 }} />
+                            <TimelineSeparator>
+                              <TimelineDot />
+                              <TimelineConnector />
+                            </TimelineSeparator>
+                            <TimelineContent>
+                              <Typography variant="h6" component="span">
+                                {`${data.duration} ${data.location}`}
+                              </Typography>
+                              <div className='ea-container'>
+                                <div className='item left-border-gold item-hover ea-container-small'>
+                                  <div className='item-row'>
+                                    <img className="company-img" src={`${data.logo}`} alt="company" />
+                                  </div>
+                                  <div className='item-row'>
+                                    <div >
+                                      <div className='item-row-left'>
+                                        <Typography variant="h6" color="text.secondary" align="left">
+                                          {data.company}
+                                        </Typography>
+                                      </div>
+                                      <div className='item-row-left'>
+                                        <Typography variant="subtitle1" color="text.secondary" align="left">
+                                          {data.role}
+                                        </Typography>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className='item-hover item-long left-border-gold right-border-black hoverblue'>
+                                  <Typography variant="subtitle1" color="text.secondary" align="left">
+                                    <ul >
+                                      {data.experience.map((data, key) => {
+                                        return (
+                                          <li key={key}>{data}</li>
+                                        );
+                                      })}
+                                    </ul>
+                                  </Typography>
+                                </div>
+                              </div>
+                            </TimelineContent>
+                          </TimelineItem>
+                        </Timeline1>
+                        {/* End : Experience Item 1 */}
+
+                      </div>
+                    )
+                  }
+
                 </div>
               );
 
             })}
+
+            {ExperienceData.length > 3 ? 
+            (
+              <div>
+                  <div className='item-long left-border-gold right-border-black '>
+                    <button onClick={() => setStateValues({ ...stateValues, showExperience: !stateValues.showExperience })} >show More/Less</button>
+                  </div>
+              </div>
+            )
+            :
+            ''
+            }
           </TimelineContent>
         </TimelineItem>
 
@@ -154,9 +230,9 @@ const Timeline = () => {
 
         </TimelineItem>
 
-        
 
-        <Collapse in={showExperience}>
+
+        <Collapse in={stateValues.showMore}>
           {/* BEGIN : Time line Skills */}
           <TimelineItem>
             <TimelineOppositeContent style={{ flex: 0.001 }} />
@@ -251,9 +327,9 @@ const Timeline = () => {
 
           </TimelineItem>
         </Collapse>
-        
+
         <div className='item-long left-border-gold right-border-black '>
-            <button onClick={() => setshowExperience(!showExperience)} >show More/Less</button>
+          <button onClick={() => setStateValues({ ...stateValues, showMore: !stateValues.showMore })} >show More/Less</button>
         </div>
 
 
