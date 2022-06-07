@@ -33,6 +33,10 @@
     align-content: space-around;
 }
 
+.MuiTimeline-root  {
+    margin-left : -2rem !important;
+}
+
 
 
 
