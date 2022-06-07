@@ -11,6 +11,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 // import { ReactComponent as Step } from './Assets/_Step.svg';
 import { ReactComponent as Step } from '../Assets/_Step.svg';
 
+import Collapse from '@material-ui/core/Collapse';
 
 
 import { ExperienceData, EducationData, ToolsData, SkillsData } from "../Data/data";
@@ -19,9 +20,14 @@ import { ExperienceData, EducationData, ToolsData, SkillsData } from "../Data/da
 
 const Timeline = () => {
 
+  const [showExperience, setshowExperience] = React.useState(false);
+
+
+
   return (
     // <AppBar position="static" style={{background:'rgba(247,250,252,var(--bg-opacity))'}}>
     <div className="parent ea-Timeline-header">
+
       <Timeline1>
 
         {/* BEGIN : Time line Experience */}
@@ -148,100 +154,107 @@ const Timeline = () => {
 
         </TimelineItem>
 
-        {/* BEGIN : Time line Skills */}
-        <TimelineItem>
-          <TimelineOppositeContent style={{ flex: 0.001 }} />
-          {/* Time line Seperator */}
-          <TimelineSeparator sx={{ py: "15px" }}>
-            {/* <TimelineConnector /> */}
-            {/* <TimelineDot>
+        
+
+        <Collapse in={showExperience}>
+          {/* BEGIN : Time line Skills */}
+          <TimelineItem>
+            <TimelineOppositeContent style={{ flex: 0.001 }} />
+            {/* Time line Seperator */}
+            <TimelineSeparator sx={{ py: "15px" }}>
+              {/* <TimelineConnector /> */}
+              {/* <TimelineDot>
               <FastfoodIcon />
             </TimelineDot> */}
-            <Step />
-            <TimelineConnector />
-          </TimelineSeparator>
+              <Step />
+              <TimelineConnector />
+            </TimelineSeparator>
 
-          {/* Time line Content */}
-          <TimelineContent sx={{ py: "30px", px: 2 }}>
-            <Typography variant="h6" component="span">
-              Skills
-            </Typography>
-            <div className='ea-container'>
-              {SkillsData.map((data, key) => {
-                return (
-                  <div key={key} className='ea-container-medium'>
-                    
-                    <div className='item-full-width'>
-                    {data.type}
+            {/* Time line Content */}
+            <TimelineContent sx={{ py: "30px", px: 2 }}>
+              <Typography variant="h6" component="span">
+                Skills
+              </Typography>
+              <div className='ea-container'>
+                {SkillsData.map((data, key) => {
+                  return (
+                    <div key={key} className='ea-container-medium'>
+
+                      <div className='item-full-width'>
+                        {data.type}
+                      </div>
+                      {data.skills.map((skills, key) => {
+                        return (
+                          <div className='item-medium left-border-gold item-hover'>
+                            <ul>
+                              <div key={key}>
+
+                                {skills.values.map((data, key) => {
+                                  return (
+                                    <li key={key}>
+                                      {data}
+                                    </li>
+                                  )
+                                })
+                                }
+                              </div>
+                            </ul>
+                          </div>
+                        );
+                      })}
+
                     </div>
-                    {data.skills.map((skills, key) => {
-                      return (
-                        <div className='item-medium left-border-gold item-hover'>
-                          <ul>
-                            <div key={key}>
+                  );
+                })}
+              </div>
+            </TimelineContent>
 
-                              {skills.values.map((data, key) => {
-                                return (
-                                  <li key={key}>
-                                    {data}
-                                  </li>
-                                )
-                              })
-                              }
-                            </div>
-                          </ul>
-                        </div>
-                      );
-                    })}
-
-                  </div>
-                );
-              })}
-            </div>
-          </TimelineContent>
-
-        </TimelineItem>
+          </TimelineItem>
 
 
-        {/* BEGIN : Time line Tools */}
-        <TimelineItem>
-          <TimelineOppositeContent style={{ flex: 0.001 }} />
-          {/* Time line Seperator */}
-          <TimelineSeparator sx={{ py: "15px", pt: "27px" }}>
-            {/* <TimelineConnector /> */}
-            {/* <TimelineDot>
+          {/* BEGIN : Time line Tools */}
+          <TimelineItem>
+            <TimelineOppositeContent style={{ flex: 0.001 }} />
+            {/* Time line Seperator */}
+            <TimelineSeparator sx={{ py: "15px", pt: "27px" }}>
+              {/* <TimelineConnector /> */}
+              {/* <TimelineDot>
               <FastfoodIcon />
             </TimelineDot> */}
-            <Step />
-            <TimelineConnector />
-          </TimelineSeparator>
+              <Step />
+              <TimelineConnector />
+            </TimelineSeparator>
 
-          {/* Time line Content */}
-          <TimelineContent sx={{ py: "30px", px: 2 }}>
-            <Typography variant="h6" component="span">
-              Tools
-            </Typography>
-            <div className='ea-container-medium'>
-              {ToolsData.map((data, key) => {
-                return (
-                  <div key={key} className='item-tools left-border-gold item-hover'>
-                    <div className='item-row'>
-                      <img className="ea-img-tools" src={`${data.logo}`} alt="company" />
+            {/* Time line Content */}
+            <TimelineContent sx={{ py: "30px", px: 2 }}>
+              <Typography variant="h6" component="span">
+                Tools
+              </Typography>
+              <div className='ea-container-medium'>
+                {ToolsData.map((data, key) => {
+                  return (
+                    <div key={key} className='item-tools left-border-gold item-hover'>
+                      <div className='item-row'>
+                        <img className="ea-img-tools" src={`${data.logo}`} alt="company" />
+                      </div>
+                      <Typography variant="button" display="block" align="center">
+                        {data.name}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" align="center">
+                        {data.purpose}
+                      </Typography>
                     </div>
-                    <Typography variant="button" display="block" align="center">
-                      {data.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" align="center">
-                      {data.purpose}
-                    </Typography>
-                  </div>
-                );
-              })}
-            </div>
-          </TimelineContent>
+                  );
+                })}
+              </div>
+            </TimelineContent>
 
-        </TimelineItem>
-
+          </TimelineItem>
+        </Collapse>
+        
+        <div className='item-long left-border-gold right-border-black '>
+            <button onClick={() => setshowExperience(!showExperience)} >show More/Less</button>
+        </div>
 
 
       </Timeline1>
