@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/personal/static/css/main.0f08fa83.css",
-    "main.js": "/personal/static/js/main.9927f7d4.js",
+    "main.css": "/personal/static/css/main.8f46ad5e.css",
+    "main.js": "/personal/static/js/main.5b9fb101.js",
     "static/js/787.88012170.chunk.js": "/personal/static/js/787.88012170.chunk.js",
+    "static/media/Courseera.jpg": "/personal/static/media/Courseera.53254624d19b38c6ab56.jpg",
+    "static/media/JNTU.jpg": "/personal/static/media/JNTU.6168d4da6921a86f70a9.jpg",
+    "static/media/Salesforce.jpg": "/personal/static/media/Salesforce.6f41db88924ba79630b3.jpg",
+    "static/media/Jenkins.jpg": "/personal/static/media/Jenkins.3933fb90b96e242d2e29.jpg",
     "static/media/_Step.svg": "/personal/static/media/_Step.73376a60d23164c2415fcd8f67242fc4.svg",
     "index.html": "/personal/index.html",
-    "main.0f08fa83.css.map": "/personal/static/css/main.0f08fa83.css.map",
-    "main.9927f7d4.js.map": "/personal/static/js/main.9927f7d4.js.map",
+    "main.8f46ad5e.css.map": "/personal/static/css/main.8f46ad5e.css.map",
+    "main.5b9fb101.js.map": "/personal/static/js/main.5b9fb101.js.map",
     "787.88012170.chunk.js.map": "/personal/static/js/787.88012170.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f08fa83.css",
-    "static/js/main.9927f7d4.js"
+    "static/css/main.8f46ad5e.css",
+    "static/js/main.5b9fb101.js"
   ]
 }
