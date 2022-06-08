@@ -27,6 +27,9 @@ const Timeline = () => {
     showLessBtnLable: 'Collapse',
     showMoreExpericneBtnLable: 'Show More Experience',
     showLessExpericneBtnLable: 'Collapse Experience',
+    collpsableWidth: 90,
+    collapsableExperienceHeight : 30,
+    numberOfExpericnesToDisplay : 2
   });
 
 
@@ -62,9 +65,9 @@ const Timeline = () => {
                 return (
                   <div key={key} className="ea-experience-bg">
                     <Timeline1 >
-                      {key >= 2 ? (
+                      {key >= stateValues.numberOfExpericnesToDisplay ? (
                         <div >
-                          <Collapse in={stateValues.showExperience} collapsedSize={30}>
+                          <Collapse in={stateValues.showExperience} collapsedSize={stateValues.collapsableExperienceHeight}>
                             {/* Begin : Experience Item 1 */}
                             <TimelineItem>
                               <TimelineOppositeContent style={{ flex: 0.001 }} />
@@ -175,7 +178,7 @@ const Timeline = () => {
               })}
 
             </div>
-            {ExperienceData.length >= 2 ?
+            {ExperienceData.length >= stateValues.numberOfExpericnesToDisplay ?
               (
                 <div>
                   <div className='item-long left-border-gold right-border-black show-hide-button'>
@@ -239,7 +242,7 @@ const Timeline = () => {
 
 
 
-        <Collapse in={stateValues.showMore} collapsedSize={30}>
+        <Collapse in={stateValues.showMore} collapsedSize={stateValues.collpsableWidth}>
           {/* BEGIN : Time line Skills */}
           <TimelineItem>
             <TimelineOppositeContent style={{ flex: 0.001 }} />
@@ -293,8 +296,9 @@ const Timeline = () => {
             </TimelineContent>
 
           </TimelineItem>
+        </Collapse>
 
-
+        <Collapse in={stateValues.showMore} collapsedSize={stateValues.collpsableWidth}>
           {/* BEGIN : Time line Tools */}
           <TimelineItem>
             <TimelineOppositeContent style={{ flex: 0.001 }} />
@@ -334,6 +338,7 @@ const Timeline = () => {
 
           </TimelineItem>
         </Collapse>
+        
 
         <div className='item-long left-border-gold right-border-black show-hide-button last-button'>
           <button className="ea-btn-show " onClick={() => setStateValues({ ...stateValues, showMore: !stateValues.showMore })} >
