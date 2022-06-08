@@ -239,7 +239,7 @@ const Timeline = () => {
 
 
 
-        <Collapse in={stateValues.showMore} collapsedSize={100}>
+        <Collapse in={stateValues.showMore} collapsedSize={30}>
           {/* BEGIN : Time line Skills */}
           <TimelineItem>
             <TimelineOppositeContent style={{ flex: 0.001 }} />
