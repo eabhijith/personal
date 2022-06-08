@@ -66,9 +66,9 @@ const Timeline = () => {
                 return (
                   <div key={key} className="ea-experience-bg">
                     <Timeline1 >
-                      {key >= 3 ? (
+                      {key >= 2 ? (
                         <div >
-                          <Collapse in={stateValues.showExperience}>
+                          <Collapse in={stateValues.showExperience} collapsedSize={30}>
                             {/* Begin : Experience Item 1 */}
                             <TimelineItem>
                               <TimelineOppositeContent style={{ flex: 0.001 }} />
@@ -179,7 +179,7 @@ const Timeline = () => {
               })}
 
             </div>
-            {ExperienceData.length > 3 ?
+            {ExperienceData.length >= 2 ?
               (
                 <div>
                   <div className='item-long left-border-gold right-border-black show-hide-button'>
@@ -243,7 +243,7 @@ const Timeline = () => {
 
 
 
-        <Collapse in={stateValues.showMore}>
+        <Collapse in={stateValues.showMore} collapsedSize={100}>
           {/* BEGIN : Time line Skills */}
           <TimelineItem>
             <TimelineOppositeContent style={{ flex: 0.001 }} />
