@@ -50,10 +50,14 @@
   );
 }
 
-div.ea-experience-bg:last-of-type {
+.ea-experience-bg:last-child {
   border-bottom: 2px solid #2050e61f;
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
+}
+
+.last-button{
+  margin-bottom : 4rem
 }
 
 div.ea-experience-bg:first-of-type {
