@@ -8,7 +8,6 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import Typography from "@mui/material/Typography";
 import TimelineDot from '@mui/lab/TimelineDot';
-// import { ReactComponent as Step } from './Assets/_Step.svg';
 import { ReactComponent as Step } from '../Assets/_Step.svg';
 
 import Collapse from '@material-ui/core/Collapse';
@@ -20,9 +19,6 @@ import { ExperienceData, EducationData, ToolsData, SkillsData } from "../Data/da
 
 const Timeline = () => {
 
-  // React.useEffect(() => {
-  //   setStateValues({ ...stateValues, showMore: true, showExperience: true })
-  // }, []);
 
   const [stateValues, setStateValues] = React.useState({
     showMore: false,
