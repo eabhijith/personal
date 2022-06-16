@@ -135,7 +135,7 @@ ea-bg-gray {
 }
 
 /* Large Screen */
-@media screen and (min-width : 600px) {
+@media screen and (min-width : 900px) {
     .item-long {
         grid-column: span 2/ auto; 
     }
@@ -156,7 +156,7 @@ ea-bg-gray {
 
 
 /* Small screen */
-@media screen and (max-width : 806px) {
+@media screen and (max-width : 1360px) {
     .ea-container {
         grid-template-columns: auto;
     }
