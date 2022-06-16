@@ -103,7 +103,7 @@ div.ea-experience-bg:first-of-type {
 }
 
 /* Small screen */
-@media screen and (max-width: 806px) {
+@media screen and (max-width: 600px) {
   .item-medium {
     grid-column: span 2 / auto;
     align-items: center;
