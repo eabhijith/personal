@@ -110,7 +110,7 @@ export const EducationData = [
 
     course: "Masters in Data science",
 
-    logo: require("../Assets/Courseera.jpg"),
+    logo: require("../Assets/UMKC.jpeg"),
   },
 ];
 
