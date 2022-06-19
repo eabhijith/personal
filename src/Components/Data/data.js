@@ -109,7 +109,6 @@ export const EducationData = [
     duration: "  👉🏻 Current",
 
     course: "Masters in Data science",
-
     logo: require("../Assets/UMKC.jpeg"),
   },
 ];
