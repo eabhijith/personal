@@ -1,249 +1,111 @@
 export const ExperienceData = [
-
   {
-
     company: "Zalando SE",
-
-    duration : "Aug 2020 - Present",
-
-    location: "📍Berlin",
-
-    role : "Senior Developer Specalist",
-
-    // logo :'space',
-    logo : require('../Assets/zalando.jpg'),
-    
-
-    experience : [
-      'Lead Salesforce Programme specalist/Architect',
-      'Integration Specalist',
-      'SFDX based development specialist/consultant',
-      'Full Stack MERN Specalist programmer'
+    duration: "Aug 2020 – Present",
+    location: "Berlin, Germany",
+    role: "Senior Specialist (AI & Automation)",
+    logo: require('../Assets/zalando.jpg'),
+    experience: [
+      "Agentic AI & Prompt Engineering: Leveraging Salesforce Agentforce and Prompt Builder to architect autonomous agents that streamline complex customer and internal workflows.",
+      "Probabilistic Automations: Integrated n8n with external Model Context Protocol (MCP) to create dynamic, probabilistic flow automations, enabling smarter system-to-system context exchange.",
+      "LLM Steering & Custom ML: Fine-tuning model behavior through steering techniques and building custom classification models in SageMaker Studio for automated data categorisation.",
+      "Hybrid Cloud RAG: Engineered a cross-cloud RAG system utilizing AWS Bedrock Knowledge Bases integrated seamlessly with Google Cloud Platform (GCP).",
+      "Optimization: Reduced training compute costs by 60% through LoRA (Low-Rank Adaptation) fine-tuning on domain-specific datasets."
     ]
   },
-
   {
-
-    company: "LemonOne SE",
-
-    duration : "Feb 2020 - July 2020",
-
-    location: "📍Berlin",
-
-    role : "Senior Technical Specalist",
-
-    logo : require('../Assets/lemonOne.jpg'),
-
-    experience : [
-      'MERN full stack developer',
-      'Integration Specalist',
-      'CI/CD Operations Dev Lead'
-    ]
-  },
-
-  {
-
     company: "adidas AG",
-
-    duration : "Mar 2017 - Jan 2020",
-
-    location: "📍Herzogenaurach",
-
-    role : "Technology Specalist",
-
-    logo : require('../Assets/adidas.jpg'),
-
-
-    experience : [
-      'Lead in Adidas Service cloud enterprise application built on Salesforce service cloud platform support. which include supporting the customer support application built for Adidas on different channels like Chat (Adidas bot which is a Customer service chatbot), Auto routing of cases (Omni-Channel), Social (Whats app, facebook, twitter etc..) and others',
-      'Functional Consultant, for Lightning-based salesforce campaign portal application.',
-      'Deployment Orchestrator building a CI/CD pipeline in Jenkins',
-      'Lightning Component Developer.'
+    duration: "Mar 2017 – Jan 2020",
+    location: "Herzogenaurach",
+    role: "External Technology Specialist",
+    logo: require('../Assets/adidas.jpg'),
+    experience: [
+      "Lead Architect for Salesforce Service Cloud, delivering omnichannel support (Chat, WhatsApp, Social) for global customer service operations.",
+      "Transformed global campaign management by building a custom Salesforce Lightning portal, replacing legacy spreadsheet workflows with automated tracking.",
+      "Developed and maintained CI/CD pipelines (Jenkins/Gearset) to ensure high-velocity deployment cycles across complex sandbox environments."
     ]
   },
-
   {
-
-    company: "Inofsys",
-
-    duration : "Jan 2015 - Feb 2017",
-
-    location: "📍Mysuru",
-
-    role : "Systems Engineer / Senior Engineer",
-
-    logo : require('../Assets/infosys.jpg'),
-
-
-    experience : [
-      'Salesforce Administrator, CRM Specialist, Service cloud professional and Database Administrator at Infosys.'
+    company: "Infosys",
+    duration: "Jan 2015 – Feb 2017",
+    location: "Mysuru",
+    role: "Senior Systems Engineer",
+    logo: require('../Assets/infosys.jpg'),
+    experience: [
+      "Specialized in enterprise-scale CRM implementations, customized Apex/Visualforce development, and seamless third-party systems integration."
     ]
-  },
-
+  }
 ];
-
 
 export const EducationData = [
   {
-    university: "JNTU-Anantapur",
-
-    duration: "Mar 2014",
-
-    course: "Bachelor of Technology, Electrical and Communications Engineering",
-
-    logo: require("../Assets/JNTU.jpg"),
-  },
-
-  {
-    university: "Coursera",
-
-    duration: "Dec 2019",
-
-    course: "CoureEra ML using Tensorflow",
-
-    logo: require("../Assets/Courseera.jpg"),
-  },
-  {
-    university: "UMKC",
-
-    duration: "  👉🏻 Current",
-
-    course: "Masters in Data science",
+    university: "University of Missouri-Kansas City (UMKC)",
+    duration: "Graduated March 2021",
+    course: "Master of Science in Data Sciences",
+    details: "Specialization in Machine Learning & Predictive Analytics",
     logo: require("../Assets/UMKC.jpeg"),
-  },
+  }
 ];
-
-
-export const ToolsData = [
-
-  {
-
-    name: "Figma",
-
-    purpose : "UI Design, prototyping ",
-
-    logo : require('../Assets/Figma.jpg'),
-  },
-
-  {
-
-    name: "Salesforce",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/Salesforce.jpg'),
-  },
-  {
-
-    name: "Jenkins",
-
-    purpose : "CI/CD pipeline Managment",
-
-    logo : require('../Assets/Jenkins.jpg'),
-  },
-  {
-
-    name: "Google colabs",
-
-    purpose : "ML/ Data processing (cloud jypter notebooks)",
-
-    logo : require('../Assets/Colab.jpg'),
-  },
-  {
-
-    name: "R Studio",
-
-    purpose : "KDD porcessing",
-
-    logo : require('../Assets/Rstudio.jpg'),
-  },
-  {
-
-    name: "VS Code",
-
-    purpose : "Product Development",
-
-    logo : require('../Assets/Vscode.jpg'),
-  },
-  {
-
-    name: "Xcode",
-
-    purpose : "iOS development",
-
-    logo : require('../Assets/xcode.jpg'),
-  },
-  {
-
-    name: "Jira",
-
-    purpose : "Project lifecycle managment",
-
-    logo : require('../Assets/Jira.jpg'),
-  },
-];
-
 
 export const SkillsData = [
   {
-    type: "Technologies",
-
+    type: "AI & Agentic Systems",
     skills: [
-      {
-        values: ["Sales and service clouds"],
-      },
-      {
-        values: ["Experience cloud"],
-      },
-      {
-        values: ["Software Development", "Design Patterns", "Consulting"],
-      },
-      {
-        values: ["Agile/Scrum", "DevOps"],
-      },
-
-      {
-        values: ["GCP/AWS/Jenkins/ Gearset"],
-      },
-
-      {
-        values: ["Prototyping", "Testing"],
-      },
-
-      {
-        values: ["ML Tool kits (Tensorflow,keras,scikitlearn)"],
-      },
-    ],
+      "Agentforce",
+      "Prompt Builder",
+      "LLM Steering",
+      "LoRA Fine-tuning",
+      "RAG / Bedrock"
+    ]
   },
-
   {
-    type: "Development",
-
+    type: "Automation & Cloud",
     skills: [
-      {
-        values: ["Webcomponts (React,lwc)"],
-      },
-      {
-        values: ["HTML/CSS/JS (ES7)"],
-      },
-      {
-        values: ["Typescript Node Js"],
-      },
-      {
-        values: ["Matlab", "R"],
-      },
-
-      {
-        values: ["JAVA", "Apex", "PYTHON", "Go"],
-      },
-
-      {
-        values: ["Mongo", "Express DB"],
-      },
-
-      {
-        values: ["Git", "K8 Microser", "Docker"],
-      },
-    ],
+      "n8n / MCP",
+      "AWS & GCP Hybrid",
+      "SageMaker Studio",
+      "Kubernetes / Docker",
+      "GitLab CI/CD"
+    ]
   },
+  {
+    type: "Salesforce Ecosystem",
+    skills: [
+      "Service Cloud",
+      "LWC / Apex",
+      "Omni-Channel",
+      "MERN Stack"
+    ]
+  }
+];
+
+export const CoreCompetencies = [
+    {
+        title: "Agentic Workflows",
+        subtitle: "Designing autonomous systems",
+        icon: "fas fa-robot"
+    },
+    {
+        title: "Probabilistic Logic",
+        subtitle: "Non-linear flow automation",
+        icon: "fas fa-project-diagram"
+    },
+    {
+        title: "Hybrid Solutions",
+        subtitle: "Connecting CRM to AI/Cloud",
+        icon: "fas fa-cloud-upload-alt"
+    }
+];
+
+export const LanguagesData = [
+    {
+        language: "English",
+        level: "Professional",
+        percentage: 100
+    },
+    {
+        language: "German",
+        level: "Learning",
+        percentage: 25
+    }
 ];

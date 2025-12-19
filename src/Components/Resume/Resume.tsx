@@ -1,8 +1,14 @@
 import React from 'react';
+import { BannerContent } from '../Data/banner';
+import { ExperienceData, EducationData, SkillsData, CoreCompetencies, LanguagesData } from '../Data/data';
 
 const Resume: React.FC = () => {
     return (
-        <div className="font-sans bg-[#f3f4f6] text-[#1f2937] min-h-screen">
+        <div className="font-sans bg-[#f3f4f6] text-[#1f2937] min-h-screen relative overflow-hidden">
+            {/* Background elements for glassy effect context if needed, usually glassy relies on elements *behind* it.
+                Given the 'minimalist' requirement, we'll keep the background simple but use backdrop-blur on the container.
+            */}
+
             <style>
                 {`
                 @media print {
@@ -10,180 +16,154 @@ const Resume: React.FC = () => {
                     body { background-color: white; }
                     .resume-container { box-shadow: none; margin: 0; width: 100%; max-width: 100%; }
                 }
+                .glass-panel {
+                    background: rgba(255, 255, 255, 0.7);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                }
+                .hover-scale {
+                    transition: transform 0.3s ease;
+                }
+                .hover-scale:hover {
+                    transform: scale(1.05);
+                }
                 `}
             </style>
-            <div className="p-4 md:p-10">
-                <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden resume-container">
+            <div className="p-4 md:p-10 relative z-10">
+                <div className="max-w-5xl mx-auto glass-panel shadow-2xl rounded-xl overflow-hidden resume-container">
                     {/* Header Section */}
-                    <header className="bg-slate-900 text-white p-8 md:p-12 flex flex-col md:flex-row justify-between items-center">
-                        <div className="text-center md:text-left">
-                            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Abhijith Eanuga</h1>
-                            <p className="text-blue-400 text-xl mt-2 font-medium tracking-wide">Senior Systems Architect & AI Specialist</p>
-                            <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300">
-                                <span className="flex items-center gap-2"><i className="fas fa-envelope text-blue-400"></i> eabhijith@gmail.com</span>
-                                <span className="flex items-center gap-2"><i className="fas fa-phone text-blue-400"></i> +49 15510521709</span>
-                                <span className="flex items-center gap-2"><i className="fas fa-map-marker-alt text-blue-400"></i> Berlin, Germany</span>
+                    <header className="bg-slate-900 text-white p-8 md:p-12 flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
+                        {/* Subtle background decoration for header */}
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 z-0"></div>
+
+                        <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 text-center md:text-left w-full">
+                            {/* Profile Picture */}
+                            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/20 shadow-lg overflow-hidden flex-shrink-0 hover-scale cursor-pointer">
+                                <img src={`${BannerContent.displayPic}`} alt={BannerContent.name} className="w-full h-full object-cover" />
                             </div>
-                        </div>
-                        <div className="mt-8 md:mt-0 flex gap-4 no-print">
-                            <a href="https://linkedin.com/in/eabhijith" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-blue-600 p-3 rounded-full transition-colors"><i className="fab fa-linkedin-in text-xl"></i></a>
-                            <a href="https://github.com/eabhijith" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-slate-700 p-3 rounded-full transition-colors"><i className="fab fa-github text-xl"></i></a>
-                            <button onClick={() => window.print()} className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all">
-                                <i className="fas fa-print"></i> PDF
-                            </button>
+
+                            <div className="flex-grow">
+                                <h1 className="text-4xl md:text-5xl font-bold tracking-tight">{BannerContent.name}</h1>
+                                <p className="text-blue-400 text-xl mt-2 font-medium tracking-wide">{BannerContent.role}</p>
+                                <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300">
+                                    <span className="flex items-center gap-2 hover:text-white transition-colors"><i className="fas fa-envelope text-blue-400"></i> {BannerContent.email}</span>
+                                    <span className="flex items-center gap-2 hover:text-white transition-colors"><i className="fas fa-phone text-blue-400"></i> {BannerContent.phone}</span>
+                                    <span className="flex items-center gap-2 hover:text-white transition-colors"><i className="fas fa-map-marker-alt text-blue-400"></i> {BannerContent.location}</span>
+                                </div>
+                            </div>
+
+                            <div className="mt-8 md:mt-0 flex gap-4 no-print flex-shrink-0">
+                                <a href={BannerContent.linkedin} target="_blank" rel="noreferrer" className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all backdrop-blur-sm border border-white/10 hover:scale-110"><i className="fab fa-linkedin-in text-xl text-white"></i></a>
+                                <a href={BannerContent.github} target="_blank" rel="noreferrer" className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all backdrop-blur-sm border border-white/10 hover:scale-110"><i className="fab fa-github text-xl text-white"></i></a>
+                                <button onClick={() => window.print()} className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all hover:shadow-lg hover:scale-105">
+                                    <i className="fas fa-print"></i> PDF
+                                </button>
+                            </div>
                         </div>
                     </header>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                         {/* Left Column: Experience */}
-                        <main className="lg:col-span-8 p-8 md:p-12 border-r border-gray-100">
+                        <main className="lg:col-span-8 p-8 md:p-12 border-r border-gray-100 bg-white/50 backdrop-blur-sm">
 
                             <section className="mb-10">
                                 <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-500 pb-2 mb-6 flex items-center gap-2">
                                     <i className="fas fa-briefcase text-blue-500"></i> Professional Experience
                                 </h2>
 
-                                {/* Zalando */}
-                                <div className="mb-10">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-900">Senior Specialist (AI & Automation)</h3>
-                                            <p className="text-blue-600 font-semibold text-lg">Zalando SE</p>
+                                {ExperienceData.map((exp: any, index: number) => (
+                                    <div className="mb-10 hover:bg-white/40 p-4 rounded-lg transition-colors -mx-4" key={index}>
+                                        <div className="flex justify-between items-start mb-2 flex-wrap gap-2">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-12 h-12 rounded-lg overflow-hidden shadow-sm border border-slate-100 flex-shrink-0 hidden md:block">
+                                                    <img src={`${exp.logo}`} alt={exp.company} className="w-full h-full object-contain bg-white" />
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-xl font-bold text-slate-900">{exp.role}</h3>
+                                                    <p className="text-blue-600 font-semibold text-lg">{exp.company}</p>
+                                                </div>
+                                            </div>
+                                            <span className="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-1 whitespace-nowrap">{exp.duration}</span>
                                         </div>
-                                        <span className="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-1">Aug 2020 – Present</span>
+                                        <ul className="list-disc ml-5 space-y-2 text-slate-600 text-sm md:text-base mt-2">
+                                            {exp.experience.map((item: string, i: number) => (
+                                                <li key={i}><div dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} /></li>
+                                            ))}
+                                        </ul>
                                     </div>
-                                    <ul className="list-disc ml-5 space-y-2 text-slate-600 text-sm md:text-base">
-                                        <li><strong>Agentic AI & Prompt Engineering:</strong> Leveraging <strong>Salesforce Agentforce</strong> and <strong>Prompt Builder</strong> to architect autonomous agents that streamline complex customer and internal workflows.</li>
-                                        <li><strong>Probabilistic Automations:</strong> Integrated <strong>n8n</strong> with external <strong>Model Context Protocol (MCP)</strong> to create dynamic, probabilistic flow automations, enabling smarter system-to-system context exchange.</li>
-                                        <li><strong>LLM Steering & Custom ML:</strong> Fine-tuning model behavior through steering techniques and building custom classification models in <strong>SageMaker Studio</strong> for automated data categorisation.</li>
-                                        <li><strong>Hybrid Cloud RAG:</strong> Engineered a cross-cloud RAG system utilizing <strong>AWS Bedrock Knowledge Bases</strong> integrated seamlessly with <strong>Google Cloud Platform (GCP)</strong>.</li>
-                                        <li><strong>Optimization:</strong> Reduced training compute costs by 60% through <strong>LoRA</strong> (Low-Rank Adaptation) fine-tuning on domain-specific datasets.</li>
-                                    </ul>
-                                </div>
-
-                                {/* Adidas */}
-                                <div className="mb-10">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-900">External Technology Specialist</h3>
-                                            <p className="text-blue-600 font-semibold text-lg">adidas AG</p>
-                                        </div>
-                                        <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-1">Mar 2017 – Jan 2020</span>
-                                    </div>
-                                    <ul className="list-disc ml-5 space-y-2 text-slate-600 text-sm md:text-base">
-                                        <li>Lead Architect for <strong>Salesforce Service Cloud</strong>, delivering omnichannel support (Chat, WhatsApp, Social) for global customer service operations.</li>
-                                        <li>Transformed global campaign management by building a custom <strong>Salesforce Lightning</strong> portal, replacing legacy spreadsheet workflows with automated tracking.</li>
-                                        <li>Developed and maintained <strong>CI/CD pipelines</strong> (Jenkins/Gearset) to ensure high-velocity deployment cycles across complex sandbox environments.</li>
-                                    </ul>
-                                </div>
-
-                                {/* Infosys */}
-                                <div className="mb-10">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-900">Senior Systems Engineer</h3>
-                                            <p className="text-blue-600 font-semibold text-lg">Infosys</p>
-                                        </div>
-                                        <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-1">Jan 2015 – Feb 2017</span>
-                                    </div>
-                                    <p className="text-slate-600 text-sm md:text-base">Specialized in enterprise-scale CRM implementations, customized Apex/Visualforce development, and seamless third-party systems integration.</p>
-                                </div>
+                                ))}
                             </section>
 
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-500 pb-2 mb-6 flex items-center gap-2">
                                     <i className="fas fa-graduation-cap text-blue-500"></i> Education
                                 </h2>
-                                <div>
-                                    <h3 className="text-lg font-bold text-slate-900">Master of Science in Data Sciences</h3>
-                                    <p className="text-blue-600 font-medium">University of Missouri-Kansas City (UMKC)</p>
-                                    <p className="text-slate-500 text-sm mt-1 italic">Specialization in Machine Learning & Predictive Analytics • Graduated March 2021</p>
-                                </div>
+                                {EducationData.map((edu: any, index: number) => (
+                                    <div key={index} className="flex gap-4 items-start">
+                                        <div className="w-16 h-16 rounded-lg overflow-hidden shadow-sm border border-slate-100 flex-shrink-0 hidden md:block bg-white p-1">
+                                            <img src={`${edu.logo}`} alt={edu.university} className="w-full h-full object-contain" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-bold text-slate-900">{edu.course}</h3>
+                                            <p className="text-blue-600 font-medium">{edu.university}</p>
+                                            <p className="text-slate-500 text-sm mt-1 italic">{edu.details} • {edu.duration}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </section>
                         </main>
 
                         {/* Right Column: Sidebar */}
-                        <aside className="lg:col-span-4 bg-slate-50 p-8 md:p-12">
+                        <aside className="lg:col-span-4 bg-slate-50/80 p-8 md:p-12 backdrop-blur-sm">
 
                             {/* Skills */}
                             <section className="mb-10">
                                 <h2 className="text-xl font-bold text-slate-900 mb-6 uppercase tracking-wider border-b border-slate-200 pb-2">Technical Skills</h2>
 
-                                <div className="mb-6">
-                                    <h3 className="text-blue-600 font-bold text-xs uppercase mb-3">AI & Agentic Systems</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">Agentforce</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">Prompt Builder</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">LLM Steering</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">LoRA Fine-tuning</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">RAG / Bedrock</span>
+                                {SkillsData.map((category: any, index: number) => (
+                                    <div className="mb-6" key={index}>
+                                        <h3 className="text-blue-600 font-bold text-xs uppercase mb-3">{category.type}</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {category.skills.map((skill: string, i: number) => (
+                                                <span key={i} className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium hover:shadow-md transition-shadow cursor-default">{skill}</span>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div className="mb-6">
-                                    <h3 className="text-blue-600 font-bold text-xs uppercase mb-3">Automation & Cloud</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">n8n / MCP</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">AWS & GCP Hybrid</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">SageMaker Studio</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">Kubernetes / Docker</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">GitLab CI/CD</span>
-                                    </div>
-                                </div>
-
-                                <div className="mb-6">
-                                    <h3 className="text-blue-600 font-bold text-xs uppercase mb-3">Salesforce Ecosystem</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">Service Cloud</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">LWC / Apex</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">Omni-Channel</span>
-                                        <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-medium">MERN Stack</span>
-                                    </div>
-                                </div>
+                                ))}
                             </section>
 
                             {/* Core Competencies */}
                             <section className="mb-10">
                                 <h2 className="text-xl font-bold text-slate-900 mb-6 uppercase tracking-wider border-b border-slate-200 pb-2">Core Competencies</h2>
                                 <ul className="space-y-4 text-slate-600">
-                                    <li className="flex items-start gap-3">
-                                        <i className="fas fa-robot text-blue-500 mt-1"></i>
-                                        <div>
-                                            <p className="font-bold text-sm">Agentic Workflows</p>
-                                            <p className="text-xs">Designing autonomous systems</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <i className="fas fa-project-diagram text-blue-500 mt-1"></i>
-                                        <div>
-                                            <p className="font-bold text-sm">Probabilistic Logic</p>
-                                            <p className="text-xs">Non-linear flow automation</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <i className="fas fa-cloud-upload-alt text-blue-500 mt-1"></i>
-                                        <div>
-                                            <p className="font-bold text-sm">Hybrid Solutions</p>
-                                            <p className="text-xs">Connecting CRM to AI/Cloud</p>
-                                        </div>
-                                    </li>
+                                    {CoreCompetencies.map((comp: any, index: number) => (
+                                        <li className="flex items-start gap-3 hover:bg-slate-100 p-2 rounded-lg transition-colors -mx-2" key={index}>
+                                            <i className={`${comp.icon} text-blue-500 mt-1`}></i>
+                                            <div>
+                                                <p className="font-bold text-sm">{comp.title}</p>
+                                                <p className="text-xs">{comp.subtitle}</p>
+                                            </div>
+                                        </li>
+                                    ))}
                                 </ul>
                             </section>
 
                             {/* Languages */}
                             <section>
                                 <h2 className="text-xl font-bold text-slate-900 mb-6 uppercase tracking-wider border-b border-slate-200 pb-2">Languages</h2>
-                                <div className="space-y-2">
-                                    <div className="flex justify-between items-center text-sm">
-                                        <span className="font-medium">English</span>
-                                        <span className="text-blue-600 font-bold text-xs uppercase">Professional</span>
-                                    </div>
-                                    <div className="w-full bg-slate-200 h-1 rounded-full"><div className="bg-blue-500 h-1 rounded-full w-full"></div></div>
-                                    <div className="flex justify-between items-center text-sm mt-3">
-                                        <span className="font-medium">German</span>
-                                        <span className="text-slate-400 font-bold text-xs uppercase">Learning</span>
-                                    </div>
-                                    <div className="w-full bg-slate-200 h-1 rounded-full"><div className="bg-slate-400 h-1 rounded-full w-1/4"></div></div>
+                                <div className="space-y-4">
+                                    {LanguagesData.map((lang: any, index: number) => (
+                                        <div key={index}>
+                                            <div className="flex justify-between items-center text-sm">
+                                                <span className="font-medium">{lang.language}</span>
+                                                <span className={`font-bold text-xs uppercase ${lang.level === 'Professional' ? 'text-blue-600' : 'text-slate-400'}`}>{lang.level}</span>
+                                            </div>
+                                            <div className="w-full bg-slate-200 h-1 rounded-full mt-1">
+                                                <div className={`h-1 rounded-full ${lang.level === 'Professional' ? 'bg-blue-500' : 'bg-slate-400'}`} style={{ width: `${lang.percentage}%` }}></div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </section>
 
@@ -191,8 +171,8 @@ const Resume: React.FC = () => {
                     </div>
 
                     {/* Footer */}
-                    <footer className="bg-slate-100 text-center py-4 text-slate-400 text-[10px] uppercase tracking-widest border-t border-slate-200">
-                        Professional Profile &bull; Abhijith Eanuga &bull; 2024
+                    <footer className="bg-slate-100/80 backdrop-blur-sm text-center py-4 text-slate-400 text-[10px] uppercase tracking-widest border-t border-slate-200 z-10 relative">
+                        Professional Profile &bull; {BannerContent.name} &bull; 2024
                     </footer>
                 </div>
             </div>
