@@ -27,7 +27,7 @@ const Resume: React.FC = () => {
                         </div>
                         <div className="mt-8 md:mt-0 flex gap-4 no-print">
                             <a href="https://linkedin.com/in/eabhijith" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-blue-600 p-3 rounded-full transition-colors"><i className="fab fa-linkedin-in text-xl"></i></a>
-                            <a href="https://github.com/eabhijith" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-slate-700 p-3 rounded-full transition-colors"><i class="fab fa-github text-xl"></i></a>
+                            <a href="https://github.com/eabhijith" target="_blank" rel="noreferrer" className="bg-slate-800 hover:bg-slate-700 p-3 rounded-full transition-colors"><i className="fab fa-github text-xl"></i></a>
                             <button onClick={() => window.print()} className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all">
                                 <i className="fas fa-print"></i> PDF
                             </button>
@@ -96,7 +96,7 @@ const Resume: React.FC = () => {
                                 </h2>
                                 <div>
                                     <h3 className="text-lg font-bold text-slate-900">Master of Science in Data Sciences</h3>
-                                    <p class="text-blue-600 font-medium">University of Missouri-Kansas City (UMKC)</p>
+                                    <p className="text-blue-600 font-medium">University of Missouri-Kansas City (UMKC)</p>
                                     <p className="text-slate-500 text-sm mt-1 italic">Specialization in Machine Learning & Predictive Analytics • Graduated March 2021</p>
                                 </div>
                             </section>
