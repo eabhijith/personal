@@ -1,34 +1,42 @@
-# Introduction
+# My Personal Portfolio & Resume
 
-This is a simple github page implemenation for personal content
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi there! 👋 Welcome to the repository for my personal website.
 
-## Available Scripts
+I built this site to serve as a live, interactive version of my professional resume. It's designed to give you a quick yet comprehensive overview of my work as a **Senior Systems Architect & AI Specialist**, covering my experience with Agentic AI, Cloud infrastructure, and Salesforce ecosystems.
 
-In the project directory, you can run:
+## 🛠 Under the Hood
 
-### `npm start`
+While the interface looks like a clean, single-page profile, it's built on a modern stack to ensure it's responsive, maintainable, and print-friendly:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   **React**: For building a modular and dynamic UI.
+-   **Tailwind CSS**: For rapid, utility-first styling that looks great on any device.
+-   **GitHub Pages**: For seamless hosting and deployment directly from this repository.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Running It Locally
 
-### `npm test`
+If you're curious about the code or want to spin this up on your own machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.  **Clone the repo**:
+    ```bash
+    git clone https://github.com/eabhijith/personal.git
+    cd personal
+    ```
 
-### `npm run build`
+2.  **Install dependencies**:
+    ```bash
+    npm install --legacy-peer-deps
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3.  **Start the dev server**:
+    ```bash
+    npm start
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📄 PDF Version
+One cool feature: I've added specific print styles so you can simply hit the **Pdf** button (or `Cmd/Ctrl + P`) to generate a clean, distraction-free PDF version of my resume.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+Thanks for stopping by! Feel free to reach out if you want to chat about AI, architecture, or just say hello.
 
-
-
+*— Abhijith Eanuga*
