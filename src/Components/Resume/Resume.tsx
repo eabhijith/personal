@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Switch from '@mui/material/Switch';
 import { BannerContent } from '../Data/banner';
 import { ExperienceData } from '../Data/experience';
@@ -14,6 +14,11 @@ interface ResumeProps {
 }
 
 const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
+    const [currentSection, setCurrentSection] = useState(0);
+    const [isSwipeMode, setIsSwipeMode] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const startXRef = useRef<number>(0);
+    const startYRef = useRef<number>(0);
 
     const trailheadStats = {
         rank: "All Star Ranger",
@@ -21,6 +26,51 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
         points: "50,000+",
         profileUrl: "https://www.salesforce.com/trailblazer/abhie"
     };
+
+    const sections = ['experience', 'skills'];
+
+    // Touch/swipe handlers
+    const handleTouchStart = (e: React.TouchEvent) => {
+        if (window.innerWidth >= 1024) return; // Only on mobile/tablet
+        startXRef.current = e.touches[0].clientX;
+        startYRef.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (window.innerWidth >= 1024) return;
+        e.preventDefault();
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (window.innerWidth >= 1024) return;
+
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const diffX = startXRef.current - endX;
+        const diffY = startYRef.current - endY;
+
+        // Only trigger swipe if horizontal movement is greater than vertical
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (diffX > 0 && currentSection < sections.length - 1) {
+                // Swipe left - next section
+                setCurrentSection(prev => prev + 1);
+            } else if (diffX < 0 && currentSection > 0) {
+                // Swipe right - previous section
+                setCurrentSection(prev => prev - 1);
+            }
+        }
+    };
+
+    // Detect mobile/tablet for swipe mode
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsSwipeMode(window.innerWidth < 1024);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     return (
         <div className={`${mode} font-sans`}>
@@ -111,6 +161,8 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             background: rgba(59, 130, 246, 0.1);
                             border-color: rgba(59, 130, 246, 0.3);
                         }
+
+                        /* Improved Timeline */
                         .timeline-container {
                             position: relative;
                             padding-left: 2.5rem;
@@ -120,44 +172,135 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             left: 19px;
                             top: 15px;
                             bottom: 15px;
-                            width: 3px;
-                            background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #e2e8f0);
-                            border-radius: 3px;
+                            width: 4px;
+                            background: linear-gradient(to bottom, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+                            border-radius: 4px;
+                            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
                         }
                         .dark .timeline-line {
-                            background: linear-gradient(to bottom, #3b82f6, #6366f1, #1e293b);
-                        }
-                        .group:hover .timeline-line {
-                            box-shadow: 0 0 15px 5px rgba(59, 130, 246, 0.4);
-                        }
-                        .group:hover .hover-card {
-                            background: rgba(255, 255, 255, 0.85);
-                        }
-                        .dark .group:hover .hover-card {
-                            background: rgba(30, 41, 59, 0.85);
+                            background: linear-gradient(to bottom, #3b82f6 0%, #6366f1 50%, #06b6d4 100%);
+                            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
                         }
                         .timeline-dot {
                             position: absolute;
-                            left: 10px;
+                            left: 8px;
                             top: 24px;
-                            width: 22px;
-                            height: 22px;
+                            width: 26px;
+                            height: 26px;
                             border-radius: 50%;
-                            background: white;
-                            border: 4px solid #3b82f6;
+                            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+                            border: 3px solid white;
                             z-index: 10;
-                            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
-                            transition: all 0.3s ease;
+                            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .timeline-dot::after {
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            background: white;
+                            border-radius: 50%;
+                            animation: pulse 2s infinite;
                         }
                         .dark .timeline-dot {
-                            background: #0f172a;
-                            border-color: #3b82f6;
-                            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+                            border-color: #0f172a;
+                            background: linear-gradient(135deg, #3b82f6, #6366f1);
                         }
                         .group:hover .timeline-dot {
+                            transform: scale(1.3) rotate(180deg);
+                            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+                        }
+                        @keyframes pulse {
+                            0%, 100% { opacity: 1; transform: scale(1); }
+                            50% { opacity: 0.7; transform: scale(1.2); }
+                        }
+
+                        /* Language Progress Bar Enhancement */
+                        .language-progress {
+                            height: 8px;
+                            background: rgba(148, 163, 184, 0.2);
+                            border-radius: 10px;
+                            overflow: hidden;
+                            position: relative;
+                        }
+                        .language-progress-bar {
+                            height: 100%;
+                            background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
+                            border-radius: 10px;
+                            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        .language-progress-bar::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                            animation: shimmer 2s infinite;
+                        }
+                        @keyframes shimmer {
+                            0% { left: -100%; }
+                            100% { left: 100%; }
+                        }
+                        .dark .language-progress {
+                            background: rgba(51, 65, 85, 0.4);
+                        }
+
+                        /* Swipe Navigation */
+                        .swipe-container {
+                            overflow: hidden;
+                            position: relative;
+                        }
+                        .swipe-content {
+                            display: flex;
+                            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+                        .swipe-section {
+                            min-width: 100%;
+                            flex-shrink: 0;
+                        }
+                        .swipe-indicators {
+                            display: flex;
+                            justify-content: center;
+                            gap: 8px;
+                            margin-top: 1rem;
+                        }
+                        .swipe-dot {
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: rgba(148, 163, 184, 0.3);
+                            transition: all 0.3s ease;
+                            cursor: pointer;
+                        }
+                        .swipe-dot.active {
+                            background: #3b82f6;
                             transform: scale(1.2);
-                            border-color: #8b5cf6;
-                            box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.2);
+                        }
+
+                        /* Mobile responsiveness */
+                        @media (max-width: 1023px) {
+                            .mobile-stack {
+                                display: block !important;
+                            }
+                            .timeline-container {
+                                padding-left: 1rem;
+                            }
+                            .timeline-line {
+                                left: 8px;
+                                width: 2px;
+                            }
+                            .timeline-dot {
+                                left: 2px;
+                                width: 16px;
+                                height: 16px;
+                            }
                         }
                     }
 
@@ -241,7 +384,13 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                 </div>
 
                 <div className="py-6 px-4 md:px-8 lg:py-10">
-                    <div className="max-w-7xl mx-auto glass-panel shadow-2xl rounded-3xl overflow-hidden resume-container relative">
+                    <div
+                        ref={containerRef}
+                        className="max-w-7xl mx-auto glass-panel shadow-2xl rounded-3xl overflow-hidden resume-container relative"
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
                         
                         {/* Animated Grid Background */}
                         <div className="absolute inset-0 grid-bg pointer-events-none z-0 opacity-30 dark:opacity-20"></div>
@@ -292,10 +441,91 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                         </header>
 
                         <main className="p-6 md:p-10 relative z-10">
-                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 print-grid">
+                            {/* Swipe indicators for mobile */}
+                            {isSwipeMode && (
+                                <div className="swipe-indicators lg:hidden mb-6">
+                                    {sections.map((_, index) => (
+                                        <div
+                                            key={index}
+                                            className={`swipe-dot ${index === currentSection ? 'active' : ''}`}
+                                            onClick={() => setCurrentSection(index)}
+                                        />
+                                    ))}
+                                </div>
+                            )}
 
-                                {/* Left Column - Skills & Info (MOVED HERE) */}
-                                <div className="lg:col-span-4 print-sidebar-col space-y-10 order-2 lg:order-1">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 print-grid">
+                                {/* Mobile: Show sections based on currentSection, Desktop: Show both */}
+                                <div className={`lg:col-span-8 print-main-col order-1 lg:order-2 ${
+                                    isSwipeMode && currentSection !== 0 ? 'hidden lg:block' : ''
+                                }`}>
+                                    {/* Experience Section */}
+                                    <section className="print-break-inside-avoid mb-10">
+                                        <div className="flex items-center gap-3 mb-8">
+                                            <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+                                                <i className="fas fa-briefcase text-xl"></i>
+                                            </div>
+                                            <h2 className="text-2xl font-bold uppercase tracking-wider text-slate-800 dark:text-white">
+                                                Professional Experience
+                                            </h2>
+                                        </div>
+
+                                        <div className="timeline-container">
+                                            <div className="timeline-line no-print"></div>
+                                            {ExperienceData.map((exp, index) => (
+                                                <div className="relative pl-8 mb-10 group" key={index}>
+                                                    <div className="timeline-dot no-print"></div>
+
+                                                    <div className="hover-card p-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50">
+                                                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+                                                            <div className="flex items-center gap-4">
+                                                                {exp.logo && (
+                                                                    <div className="w-12 h-12 rounded-lg bg-white p-1 shadow-sm flex-shrink-0 overflow-hidden">
+                                                                        <img
+                                                                            src={exp.logo}
+                                                                            alt={exp.company}
+                                                                            className="w-full h-full object-contain"
+                                                                            onError={(e) => {
+                                                                                const target = e.target as HTMLImageElement;
+                                                                                target.style.display = 'none';
+                                                                            }}
+                                                                        />
+                                                                    </div>
+                                                                )}
+                                                                <div>
+                                                                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
+                                                                    <div className="text-blue-600 dark:text-blue-400 font-semibold text-lg">{exp.company}</div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="text-right">
+                                                                <span className="inline-block px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full text-xs font-bold uppercase tracking-wide">
+                                                                    {exp.duration}
+                                                                </span>
+                                                                <div className="text-sm text-slate-500 dark:text-slate-400 mt-1 flex items-center justify-end gap-1">
+                                                                    <i className="fas fa-map-marker-alt text-xs"></i> {exp.location}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <ul className="space-y-3 text-slate-600 dark:text-slate-300">
+                                                            {exp.experience.map((item, i) => (
+                                                                <li key={i} className="flex gap-3 items-start">
+                                                                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></span>
+                                                                    <span className="leading-relaxed" dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-800 dark:text-slate-200">$1</strong>') }}></span>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </section>
+                                </div>
+
+                                {/* Left Column - Skills & Info */}
+                                <div className={`lg:col-span-4 print-sidebar-col space-y-10 order-2 lg:order-1 ${
+                                    isSwipeMode && currentSection !== 1 ? 'hidden lg:block' : ''
+                                }`}>
                                     
                                     {/* Trailblazer Status */}
                                     <section className="print-break-inside-avoid hover-card p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 border border-blue-100 dark:border-slate-700">
@@ -384,7 +614,17 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                                         {EducationData.map((edu, index) => (
                                             <div key={index} className="hover-card p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
                                                 <div className="flex items-center gap-3 mb-2">
-                                                    {edu.logo && <img src={edu.logo} alt="University" className="w-8 h-8 object-contain" />}
+                                                    {edu.logo && (
+                                                        <img
+                                                            src={edu.logo}
+                                                            alt="University"
+                                                            className="w-8 h-8 object-contain"
+                                                            onError={(e) => {
+                                                                const target = e.target as HTMLImageElement;
+                                                                target.style.display = 'none';
+                                                            }}
+                                                        />
+                                                    )}
                                                     <h3 className="font-bold text-slate-900 dark:text-slate-100 leading-tight">{edu.university}</h3>
                                                 </div>
                                                 <p className="text-blue-600 dark:text-blue-400 text-sm font-medium mb-1">{edu.course}</p>
@@ -426,15 +666,18 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                                                 Languages
                                             </h2>
                                         </div>
-                                        <div className="space-y-4 bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-100 dark:border-slate-700 hover-card">
+                                        <div className="space-y-5 bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-100 dark:border-slate-700 hover-card">
                                             {LanguagesData.map((lang, index) => (
                                                 <div key={index}>
-                                                    <div className="flex justify-between items-center mb-1.5">
+                                                    <div className="flex justify-between items-center mb-2">
                                                         <span className="font-semibold text-sm text-slate-800 dark:text-slate-100">{lang.language}</span>
-                                                        <span className="text-xs text-slate-500 dark:text-slate-400">{lang.level}</span>
+                                                        <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">{lang.level}</span>
                                                     </div>
-                                                    <div className="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                                                        <div className="h-full bg-gradient-to-r from-blue-400 to-blue-600" style={{ width: `${lang.percentage}%` }}></div>
+                                                    <div className="language-progress">
+                                                        <div
+                                                            className="language-progress-bar"
+                                                            style={{ width: `${lang.percentage}%` }}
+                                                        ></div>
                                                     </div>
                                                 </div>
                                             ))}
@@ -442,61 +685,6 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                                     </section>
                                 </div>
 
-                                {/* Right Column - Experience (MOVED HERE) */}
-                                <div className="lg:col-span-8 print-main-col order-1 lg:order-2">
-                                    <section className="print-break-inside-avoid mb-10">
-                                        <div className="flex items-center gap-3 mb-8">
-                                            <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
-                                                <i className="fas fa-briefcase text-xl"></i>
-                                            </div>
-                                            <h2 className="text-2xl font-bold uppercase tracking-wider text-slate-800 dark:text-white">
-                                                Professional Experience
-                                            </h2>
-                                        </div>
-                                        
-                                        <div className="timeline-container">
-                                            <div className="timeline-line no-print"></div>
-                                            {ExperienceData.map((exp, index) => (
-                                                <div className="relative pl-8 mb-10 group" key={index}>
-                                                    <div className="timeline-dot no-print transition-transform duration-300 group-hover:scale-125"></div>
-                                                    
-                                                    <div className="hover-card p-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50">
-                                                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
-                                                            <div className="flex items-center gap-4">
-                                                                {exp.logo && (
-                                                                    <div className="w-12 h-12 rounded-lg bg-white p-1 shadow-sm flex-shrink-0 overflow-hidden">
-                                                                        <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain" />
-                                                                    </div>
-                                                                )}
-                                                                <div>
-                                                                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
-                                                                    <div className="text-blue-600 dark:text-blue-400 font-semibold text-lg">{exp.company}</div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="text-right">
-                                                                <span className="inline-block px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full text-xs font-bold uppercase tracking-wide">
-                                                                    {exp.duration}
-                                                                </span>
-                                                                <div className="text-sm text-slate-500 dark:text-slate-400 mt-1 flex items-center justify-end gap-1">
-                                                                    <i className="fas fa-map-marker-alt text-xs"></i> {exp.location}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-                                                            {exp.experience.map((item, i) => (
-                                                                <li key={i} className="flex gap-3 items-start">
-                                                                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></span>
-                                                                    <span className="leading-relaxed" dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-800 dark:text-slate-200">$1</strong>') }}></span>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </section>
-                                </div>
 
                             </div>
                         </main>
