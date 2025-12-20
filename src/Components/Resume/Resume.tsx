@@ -370,7 +370,7 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
 
                     @media print {
                         @page {
-                            margin: 0.5cm;
+                            margin: 0.4cm;
                             size: A4 portrait;
                         }
 
@@ -384,6 +384,8 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             background: white !important;
                             margin: 0 !important;
                             padding: 0 !important;
+                            height: auto !important;
+                            overflow: visible !important;
                         }
 
                         /* HIDE ONLY INTERACTIVE ELEMENTS */
@@ -392,29 +394,108 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             display: none !important;
                         }
 
-                        /* PRESERVE MAIN LAYOUT BUT SCALE FOR PRINT */
-                        .resume-container {
-                            transform: scale(0.75) !important;
-                            transform-origin: top left !important;
-                            width: 133.33% !important;
-                            margin: 0 !important;
-                            box-shadow: none !important;
-                            border-radius: 0 !important;
+                        /* PRESERVE EXACT SCREEN LAYOUT */
+                        .py-6.px-4 {
+                            padding: 0 !important;
                         }
 
-                        /* KEEP GLASS PANEL STYLING BUT MAKE PRINT FRIENDLY */
+                        .max-w-7xl {
+                            max-width: none !important;
+                            margin: 0 !important;
+                        }
+
+                        .resume-container {
+                            transform: scale(0.85) !important;
+                            transform-origin: top center !important;
+                            width: 117.65% !important;
+                            margin: 0 auto !important;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+                            border-radius: 24px !important;
+                            overflow: visible !important;
+                            height: auto !important;
+                        }
+
+                        /* PRESERVE GLASS PANEL EXACTLY */
                         .glass-panel {
                             background: rgba(255, 255, 255, 0.95) !important;
-                            border: 1px solid #e5e7eb !important;
+                            border: 1px solid rgba(229, 231, 235, 0.2) !important;
                             backdrop-filter: none !important;
-                            border-radius: 12px !important;
+                            border-radius: 24px !important;
+                            overflow: hidden !important;
                         }
 
-                        /* PRESERVE HEADER DESIGN */
+                        /* PRESERVE HEADER DESIGN EXACTLY */
                         header {
                             background: linear-gradient(to right, #1e293b, #334155) !important;
                             color: white !important;
-                            border-radius: 12px 12px 0 0 !important;
+                            border-radius: 24px 24px 0 0 !important;
+                            padding: 1rem 2rem !important;
+                        }
+
+                        /* PRESERVE GRID LAYOUT EXACTLY */
+                        .print-grid {
+                            display: grid !important;
+                            grid-template-columns: 65% 35% !important;
+                            gap: 3rem !important;
+                            padding: 0 2rem 2rem 2rem !important;
+                            margin: 0 !important;
+                        }
+
+                        .print-main-col {
+                            width: 100% !important;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                        }
+
+                        .print-sidebar-col {
+                            width: 100% !important;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                        }
+
+                        /* PRESERVE ALL SPACINGS EXACTLY */
+                        .space-y-10 > * + * {
+                            margin-top: 2.5rem !important;
+                        }
+
+                        .space-y-6 > * + * {
+                            margin-top: 1.5rem !important;
+                        }
+
+                        .space-y-4 > * + * {
+                            margin-top: 1rem !important;
+                        }
+
+                        .mb-10 {
+                            margin-bottom: 2.5rem !important;
+                        }
+
+                        .mb-8 {
+                            margin-bottom: 2rem !important;
+                        }
+
+                        .mb-6 {
+                            margin-bottom: 1.5rem !important;
+                        }
+
+                        .mb-4 {
+                            margin-bottom: 1rem !important;
+                        }
+
+                        .gap-12 {
+                            gap: 3rem !important;
+                        }
+
+                        .gap-6 {
+                            gap: 1.5rem !important;
+                        }
+
+                        .gap-4 {
+                            gap: 1rem !important;
+                        }
+
+                        .gap-3 {
+                            gap: 0.75rem !important;
                         }
 
                         /* KEEP PROFILE PICTURE CIRCULAR */
@@ -422,39 +503,55 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             border-radius: 50% !important;
                         }
 
-                        /* PRESERVE TIMELINE DESIGN BUT MAKE PRINT FRIENDLY */
+                        /* PRESERVE TIMELINE DESIGN EXACTLY */
                         .MuiTimeline-root {
                             display: block !important;
+                            padding-left: 0 !important;
                         }
 
                         .MuiTimelineDot-root {
                             background: white !important;
                             border: 3px solid #6b7280 !important;
-                            box-shadow: 0 2px 8px rgba(107, 114, 128, 0.2) !important;
+                            box-shadow: 0 4px 16px rgba(107, 114, 128, 0.2) !important;
+                            width: 56px !important;
+                            height: 56px !important;
                         }
 
                         .MuiTimelineConnector-root {
                             background: #e2e8f0 !important;
+                            width: 2px !important;
                         }
 
-                        /* PRESERVE CARD DESIGN */
+                        /* PRESERVE CARD DESIGN EXACTLY */
                         .MuiCard-root {
                             background: white !important;
                             border: 1px solid #e5e7eb !important;
                             border-radius: 12px !important;
                             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+                            margin-bottom: 1rem !important;
                         }
 
                         .MuiCard-root::before {
-                            background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%) !important;
+                            content: "" !important;
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                            right: 0 !important;
                             height: 3px !important;
+                            background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%) !important;
                             border-radius: 12px 12px 0 0 !important;
                         }
 
-                        /* PRESERVE AVATAR/LOGO DESIGN */
+                        .MuiCardContent-root {
+                            padding: 1.5rem !important;
+                        }
+
+                        /* PRESERVE AVATAR/LOGO DESIGN EXACTLY */
                         .MuiAvatar-root {
                             border-radius: 50% !important;
                             border: 1px solid #f1f5f9 !important;
+                            width: 40px !important;
+                            height: 40px !important;
                         }
 
                         .MuiAvatar-root img {
@@ -462,20 +559,24 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             padding: 2px !important;
                         }
 
-                        /* PRESERVE CHIP STYLING */
+                        /* PRESERVE CHIP STYLING EXACTLY */
                         .MuiChip-root {
                             border-radius: 16px !important;
                             background: #f3f4f6 !important;
                             border: 1px solid #d1d5db !important;
+                            margin: 0.25rem !important;
+                            height: auto !important;
+                            font-size: 0.875rem !important;
                         }
 
                         /* PRESERVE SECTION ICONS */
                         .fa-briefcase, .fa-code, .fa-certificate,
                         .fa-graduation-cap, .fa-star, .fa-language, .fa-cloud {
                             display: inline !important;
+                            color: inherit !important;
                         }
 
-                        /* PRESERVE COLORED BACKGROUNDS */
+                        /* PRESERVE COLORED BACKGROUNDS EXACTLY */
                         .bg-blue-100 {
                             background: #dbeafe !important;
                         }
@@ -504,7 +605,7 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             background: rgba(30, 41, 59, 0.1) !important;
                         }
 
-                        /* PRESERVE GRADIENTS AND COLORS */
+                        /* PRESERVE ALL COLORS EXACTLY */
                         .bg-gradient-to-r {
                             background: linear-gradient(to right, #1e293b, #334155) !important;
                         }
@@ -525,7 +626,7 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             color: #60a5fa !important;
                         }
 
-                        /* PRESERVE HOVER EFFECTS FOR PRINT (STATIC STATE) */
+                        /* PRESERVE HOVER EFFECTS (STATIC STATE) */
                         .hover-card {
                             transform: none !important;
                             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
@@ -534,10 +635,10 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                         /* PRESERVE ANIMATED BACKGROUND */
                         .grid-bg {
                             display: block !important;
-                            opacity: 0.1 !important;
+                            opacity: 0.3 !important;
                         }
 
-                        /* KEEP SOCIAL MEDIA BUTTON STYLING */
+                        /* PRESERVE SOCIAL MEDIA BUTTON STYLING EXACTLY */
                         .bg-blue-700 {
                             background: #1d4ed8 !important;
                         }
@@ -558,7 +659,7 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             background: #2563eb !important;
                         }
 
-                        /* PRESERVE ROUNDED ELEMENTS */
+                        /* PRESERVE ROUNDED ELEMENTS EXACTLY */
                         .rounded-full {
                             border-radius: 9999px !important;
                         }
@@ -575,19 +676,27 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             border-radius: 24px !important;
                         }
 
-                        /* ADJUST ONLY SIZING FOR PRINT */
-                        .max-w-7xl {
-                            max-width: 100% !important;
+                        /* PRESERVE PADDING EXACTLY */
+                        .p-2 {
+                            padding: 0.5rem !important;
                         }
 
-                        .py-6 {
+                        .p-4 {
+                            padding: 1rem !important;
+                        }
+
+                        .p-6 {
+                            padding: 1.5rem !important;
+                        }
+
+                        .py-4 {
                             padding-top: 1rem !important;
                             padding-bottom: 1rem !important;
                         }
 
                         .px-4 {
-                            padding-left: 0.75rem !important;
-                            padding-right: 0.75rem !important;
+                            padding-left: 1rem !important;
+                            padding-right: 1rem !important;
                         }
 
                         /* HIDE AI CHAT IF OPEN */
@@ -601,29 +710,44 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             page-break-inside: avoid !important;
                         }
 
-                        /* SLIGHTLY REDUCE FONT SIZES FOR BETTER FIT */
+                        /* PRESERVE TYPOGRAPHY EXACTLY */
                         body {
-                            font-size: 0.9rem !important;
+                            font-size: 1rem !important;
+                            line-height: 1.5 !important;
                         }
 
                         h1 {
-                            font-size: 1.8rem !important;
+                            font-size: 1.875rem !important;
+                            line-height: 2.25rem !important;
                         }
 
                         h2 {
-                            font-size: 1.4rem !important;
+                            font-size: 1.5rem !important;
+                            line-height: 2rem !important;
                         }
 
                         h3 {
-                            font-size: 1.1rem !important;
+                            font-size: 1.125rem !important;
+                            line-height: 1.75rem !important;
                         }
 
                         .text-sm {
-                            font-size: 0.8rem !important;
+                            font-size: 0.875rem !important;
+                            line-height: 1.25rem !important;
                         }
 
                         .text-xs {
-                            font-size: 0.7rem !important;
+                            font-size: 0.75rem !important;
+                            line-height: 1rem !important;
+                        }
+
+                        /* PRESERVE SECTION HEADERS EXACTLY */
+                        .flex.items-center.gap-3.mb-8 h2 {
+                            font-size: 1.5rem !important;
+                            font-weight: 700 !important;
+                            text-transform: uppercase !important;
+                            letter-spacing: 0.1em !important;
+                            color: #1e293b !important;
                         }
                     }
                     `}
