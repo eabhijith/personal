@@ -1,3 +1,5 @@
+import profilePic from '../Assets/Dp.jpeg';
+
 export const BannerContent = {
   name: "Abhijith Eanuga",
   role: "Senior Systems Architect & AI Specialist",
@@ -6,5 +8,5 @@ export const BannerContent = {
   location: "Berlin, Germany",
   linkedin: "https://linkedin.com/in/eabhijith",
   github: "https://github.com/eabhijith",
-  displayPic: require("../Assets/Dp.jpeg").default,
+  displayPic: profilePic,
 };

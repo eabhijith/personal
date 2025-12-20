@@ -1,10 +1,14 @@
+import zalandoLogo from '../Assets/zalando.jpg';
+import adidasLogo from '../Assets/adidas.jpg';
+import infosysLogo from '../Assets/infosys.jpg';
+
 export const ExperienceData = [
   {
     company: "Zalando SE",
     duration: "Aug 2020 – Present",
     location: "Berlin, Germany",
     role: "Senior Specialist (AI & Automation)",
-    logo: require('../Assets/zalando.jpg').default,
+    logo: zalandoLogo,
     experience: [
       "Architected and deployed autonomous agents using **Salesforce Agentforce** and **Prompt Builder** to streamline complex workflows, improving operational efficiency.",
       "Engineered a dynamic, probabilistic automation system by integrating **n8n** with **Model Context Protocol (MCP)**, enabling intelligent system-to-system context exchange.",
@@ -31,7 +35,7 @@ export const ExperienceData = [
     duration: "Mar 2017 – Jan 2020",
     location: "Herzogenaurach, Germany",
     role: "External Technology Specialist",
-    logo: require('../Assets/adidas.jpg').default,
+    logo: adidasLogo,
     experience: [
       "Served as the lead architect for **Salesforce Service Cloud**, delivering omnichannel support solutions (Chat, WhatsApp, Social Media) for global customer service operations.",
       "Transformed global campaign management by building a custom **Salesforce Lightning portal**, replacing legacy spreadsheet-based workflows with a fully automated tracking system.",
@@ -43,7 +47,7 @@ export const ExperienceData = [
     duration: "Jan 2015 – Feb 2017",
     location: "Mysuru, India",
     role: "Senior Systems Engineer",
-    logo: require('../Assets/infosys.jpg').default,
+    logo: infosysLogo,
     experience: [
       "Specialized in enterprise-scale **CRM implementations**, delivering customized **Apex/Visualforce** solutions and ensuring seamless third-party systems integration."
     ]

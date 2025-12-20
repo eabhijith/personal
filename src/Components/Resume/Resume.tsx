@@ -90,7 +90,7 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                              border: 1px solid rgba(255, 255, 255, 0.05);
                              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
                         }
-                        
+
                         .hover-card {
                             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                             border: 1px solid transparent;
@@ -109,7 +109,7 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.5), 0 10px 15px -5px rgba(0, 0, 0, 0.3);
                             border-color: rgba(59, 130, 246, 0.4);
                         }
-                        
+
                         /* Subtle shine effect on hover */
                         .hover-card::after {
                             content: '';
@@ -136,16 +136,16 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             0% { background-position: 0 0; }
                             100% { background-position: 40px 40px; }
                         }
-                        
+
                         .grid-bg {
                             background-size: 40px 40px;
-                            background-image: 
+                            background-image:
                                 linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
                                 linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
                             animation: gridMove 20s linear infinite;
                         }
                         .dark .grid-bg {
-                            background-image: 
+                            background-image:
                                 linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
                                 linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
                         }
@@ -252,56 +252,6 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             background: rgba(51, 65, 85, 0.4);
                         }
 
-                        /* Enhanced Banner Animations */
-                        @keyframes spin-slow {
-                            from { transform: rotate(0deg); }
-                            to { transform: rotate(360deg); }
-                        }
-                        .animate-spin-slow {
-                            animation: spin-slow 8s linear infinite;
-                        }
-
-                        /* Particle Animations */
-                        .particle-1, .particle-2, .particle-3 {
-                            position: absolute;
-                            background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);
-                            border-radius: 50%;
-                            filter: blur(1px);
-                        }
-                        .particle-1 {
-                            width: 4px;
-                            height: 4px;
-                            top: 20%;
-                            left: 10%;
-                            animation: float 6s ease-in-out infinite;
-                        }
-                        .particle-2 {
-                            width: 6px;
-                            height: 6px;
-                            top: 60%;
-                            right: 15%;
-                            animation: float 8s ease-in-out infinite reverse;
-                        }
-                        .particle-3 {
-                            width: 3px;
-                            height: 3px;
-                            top: 80%;
-                            left: 70%;
-                            animation: float 10s ease-in-out infinite;
-                        }
-                        @keyframes float {
-                            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
-                            25% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
-                            50% { transform: translateY(-10px) translateX(-10px); opacity: 0.6; }
-                            75% { transform: translateY(-30px) translateX(5px); opacity: 0.8; }
-                        }
-
-                        /* Enhanced gradient text */
-                        .bg-clip-text {
-                            -webkit-background-clip: text;
-                            background-clip: text;
-                        }
-
                         /* Swipe Navigation */
                         .swipe-container {
                             overflow: hidden;
@@ -355,83 +305,70 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                     }
 
                     @media print {
-                        @page { 
-                            margin: 0.5cm; 
+                        @page {
+                            margin: 0.5cm;
                             size: A4;
                         }
-                        
+
                         * {
                             -webkit-print-color-adjust: exact !important;
                             print-color-adjust: exact !important;
                         }
-                        
-                        body { 
-                            background-color: white !important; 
-                            color: black !important; 
+
+                        body {
+                            background-color: white !important;
+                            color: black !important;
                             font-size: 9pt;
                         }
-                        
+
                         .no-print { display: none !important; }
-                        
-                        .resume-container { 
-                            box-shadow: none !important; 
-                            max-width: 100% !important; 
-                            width: 100% !important; 
-                            margin: 0 !important; 
+
+                        .resume-container {
+                            box-shadow: none !important;
+                            max-width: 100% !important;
+                            width: 100% !important;
+                            margin: 0 !important;
                             border: none !important;
                             border-radius: 0 !important;
                         }
-                        
+
                         .glass-panel {
                             background: white !important;
                             border: none !important;
                             backdrop-filter: none !important;
                         }
-                        
+
                         header {
-                            padding: 1.5rem 0 !important;
+                            padding: 0 !important;
                             margin-bottom: 1rem !important;
-                            background: white !important;
+                            background-color: transparent !important;
                             border-bottom: 2px solid #eee;
-                            position: relative !important;
+                            padding-bottom: 1rem !important;
                         }
 
-                        header * {
-                            background: transparent !important;
-                            color: black !important;
-                        }
-
-                        header .particle-1, header .particle-2, header .particle-3 {
-                            display: none !important;
-                        }
-
-                        header .animate-spin-slow {
-                            animation: none !important;
-                        }
-                        
                         h1 { font-size: 20pt !important; margin-bottom: 0 !important; color: black !important; }
                         h2 { font-size: 13pt !important; border-bottom: 1px solid #ccc !important; margin-bottom: 0.5rem !important; padding-bottom: 2px !important; color: black !important; margin-top: 1rem !important; }
                         h3 { font-size: 10pt !important; color: black !important; margin-bottom: 0 !important; }
                         p, li, span { font-size: 8.5pt !important; color: #333 !important; }
-                        
-                        .print-break-inside-avoid { 
-                            break-inside: avoid; 
-                            page-break-inside: avoid; 
+
+                        .print-break-inside-avoid {
+                            break-inside: avoid;
+                            page-break-inside: avoid;
                         }
-                        
+
                         .timeline-line, .timeline-dot { display: none !important; }
                         .timeline-container { padding-left: 0 !important; }
                         .timeline-content { margin-left: 0 !important; padding-left: 0 !important; }
                         .timeline-date { font-weight: bold !important; color: #000 !important; }
-                        
+
                         .print-grid {
                             display: grid !important;
-                            grid-template-columns: 35% 65% !important; /* Swapped for print too */
+                            grid-template-columns: 65% 35% !important; /* Professional Experience on LEFT, Skills on RIGHT */
                             gap: 1.5rem !important;
                         }
-                        
+
                         i { display: none !important; }
-                        
+
                         .print-main-col { width: 100% !important; }
                         .print-sidebar-col { width: 100% !important; }
                     }
@@ -454,135 +391,54 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}
                     >
-                        
+
                         {/* Animated Grid Background */}
                         <div className="absolute inset-0 grid-bg pointer-events-none z-0 opacity-30 dark:opacity-20"></div>
 
-                        <header className="relative overflow-hidden bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 dark:from-black dark:via-slate-900 dark:to-slate-800 text-white">
-                            {/* Enhanced Background Effects */}
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
-                            <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,rgba(99,102,241,0.05)_60deg,transparent_120deg,rgba(147,51,234,0.05)_180deg,transparent_240deg,rgba(59,130,246,0.05)_300deg,transparent_360deg)]"></div>
+                        <header className="bg-slate-900 dark:bg-black text-white p-8 md:p-10 relative z-10">
+                            <div className="flex flex-col md:flex-row items-center gap-8">
+                                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/20 shadow-xl overflow-hidden flex-shrink-0 relative group">
+                                    <img
+                                        src={BannerContent.displayPic}
+                                        alt={BannerContent.name}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        onLoad={() => console.log('Profile image loaded successfully:', BannerContent.displayPic)}
+                                        onError={(e) => {
+                                            console.error('Profile image failed to load:', BannerContent.displayPic);
+                                            console.log('Image element:', e.target);
+                                        }}
+                                    />
+                                </div>
+                                <div className="text-center md:text-left flex-grow">
+                                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">{BannerContent.name}</h1>
+                                    <p className="text-blue-300 text-xl font-medium mb-4">{BannerContent.role}</p>
 
-                            {/* Animated Particles */}
-                            <div className="absolute inset-0 overflow-hidden">
-                                <div className="particle-1"></div>
-                                <div className="particle-2"></div>
-                                <div className="particle-3"></div>
-                            </div>
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300">
+                                        <a href={`mailto:${BannerContent.email}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                                            <i className="fas fa-envelope"></i> {BannerContent.email}
+                                        </a>
+                                        <a href={`tel:${BannerContent.phone}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                                            <i className="fas fa-phone"></i> {BannerContent.phone}
+                                        </a>
+                                        <span className="flex items-center gap-2">
+                                            <i className="fas fa-map-marker-alt"></i> {BannerContent.location}
+                                        </span>
+                                    </div>
 
-                            <div className="relative z-10 p-8 md:p-12">
-                                <div className="max-w-6xl mx-auto">
-                                    <div className="grid md:grid-cols-12 gap-8 items-center">
-
-                                        {/* Profile Picture Section */}
-                                        <div className="md:col-span-4 flex justify-center md:justify-start">
-                                            <div className="relative group">
-                                                {/* Enhanced Profile Picture Container */}
-                                                <div className="w-48 h-48 md:w-56 md:h-56 relative">
-                                                    {/* Animated Border */}
-                                                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 animate-spin-slow opacity-75"></div>
-                                                    <div className="absolute inset-1 rounded-full bg-gradient-to-r from-slate-900 to-blue-900 dark:from-black dark:to-slate-900"></div>
-
-                                                    {/* Profile Image */}
-                                                    <div className="absolute inset-3 rounded-full overflow-hidden shadow-2xl ring-4 ring-white/20 group-hover:ring-white/40 transition-all duration-500">
-                                                        <img
-                                                            src={BannerContent.displayPic}
-                                                            alt={BannerContent.name}
-                                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                                            onError={(e) => {
-                                                                const target = e.target as HTMLImageElement;
-                                                                target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiM0Qjc3QkUiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMzAiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOCIvPjxwYXRoIGQ9Ik00MCA1MEgxNjBDMTcwIDUwIDE4MCA2MiAxODAgODJWMTIwQzE4MCA0MDAgeCAUiIODUiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOCIvPjwvc3ZnPg==';
-                                                            }}
-                                                        />
-                                                    </div>
-
-                                                    {/* Status Indicator */}
-                                                    <div className="absolute bottom-6 right-6 w-6 h-6 bg-green-400 rounded-full border-4 border-white shadow-lg animate-pulse"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Content Section */}
-                                        <div className="md:col-span-8 text-center md:text-left space-y-6">
-
-                                            {/* Name and Title */}
-                                            <div className="space-y-3">
-                                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-cyan-100">
-                                                    {BannerContent.name}
-                                                </h1>
-                                                <div className="flex items-center justify-center md:justify-start gap-3">
-                                                    <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500"></div>
-                                                    <p className="text-xl md:text-2xl font-semibold text-blue-200 tracking-wide">
-                                                        {BannerContent.role}
-                                                    </p>
-                                                    <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400"></div>
-                                                </div>
-                                            </div>
-
-                                            {/* Contact Information */}
-                                            <div className="flex flex-wrap justify-center md:justify-start gap-6 text-slate-300">
-                                                <a href={`mailto:${BannerContent.email}`} className="group flex items-center gap-2 hover:text-white transition-colors duration-300">
-                                                    <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
-                                                        <i className="fas fa-envelope text-sm"></i>
-                                                    </div>
-                                                    <span className="font-medium">{BannerContent.email}</span>
-                                                </a>
-                                                <a href={`tel:${BannerContent.phone}`} className="group flex items-center gap-2 hover:text-white transition-colors duration-300">
-                                                    <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/40 transition-colors">
-                                                        <i className="fas fa-phone text-sm"></i>
-                                                    </div>
-                                                    <span className="font-medium">{BannerContent.phone}</span>
-                                                </a>
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center">
-                                                        <i className="fas fa-map-marker-alt text-sm"></i>
-                                                    </div>
-                                                    <span className="font-medium">{BannerContent.location}</span>
-                                                </div>
-                                            </div>
-
-                                            {/* Social Links and Actions */}
-                                            <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                                                {BannerContent.linkedin && (
-                                                    <a href={BannerContent.linkedin} target="_blank" rel="noopener noreferrer"
-                                                       className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-1">
-                                                        <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                                                        <div className="relative flex items-center gap-2">
-                                                            <i className="fab fa-linkedin text-lg"></i>
-                                                            <span>LinkedIn</span>
-                                                        </div>
-                                                    </a>
-                                                )}
-                                                {BannerContent.github && (
-                                                    <a href={BannerContent.github} target="_blank" rel="noopener noreferrer"
-                                                       className="group relative overflow-hidden bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/25 hover:-translate-y-1">
-                                                        <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                                                        <div className="relative flex items-center gap-2">
-                                                            <i className="fab fa-github text-lg"></i>
-                                                            <span>GitHub</span>
-                                                        </div>
-                                                    </a>
-                                                )}
-                                                <a href={trailheadStats.profileUrl} target="_blank" rel="noopener noreferrer"
-                                                   className="group relative overflow-hidden bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-1">
-                                                    <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                                                    <div className="relative flex items-center gap-2">
-                                                        <i className="fas fa-mountain text-lg"></i>
-                                                        <span>Trailblazer</span>
-                                                    </div>
-                                                </a>
-
-                                                {/* Print Button */}
-                                                <button onClick={() => window.print()}
-                                                        className="no-print group relative overflow-hidden bg-gradient-to-r from-white to-slate-100 text-slate-900 hover:from-slate-100 hover:to-slate-200 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:shadow-lg hover:shadow-white/25 hover:-translate-y-1">
-                                                    <div className="absolute inset-0 bg-slate-900/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                                                    <div className="relative flex items-center gap-2">
-                                                        <i className="fas fa-download text-lg"></i>
-                                                        <span>Download PDF</span>
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </div>
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4 pt-4 border-t border-white/10">
+                                        {BannerContent.linkedin && (
+                                            <a href={BannerContent.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-600 px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
+                                                <i className="fab fa-linkedin"></i> LinkedIn
+                                            </a>
+                                        )}
+                                        {BannerContent.github && (
+                                            <a href={BannerContent.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
+                                                <i className="fab fa-github"></i> GitHub
+                                            </a>
+                                        )}
+                                        <a href={trailheadStats.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white bg-blue-500 hover:bg-blue-400 px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
+                                            <i className="fas fa-mountain"></i> Trailblazer
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -603,8 +459,8 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             )}
 
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 print-grid">
-                                {/* Mobile: Show sections based on currentSection, Desktop: Show both */}
-                                <div className={`lg:col-span-8 print-main-col order-1 lg:order-2 ${
+                                {/* LEFT COLUMN - Professional Experience (MOVED FROM RIGHT) */}
+                                <div className={`lg:col-span-8 print-main-col order-1 lg:order-1 ${
                                     isSwipeMode && currentSection !== 0 ? 'hidden lg:block' : ''
                                 }`}>
                                     {/* Experience Section */}
@@ -633,7 +489,9 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                                                                             src={exp.logo}
                                                                             alt={exp.company}
                                                                             className="w-full h-full object-contain"
+                                                                            onLoad={() => console.log('Company logo loaded:', exp.company)}
                                                                             onError={(e) => {
+                                                                                console.error('Company logo failed:', exp.company, exp.logo);
                                                                                 const target = e.target as HTMLImageElement;
                                                                                 target.style.display = 'none';
                                                                             }}
@@ -670,11 +528,11 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                                     </section>
                                 </div>
 
-                                {/* Left Column - Skills & Info */}
-                                <div className={`lg:col-span-4 print-sidebar-col space-y-10 order-2 lg:order-1 ${
+                                {/* RIGHT COLUMN - Skills & Info (MOVED FROM LEFT) */}
+                                <div className={`lg:col-span-4 print-sidebar-col space-y-10 order-2 lg:order-2 ${
                                     isSwipeMode && currentSection !== 1 ? 'hidden lg:block' : ''
                                 }`}>
-                                    
+
                                     {/* Trailblazer Status */}
                                     <section className="print-break-inside-avoid hover-card p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 border border-blue-100 dark:border-slate-700">
                                         <div className="flex items-center gap-3 mb-4">
@@ -767,7 +625,9 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                                                             src={edu.logo}
                                                             alt="University"
                                                             className="w-8 h-8 object-contain"
+                                                            onLoad={() => console.log('University logo loaded:', edu.university)}
                                                             onError={(e) => {
+                                                                console.error('University logo failed:', edu.university, edu.logo);
                                                                 const target = e.target as HTMLImageElement;
                                                                 target.style.display = 'none';
                                                             }}
@@ -833,11 +693,10 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                                     </section>
                                 </div>
 
-
                             </div>
                         </main>
                     </div>
-                    
+
                     <footer className="text-center mt-12 text-slate-500 dark:text-slate-400 text-sm no-print">
                         <p>© {new Date().getFullYear()} {BannerContent.name}. All rights reserved.</p>
                     </footer>

@@ -1,10 +1,15 @@
+import zalandoLogo from '../Assets/zalando.jpg';
+import adidasLogo from '../Assets/adidas.jpg';
+import infosysLogo from '../Assets/infosys.jpg';
+import umkcLogo from '../Assets/UMKC.jpeg';
+
 export const ExperienceData = [
   {
     company: "Zalando SE",
     duration: "Aug 2020 – Present",
     location: "Berlin, Germany",
     role: "Senior Specialist (AI & Automation)",
-    logo: require('../Assets/zalando.jpg').default,
+    logo: zalandoLogo,
     experience: [
       "Agentic AI & Prompt Engineering: Leveraging Salesforce Agentforce and Prompt Builder to architect autonomous agents that streamline complex customer and internal workflows.",
       "Probabilistic Automations: Integrated n8n with external Model Context Protocol (MCP) to create dynamic, probabilistic flow automations, enabling smarter system-to-system context exchange.",
@@ -31,7 +36,7 @@ export const ExperienceData = [
     duration: "Mar 2017 – Jan 2020",
     location: "Herzogenaurach",
     role: "External Technology Specialist",
-    logo: require('../Assets/adidas.jpg').default,
+    logo: adidasLogo,
     experience: [
       "Lead Architect for Salesforce Service Cloud, delivering omnichannel support (Chat, WhatsApp, Social) for global customer service operations.",
       "Transformed global campaign management by building a custom Salesforce Lightning portal, replacing legacy spreadsheet workflows with automated tracking.",
@@ -43,7 +48,7 @@ export const ExperienceData = [
     duration: "Jan 2015 – Feb 2017",
     location: "Mysuru",
     role: "Senior Systems Engineer",
-    logo: require('../Assets/infosys.jpg').default,
+    logo: infosysLogo,
     experience: [
       "Specialized in enterprise-scale CRM implementations, customized Apex/Visualforce development, and seamless third-party systems integration."
     ]
@@ -56,7 +61,7 @@ export const EducationData = [
     duration: "Graduated March 2021",
     course: "Master of Science in Data Sciences",
     details: "Specialization in Machine Learning & Predictive Analytics",
-    logo: require("../Assets/UMKC.jpeg").default,
+    logo: umkcLogo,
   }
 ];
 
