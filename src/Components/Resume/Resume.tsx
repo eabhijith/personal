@@ -370,7 +370,7 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
 
                     @media print {
                         @page {
-                            margin: 0.4cm;
+                            margin: 0.6cm;
                             size: A4 portrait;
                         }
 
@@ -379,247 +379,258 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             print-color-adjust: exact !important;
                             color-adjust: exact !important;
                             box-shadow: none !important;
+                            border-radius: 0 !important;
                         }
 
                         html, body {
                             height: auto !important;
                             background: white !important;
                             color: #000 !important;
-                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-                            font-size: 10pt !important;
-                            line-height: 1.4 !important;
+                            font-family: 'Arial', 'Helvetica', sans-serif !important;
+                            font-size: 9pt !important;
+                            line-height: 1.3 !important;
                             margin: 0 !important;
                             padding: 0 !important;
                         }
 
                         /* HIDE UNWANTED ELEMENTS */
-                        .no-print, .fixed, button, footer, nav {
+                        .no-print, .fixed, button, footer, nav, .MuiSwitch-root,
+                        .timeline-line, .timeline-dot, .MuiTimeline-root,
+                        .grid-bg, .glass-panel::before, .MuiTimelineDot-root,
+                        .MuiTimelineConnector-root, .MuiTimelineSeparator-root {
                             display: none !important;
                         }
 
                         /* RESET MAIN CONTAINERS */
-                        .min-h-screen, main {
+                        .min-h-screen, main, .resume-container {
                             height: auto !important;
                             min-height: auto !important;
                             background: white !important;
                             padding: 0 !important;
                             margin: 0 !important;
+                            border: none !important;
+                            border-radius: 0 !important;
+                            box-shadow: none !important;
+                            backdrop-filter: none !important;
                         }
 
                         .glass-panel {
                             background: white !important;
                             border: none !important;
                             backdrop-filter: none !important;
+                            border-radius: 0 !important;
                         }
 
-                        /* PROFESSIONAL HEADER */
+                        /* COMPACT HEADER */
                         header {
-                            background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+                            background: #2d3748 !important;
                             color: white !important;
-                            padding: 12pt !important;
-                            margin: 0 0 8pt 0 !important;
+                            padding: 8pt !important;
+                            margin: 0 0 6pt 0 !important;
                             page-break-inside: avoid !important;
+                            border-radius: 0 !important;
                         }
 
                         header .flex {
                             display: flex !important;
                             flex-direction: row !important;
                             align-items: center !important;
-                            gap: 12pt !important;
+                            gap: 10pt !important;
                         }
 
+                        /* FIX PROFILE PICTURE - SQUARE NOT CIRCLE */
                         header img, header .w-24, header .w-28, header .w-32 {
-                            width: 32pt !important;
-                            height: 32pt !important;
-                            border: 2pt solid white !important;
-                            border-radius: 50% !important;
+                            width: 24pt !important;
+                            height: 24pt !important;
+                            border: 1pt solid white !important;
+                            border-radius: 0 !important;
                             flex-shrink: 0 !important;
+                            object-fit: cover !important;
                         }
 
                         header h1 {
-                            font-size: 16pt !important;
-                            font-weight: 700 !important;
-                            margin: 0 0 2pt 0 !important;
+                            font-size: 14pt !important;
+                            font-weight: bold !important;
+                            margin: 0 0 1pt 0 !important;
                             color: white !important;
                         }
 
                         header .text-blue-300, header .text-base, header .text-lg {
-                            font-size: 10pt !important;
-                            color: #bfdbfe !important;
-                            margin: 0 0 4pt 0 !important;
+                            font-size: 9pt !important;
+                            color: #e2e8f0 !important;
+                            margin: 0 0 2pt 0 !important;
                         }
 
                         header .text-sm {
-                            font-size: 8pt !important;
+                            font-size: 7pt !important;
                             color: #cbd5e1 !important;
                             line-height: 1.2 !important;
                         }
 
                         header a {
-                            color: #bfdbfe !important;
+                            color: #e2e8f0 !important;
                             text-decoration: none !important;
+                            font-size: 7pt !important;
                         }
 
-                        /* Main content typography */
+                        /* COMPACT LAYOUT FOR ONE PAGE */
+                        .print-grid {
+                            display: grid !important;
+                            grid-template-columns: 60% 40% !important;
+                            gap: 10pt !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            height: auto !important;
+                        }
+
+                        .print-main-col, .print-sidebar-col {
+                            width: 100% !important;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                        }
+
+                        /* COMPACT SECTIONS */
                         h2 {
-                            font-size: 12pt !important;
-                            border-bottom: 2px solid #3b82f6 !important;
-                            margin-bottom: 0.8rem !important;
-                            padding-bottom: 3px !important;
+                            font-size: 10pt !important;
+                            border-bottom: 1pt solid #3b82f6 !important;
+                            margin: 6pt 0 3pt 0 !important;
+                            padding-bottom: 1pt !important;
                             color: #1e293b !important;
-                            margin-top: 1.5rem !important;
                             font-weight: bold !important;
+                            text-transform: uppercase !important;
+                            letter-spacing: 0.5pt !important;
+                        }
+
+                        h2:first-of-type {
+                            margin-top: 0 !important;
                         }
 
                         h3 {
-                            font-size: 11pt !important;
+                            font-size: 9pt !important;
                             color: #1e293b !important;
-                            margin-bottom: 0.3rem !important;
+                            margin: 2pt 0 1pt 0 !important;
                             font-weight: bold !important;
                         }
 
-                        p, li, span, div {
-                            font-size: 9.5pt !important;
+                        p, li, span, div, .MuiTypography-root {
+                            font-size: 8pt !important;
                             color: #374151 !important;
-                            line-height: 1.4 !important;
-                        }
-
-                        /* MAIN CONTENT LAYOUT */
-                        .print-grid {
-                            display: grid !important;
-                            grid-template-columns: 65% 35% !important;
-                            gap: 16pt !important;
+                            line-height: 1.2 !important;
                             margin: 0 !important;
                             padding: 0 !important;
                         }
 
-                        .print-main-col {
-                            width: 100% !important;
+                        /* EXPERIENCE SECTION - COMPACT */
+                        .print\\:block {
+                            display: block !important;
                         }
 
-                        .print-sidebar-col {
-                            width: 100% !important;
+                        .print\\:hidden {
+                            display: none !important;
                         }
 
-                        /* Timeline and cards */
-                        .MuiTimeline-root { display: none !important; }
-                        .print\\:block { display: block !important; }
-                        .print\\:hidden { display: none !important; }
-
-                        /* Cards and sections */
-                        .hover-card, .MuiCard-root, .bg-white {
-                            background: white !important;
-                            border: none !important;
-                            margin: 0 0 4pt 0 !important;
-                            padding: 2pt !important;
-                            border-radius: 0 !important;
-                        }
-
-                        .print-break-inside-avoid {
-                            break-inside: avoid !important;
-                            page-break-inside: avoid !important;
-                            margin: 0 0 6pt 0 !important;
-                        }
-
-                        /* REMOVE ALL SPACING UTILITY CLASSES */
-                        .gap-12, .gap-8, .gap-6, .gap-4, .gap-3, .gap-2, .gap-1 {
-                            gap: 0 !important;
-                        }
-
-                        .mb-10, .mb-8, .mb-6, .mb-4, .mb-3, .mb-2, .mb-1 {
-                            margin-bottom: 0 !important;
-                        }
-
-                        .mt-12, .mt-10, .mt-8, .mt-6, .mt-4, .mt-3, .mt-2, .mt-1 {
-                            margin-top: 0 !important;
-                        }
-
-                        .p-10, .p-8, .p-6, .p-4, .p-3, .p-2, .p-1 {
-                            padding: 0 !important;
-                        }
-
-                        .py-10, .py-8, .py-6, .py-4, .py-3, .py-2, .py-1 {
-                            padding-top: 0 !important;
-                            padding-bottom: 0 !important;
-                        }
-
-                        .px-10, .px-8, .px-6, .px-4, .px-3, .px-2, .px-1 {
-                            padding-left: 0 !important;
-                            padding-right: 0 !important;
-                        }
-
-                        .space-y-10 > *, .space-y-8 > *, .space-y-6 > *, .space-y-4 > * {
-                            margin-top: 0 !important;
-                        }
-
-                        .space-y-10 > * + *, .space-y-8 > * + *, .space-y-6 > * + *, .space-y-4 > * + * {
-                            margin-top: 8pt !important;
-                        }
-
-                        /* SECTIONS */
-                        .print-break-inside-avoid, section {
-                            page-break-inside: avoid !important;
-                            break-inside: avoid !important;
-                            margin: 0 0 12pt 0 !important;
-                        }
-
-                        /* CARDS AND CONTAINERS */
-                        .MuiCard-root, .hover-card {
-                            background: white !important;
-                            border: 0.5pt solid #e5e7eb !important;
-                            border-radius: 0 !important;
-                            padding: 8pt !important;
-                            margin: 0 0 8pt 0 !important;
-                            box-shadow: none !important;
-                            page-break-inside: avoid !important;
-                        }
-
-                        /* EXPERIENCE ENTRIES */
                         .print\\:block .mb-6 {
-                            margin: 0 0 10pt 0 !important;
-                            padding: 0 0 6pt 0 !important;
+                            margin: 0 0 4pt 0 !important;
+                            padding: 0 0 3pt 0 !important;
                             border-bottom: 0.5pt solid #e5e7eb !important;
                             page-break-inside: avoid !important;
                         }
 
                         .print\\:block .mb-6:last-child {
                             border-bottom: none !important;
+                            margin-bottom: 0 !important;
                         }
 
-                        /* HIDE SECTION ICONS */
-                        .fa-briefcase, .fa-code, .fa-certificate, .fa-graduation-cap, .fa-star, .fa-language, .fa-cloud {
-                            display: none !important;
+                        /* CARDS AND CONTAINERS - MINIMAL */
+                        .MuiCard-root, .hover-card, .bg-white, .dark\\:bg-slate-800 {
+                            background: white !important;
+                            border: none !important;
+                            margin: 0 0 2pt 0 !important;
+                            padding: 0 !important;
+                            border-radius: 0 !important;
+                            box-shadow: none !important;
+                            page-break-inside: avoid !important;
                         }
 
+                        .MuiCardContent-root {
+                            padding: 0 !important;
+                        }
+
+                        /* COMPANY LOGOS - FIX CIRCLES */
+                        .MuiAvatar-root, .MuiAvatar-root img {
+                            width: 12pt !important;
+                            height: 12pt !important;
+                            border-radius: 0 !important;
+                            border: 0.5pt solid #ccc !important;
+                            margin-right: 4pt !important;
+                            object-fit: contain !important;
+                            background: white !important;
+                        }
+
+                        /* REMOVE ALL TAILWIND SPACING */
+                        .gap-12, .gap-8, .gap-6, .gap-4, .gap-3, .gap-2, .gap-1,
+                        .mb-10, .mb-8, .mb-6, .mb-4, .mb-3, .mb-2, .mb-1,
+                        .mt-12, .mt-10, .mt-8, .mt-6, .mt-4, .mt-3, .mt-2, .mt-1,
+                        .p-10, .p-8, .p-6, .p-4, .p-3, .p-2, .p-1,
+                        .py-10, .py-8, .py-6, .py-4, .py-3, .py-2, .py-1,
+                        .px-10, .px-8, .px-6, .px-4, .px-3, .px-2, .px-1 {
+                            gap: 0 !important;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                        }
+
+                        /* SKILLS AND CHIPS - COMPACT */
+                        .MuiChip-root {
+                            font-size: 7pt !important;
+                            height: auto !important;
+                            padding: 1pt 3pt !important;
+                            margin: 1pt !important;
+                            background: #f3f4f6 !important;
+                            color: #374151 !important;
+                            border: 0.5pt solid #d1d5db !important;
+                        }
+
+                        .MuiChip-label {
+                            padding: 0 !important;
+                        }
+
+                        /* HIDE DECORATIVE ELEMENTS */
+                        i, .fa-briefcase, .fa-code, .fa-certificate, .fa-graduation-cap,
+                        .fa-star, .fa-language, .fa-cloud, .fab, .fas,
                         .bg-blue-100, .bg-slate-100, .bg-orange-100, .bg-purple-100, .bg-pink-100,
                         .dark\\:bg-blue-900\\/30, .dark\\:bg-slate-800\\/50, .dark\\:bg-orange-900\\/30,
                         .dark\\:bg-purple-900\\/30, .dark\\:bg-pink-900\\/30 {
                             display: none !important;
                         }
 
-                        /* ENSURE WHITE BACKGROUND EVERYWHERE */
+                        /* ENSURE CLEAN BACKGROUNDS */
                         .bg-slate-50, .dark\\:bg-slate-950, .bg-white, .dark\\:bg-slate-800 {
                             background: white !important;
+                            color: #000 !important;
                         }
 
-                        /* Icons */
-                        i {
-                            display: none !important;
+                        /* COMPACT LISTS */
+                        ul, ol {
+                            margin: 0 !important;
+                            padding: 0 0 0 8pt !important;
                         }
 
-                        /* Skills and certifications compact */
-                        .space-y-6 > *, .space-y-4 > *, .space-y-3 > * {
-                            margin-bottom: 0.5rem !important;
+                        li {
+                            margin: 0 0 1pt 0 !important;
+                            padding: 0 !important;
+                            line-height: 1.2 !important;
                         }
 
-                        /* Contact info in header */
-                        header a {
-                            color: #bfdbfe !important;
-                            text-decoration: none !important;
+                        /* PREVENT SECTION OVERLAP */
+                        .print-break-inside-avoid, section {
+                            page-break-inside: avoid !important;
+                            break-inside: avoid !important;
+                            margin: 0 0 6pt 0 !important;
+                            overflow: visible !important;
                         }
 
-                        /* Ensure proper contrast for print */
-                        .text-slate-500, .text-slate-400, .text-slate-600 {
+                        /* TEXT COLOR FIXES */
+                        .text-slate-500, .text-slate-400, .text-slate-600, .text-gray-600 {
                             color: #6b7280 !important;
                         }
 
@@ -627,15 +638,35 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             color: #2563eb !important;
                         }
 
-                        /* Fix for MUI components */
-                        .MuiTypography-root {
-                            color: inherit !important;
+                        /* COMPACT EXPERIENCE LAYOUT */
+                        .company-header {
+                            margin-bottom: 2pt !important;
                         }
 
-                        /* Profile picture */
-                        img {
-                            max-width: 80px !important;
-                            max-height: 80px !important;
+                        .experience-bullet {
+                            display: none !important;
+                        }
+
+                        /* ENSURE SINGLE PAGE FIT */
+                        .resume-container {
+                            max-height: none !important;
+                            overflow: visible !important;
+                        }
+
+                        /* LANGUAGE PROGRESS BARS - SIMPLE */
+                        .language-progress-bar, .language-progress-bg {
+                            display: none !important;
+                        }
+
+                        /* SOCIAL LINKS IN HEADER - COMPACT */
+                        header .gap-4 {
+                            gap: 4pt !important;
+                        }
+
+                        header .rounded-full {
+                            border-radius: 0 !important;
+                            padding: 1pt 3pt !important;
+                            font-size: 6pt !important;
                         }
                     }
                     `}
