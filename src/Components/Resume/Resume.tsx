@@ -15,6 +15,7 @@ import { EducationData } from '../Data/education';
 import { SkillsData } from '../Data/skills';
 import { CoreCompetencies } from '../Data/coreCompetencies';
 import { LanguagesData } from '../Data/languages';
+import SidebarChatbot from '../Chatbot/SidebarChatbot';
 
 interface ResumeProps {
     toggleTheme?: () => void;
@@ -25,9 +26,6 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
     const [currentSection, setCurrentSection] = useState(0);
     const [isSwipeMode, setIsSwipeMode] = useState(false);
     const [showAIChat, setShowAIChat] = useState(false);
-    const [chatMessages, setChatMessages] = useState<Array<{role: 'user' | 'assistant', content: string}>>([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [inputMessage, setInputMessage] = useState('');
     const containerRef = useRef<HTMLDivElement>(null);
     const startXRef = useRef<number>(0);
     const startYRef = useRef<number>(0);
@@ -85,55 +83,8 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
     }, []);
 
 
-    // Simple AI chat function using Hugging Face API (free tier)
-    const sendMessage = async (message: string) => {
-        if (!message.trim()) return;
-
-        const newUserMessage = { role: 'user' as const, content: message };
-        setChatMessages(prev => [...prev, newUserMessage]);
-        setInputMessage('');
-        setIsLoading(true);
-
-        try {
-            // For now, provide predefined responses based on common questions
-            // This can be replaced with actual API calls later
-            let response = '';
-            const lowerMessage = message.toLowerCase();
-
-            if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
-                response = "Abhijith has extensive experience as a Senior Systems Architect and AI Specialist. He has worked with companies like Zalando, Adidas, Infosys, and LemonOne, focusing on Salesforce platform development, AI integration, and cloud solutions. His experience spans over multiple years in system architecture and development.";
-            } else if (lowerMessage.includes('skills') || lowerMessage.includes('technical')) {
-                response = "His technical skills are quite comprehensive, including AI & Machine Learning (Salesforce Agentforce, HuggingFace Transformers, RAG), programming languages (Python, JavaScript/TypeScript, Apex), cloud platforms (AWS, GCP), and Salesforce expertise. He's particularly strong in full-stack development with the MERN stack.";
-            } else if (lowerMessage.includes('education') || lowerMessage.includes('degree')) {
-                response = "Abhijith holds a Master of Science in Data Science from the University of Missouri-Kansas City (UMKC), completed from Aug 2019 to Mar 2021, with a specialization in Machine Learning & Predictive Analytics.";
-            } else if (lowerMessage.includes('certifications') || lowerMessage.includes('certified')) {
-                response = "He holds 10+ Salesforce certifications including 4 Architect certifications (System Architect, Platform Development Lifecycle & Deployment, Identity & Access Management, Platform Integration), 2 Developer certifications, and specialties in Agentforce, AI Associate, and AWS Cloud Practitioner.";
-            } else if (lowerMessage.includes('location') || lowerMessage.includes('where')) {
-                response = "Abhijith is currently located in Berlin, Germany. You can reach him at eabhijith@gmail.com or +49 15510521709.";
-            } else {
-                response = "I can help you learn more about Abhijith's background! Ask me about his experience, skills, education, certifications, or any specific aspects of his professional profile. What would you like to know?";
-            }
-
-            setChatMessages(prev => [...prev, { role: 'assistant', content: response }]);
-        } catch (error) {
-            console.error('AI Chat Error:', error);
-            setChatMessages(prev => [...prev, {
-                role: 'assistant',
-                content: 'I apologize, but I encountered an error. Please try asking your question again!'
-            }]);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
     const toggleAIChat = () => {
         setShowAIChat(!showAIChat);
-        if (!showAIChat && chatMessages.length === 0) {
-            setChatMessages([{
-                role: 'assistant',
-                content: "Hi! I'm an AI assistant that can help you learn more about Abhijith's professional background. Feel free to ask me about his experience, skills, education, certifications, or any other aspects of his resume!"
-            }]);
-        }
     };
 
     return (
@@ -1720,77 +1671,12 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                         </main>
                     </div>
 
-                    {/* AI Chat Interface */}
-                    {showAIChat && (
-                        <div className="fixed bottom-4 right-4 w-80 max-w-[calc(100vw-2rem)] bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-xl shadow-2xl z-50 no-print" style={{boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'}}>
-                            <div className="p-4 border-b-2 border-slate-200 dark:border-slate-600">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                                            <i className="fas fa-robot text-white text-sm"></i>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-semibold text-slate-900 dark:text-white text-sm">AI Resume Assistant</h3>
-                                            <p className="text-xs text-slate-600 dark:text-slate-400">Ask me about Abhijith's background</p>
-                                        </div>
-                                    </div>
-                                    <button
-                                        onClick={() => setShowAIChat(false)}
-                                        className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 transition-colors"
-                                    >
-                                        <i className="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="h-64 overflow-y-auto p-3 space-y-2">
-                                {chatMessages.map((msg, index) => (
-                                    <div key={index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                        <div className={`max-w-[85%] p-3 rounded-2xl text-sm ${
-                                            msg.role === 'user'
-                                                ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                                                : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200'
-                                        }`}>
-                                            {msg.content}
-                                        </div>
-                                    </div>
-                                ))}
-                                {isLoading && (
-                                    <div className="flex justify-start">
-                                        <div className="bg-slate-100 dark:bg-slate-700 p-3 rounded-2xl">
-                                            <div className="flex space-x-1">
-                                                <div className="w-2 h-2 bg-slate-400 rounded-full animate-pulse"></div>
-                                                <div className="w-2 h-2 bg-slate-400 rounded-full animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                                                <div className="w-2 h-2 bg-slate-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="p-4 border-t border-gray-200 dark:border-slate-600">
-                                <div className="flex gap-2">
-                                    <input
-                                        type="text"
-                                        value={inputMessage}
-                                        onChange={(e) => setInputMessage(e.target.value)}
-                                        onKeyPress={(e) => e.key === 'Enter' && !isLoading && sendMessage(inputMessage)}
-                                        placeholder="Ask about experience, skills, education..."
-                                        className="flex-1 px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg text-sm bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                                        disabled={isLoading}
-                                    />
-                                    <button
-                                        onClick={() => sendMessage(inputMessage)}
-                                        disabled={isLoading || !inputMessage.trim()}
-                                        className="px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:from-slate-300 disabled:to-slate-400 text-white rounded-lg transition-all duration-200 text-sm"
-                                    >
-                                        <i className="fas fa-paper-plane"></i>
-                                    </button>
-                                </div>
-                                <p className="text-xs text-slate-400 mt-2">This AI assistant uses predefined responses about the resume content.</p>
-                            </div>
-                        </div>
-                    )}
+                    {/* Enhanced AI Chatbot */}
+                    <SidebarChatbot
+                        isOpen={showAIChat}
+                        onClose={() => setShowAIChat(false)}
+                        isDark={mode === 'dark'}
+                    />
 
                     <footer className="text-center mt-12 text-slate-500 dark:text-slate-400 text-sm no-print">
                         <p>© {new Date().getFullYear()} {BannerContent.name}. All rights reserved.</p>
