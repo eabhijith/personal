@@ -252,6 +252,56 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             background: rgba(51, 65, 85, 0.4);
                         }
 
+                        /* Enhanced Banner Animations */
+                        @keyframes spin-slow {
+                            from { transform: rotate(0deg); }
+                            to { transform: rotate(360deg); }
+                        }
+                        .animate-spin-slow {
+                            animation: spin-slow 8s linear infinite;
+                        }
+
+                        /* Particle Animations */
+                        .particle-1, .particle-2, .particle-3 {
+                            position: absolute;
+                            background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);
+                            border-radius: 50%;
+                            filter: blur(1px);
+                        }
+                        .particle-1 {
+                            width: 4px;
+                            height: 4px;
+                            top: 20%;
+                            left: 10%;
+                            animation: float 6s ease-in-out infinite;
+                        }
+                        .particle-2 {
+                            width: 6px;
+                            height: 6px;
+                            top: 60%;
+                            right: 15%;
+                            animation: float 8s ease-in-out infinite reverse;
+                        }
+                        .particle-3 {
+                            width: 3px;
+                            height: 3px;
+                            top: 80%;
+                            left: 70%;
+                            animation: float 10s ease-in-out infinite;
+                        }
+                        @keyframes float {
+                            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+                            25% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+                            50% { transform: translateY(-10px) translateX(-10px); opacity: 0.6; }
+                            75% { transform: translateY(-30px) translateX(5px); opacity: 0.8; }
+                        }
+
+                        /* Enhanced gradient text */
+                        .bg-clip-text {
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                        }
+
                         /* Swipe Navigation */
                         .swipe-container {
                             overflow: hidden;
@@ -339,11 +389,24 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                         }
                         
                         header {
-                            padding: 0 !important;
+                            padding: 1.5rem 0 !important;
                             margin-bottom: 1rem !important;
-                            background-color: transparent !important;
+                            background: white !important;
                             border-bottom: 2px solid #eee;
-                            padding-bottom: 1rem !important;
+                            position: relative !important;
+                        }
+
+                        header * {
+                            background: transparent !important;
+                            color: black !important;
+                        }
+
+                        header .particle-1, header .particle-2, header .particle-3 {
+                            display: none !important;
+                        }
+
+                        header .animate-spin-slow {
+                            animation: none !important;
                         }
                         
                         h1 { font-size: 20pt !important; margin-bottom: 0 !important; color: black !important; }
@@ -395,47 +458,132 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                         {/* Animated Grid Background */}
                         <div className="absolute inset-0 grid-bg pointer-events-none z-0 opacity-30 dark:opacity-20"></div>
 
-                        <header className="bg-slate-900 dark:bg-black text-white p-8 md:p-10 relative z-10">
-                            <div className="flex flex-col md:flex-row items-center gap-8">
-                                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/20 shadow-xl overflow-hidden flex-shrink-0 relative group">
-                                    <img src={`${BannerContent.displayPic}`} alt={BannerContent.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                                </div>
-                                <div className="text-center md:text-left flex-grow">
-                                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">{BannerContent.name}</h1>
-                                    <p className="text-blue-300 text-xl font-medium mb-4">{BannerContent.role}</p>
-                                    
-                                    <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300">
-                                        <a href={`mailto:${BannerContent.email}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                                            <i className="fas fa-envelope"></i> {BannerContent.email}
-                                        </a>
-                                        <a href={`tel:${BannerContent.phone}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                                            <i className="fas fa-phone"></i> {BannerContent.phone}
-                                        </a>
-                                        <span className="flex items-center gap-2">
-                                            <i className="fas fa-map-marker-alt"></i> {BannerContent.location}
-                                        </span>
-                                    </div>
+                        <header className="relative overflow-hidden bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 dark:from-black dark:via-slate-900 dark:to-slate-800 text-white">
+                            {/* Enhanced Background Effects */}
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+                            <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,rgba(99,102,241,0.05)_60deg,transparent_120deg,rgba(147,51,234,0.05)_180deg,transparent_240deg,rgba(59,130,246,0.05)_300deg,transparent_360deg)]"></div>
 
-                                    <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4 pt-4 border-t border-white/10">
-                                        {BannerContent.linkedin && (
-                                            <a href={BannerContent.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-600 px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
-                                                <i className="fab fa-linkedin"></i> LinkedIn
-                                            </a>
-                                        )}
-                                        {BannerContent.github && (
-                                            <a href={BannerContent.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
-                                                <i className="fab fa-github"></i> GitHub
-                                            </a>
-                                        )}
-                                        <a href={trailheadStats.profileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white bg-blue-500 hover:bg-blue-400 px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:shadow-lg hover:-translate-y-0.5">
-                                            <i className="fas fa-mountain"></i> Trailblazer
-                                        </a>
+                            {/* Animated Particles */}
+                            <div className="absolute inset-0 overflow-hidden">
+                                <div className="particle-1"></div>
+                                <div className="particle-2"></div>
+                                <div className="particle-3"></div>
+                            </div>
+
+                            <div className="relative z-10 p-8 md:p-12">
+                                <div className="max-w-6xl mx-auto">
+                                    <div className="grid md:grid-cols-12 gap-8 items-center">
+
+                                        {/* Profile Picture Section */}
+                                        <div className="md:col-span-4 flex justify-center md:justify-start">
+                                            <div className="relative group">
+                                                {/* Enhanced Profile Picture Container */}
+                                                <div className="w-48 h-48 md:w-56 md:h-56 relative">
+                                                    {/* Animated Border */}
+                                                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 animate-spin-slow opacity-75"></div>
+                                                    <div className="absolute inset-1 rounded-full bg-gradient-to-r from-slate-900 to-blue-900 dark:from-black dark:to-slate-900"></div>
+
+                                                    {/* Profile Image */}
+                                                    <div className="absolute inset-3 rounded-full overflow-hidden shadow-2xl ring-4 ring-white/20 group-hover:ring-white/40 transition-all duration-500">
+                                                        <img
+                                                            src={BannerContent.displayPic}
+                                                            alt={BannerContent.name}
+                                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                            onError={(e) => {
+                                                                const target = e.target as HTMLImageElement;
+                                                                target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiM0Qjc3QkUiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMzAiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOCIvPjxwYXRoIGQ9Ik00MCA1MEgxNjBDMTcwIDUwIDE4MCA2MiAxODAgODJWMTIwQzE4MCA0MDAgeCAUiIODUiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOCIvPjwvc3ZnPg==';
+                                                            }}
+                                                        />
+                                                    </div>
+
+                                                    {/* Status Indicator */}
+                                                    <div className="absolute bottom-6 right-6 w-6 h-6 bg-green-400 rounded-full border-4 border-white shadow-lg animate-pulse"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Content Section */}
+                                        <div className="md:col-span-8 text-center md:text-left space-y-6">
+
+                                            {/* Name and Title */}
+                                            <div className="space-y-3">
+                                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-cyan-100">
+                                                    {BannerContent.name}
+                                                </h1>
+                                                <div className="flex items-center justify-center md:justify-start gap-3">
+                                                    <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500"></div>
+                                                    <p className="text-xl md:text-2xl font-semibold text-blue-200 tracking-wide">
+                                                        {BannerContent.role}
+                                                    </p>
+                                                    <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400"></div>
+                                                </div>
+                                            </div>
+
+                                            {/* Contact Information */}
+                                            <div className="flex flex-wrap justify-center md:justify-start gap-6 text-slate-300">
+                                                <a href={`mailto:${BannerContent.email}`} className="group flex items-center gap-2 hover:text-white transition-colors duration-300">
+                                                    <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
+                                                        <i className="fas fa-envelope text-sm"></i>
+                                                    </div>
+                                                    <span className="font-medium">{BannerContent.email}</span>
+                                                </a>
+                                                <a href={`tel:${BannerContent.phone}`} className="group flex items-center gap-2 hover:text-white transition-colors duration-300">
+                                                    <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/40 transition-colors">
+                                                        <i className="fas fa-phone text-sm"></i>
+                                                    </div>
+                                                    <span className="font-medium">{BannerContent.phone}</span>
+                                                </a>
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center">
+                                                        <i className="fas fa-map-marker-alt text-sm"></i>
+                                                    </div>
+                                                    <span className="font-medium">{BannerContent.location}</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Social Links and Actions */}
+                                            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                                                {BannerContent.linkedin && (
+                                                    <a href={BannerContent.linkedin} target="_blank" rel="noopener noreferrer"
+                                                       className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-1">
+                                                        <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                                                        <div className="relative flex items-center gap-2">
+                                                            <i className="fab fa-linkedin text-lg"></i>
+                                                            <span>LinkedIn</span>
+                                                        </div>
+                                                    </a>
+                                                )}
+                                                {BannerContent.github && (
+                                                    <a href={BannerContent.github} target="_blank" rel="noopener noreferrer"
+                                                       className="group relative overflow-hidden bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/25 hover:-translate-y-1">
+                                                        <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                                                        <div className="relative flex items-center gap-2">
+                                                            <i className="fab fa-github text-lg"></i>
+                                                            <span>GitHub</span>
+                                                        </div>
+                                                    </a>
+                                                )}
+                                                <a href={trailheadStats.profileUrl} target="_blank" rel="noopener noreferrer"
+                                                   className="group relative overflow-hidden bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-1">
+                                                    <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                                                    <div className="relative flex items-center gap-2">
+                                                        <i className="fas fa-mountain text-lg"></i>
+                                                        <span>Trailblazer</span>
+                                                    </div>
+                                                </a>
+
+                                                {/* Print Button */}
+                                                <button onClick={() => window.print()}
+                                                        className="no-print group relative overflow-hidden bg-gradient-to-r from-white to-slate-100 text-slate-900 hover:from-slate-100 hover:to-slate-200 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:shadow-lg hover:shadow-white/25 hover:-translate-y-1">
+                                                    <div className="absolute inset-0 bg-slate-900/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                                                    <div className="relative flex items-center gap-2">
+                                                        <i className="fas fa-download text-lg"></i>
+                                                        <span>Download PDF</span>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="ml-auto no-print flex flex-col gap-3">
-                                    <button onClick={() => window.print()} className="bg-white text-slate-900 hover:bg-slate-100 px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                                        <i className="fas fa-print"></i> Print Resume
-                                    </button>
                                 </div>
                             </div>
                         </header>
