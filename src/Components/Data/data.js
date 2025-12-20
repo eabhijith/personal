@@ -14,6 +14,19 @@ export const ExperienceData = [
     ]
   },
   {
+    company: "LemonOne SE",
+    duration: "Feb 2020 – July 2020",
+    location: "Berlin",
+    role: "Senior Technical Specialist",
+    logo: null, // Placeholder since asset is missing
+    experience: [
+      "MERN Full Stack Developer: Built and maintained full-stack applications using MongoDB, Express, React, and Node.js.",
+      "Integration Specialist: Led system integrations ensuring seamless data flow between disparate platforms.",
+      "SFDX Development: Specialized in Salesforce DX (SFDX) based development workflows and consultancy.",
+      "CI/CD Dev Lead: Orchestrated CI/CD pipelines to automate deployment and ensure code quality."
+    ]
+  },
+  {
     company: "adidas AG",
     duration: "Mar 2017 – Jan 2020",
     location: "Herzogenaurach",
