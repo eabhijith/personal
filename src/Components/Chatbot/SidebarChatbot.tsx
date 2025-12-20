@@ -185,8 +185,7 @@ const SidebarChatbot: React.FC<SidebarChatbotProps> = ({ isOpen, onClose, isDark
   };
 
   const findMostRelevant = (query: string, context: any): any => {
-    let maxScore = 0;
-    let mostRelevant = null;
+    const results: Array<{ key: string; value: string; score: number }> = [];
 
     const searchInObject = (obj: any, prefix = ''): void => {
       for (const [key, value] of Object.entries(obj)) {
@@ -194,22 +193,18 @@ const SidebarChatbot: React.FC<SidebarChatbotProps> = ({ isOpen, onClose, isDark
 
         if (typeof value === 'string') {
           const score = calculateSimilarity(query, value);
-          if (score > maxScore) {
-            maxScore = score;
-            mostRelevant = { key: fullKey, value, score };
-          }
+          results.push({ key: fullKey, value, score });
         } else if (Array.isArray(value)) {
-          value.forEach((item, index) => {
+          // Process array items directly without nested functions
+          for (let index = 0; index < value.length; index++) {
+            const item = value[index];
             if (typeof item === 'string') {
               const score = calculateSimilarity(query, item);
-              if (score > maxScore) {
-                maxScore = score;
-                mostRelevant = { key: `${fullKey}[${index}]`, value: item, score };
-              }
-            } else if (typeof item === 'object') {
+              results.push({ key: `${fullKey}[${index}]`, value: item, score });
+            } else if (typeof item === 'object' && item !== null) {
               searchInObject(item, `${fullKey}[${index}]`);
             }
-          });
+          }
         } else if (typeof value === 'object' && value !== null) {
           searchInObject(value, fullKey);
         }
@@ -217,7 +212,13 @@ const SidebarChatbot: React.FC<SidebarChatbotProps> = ({ isOpen, onClose, isDark
     };
 
     searchInObject(context);
-    return mostRelevant;
+
+    // Find the best result after collecting all scores
+    if (results.length === 0) return null;
+
+    return results.reduce((best, current) =>
+      current.score > best.score ? current : best
+    );
   };
 
   const generateResponse = (userMessage: string): string => {
