@@ -84,35 +84,6 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // Extract resume content for AI context
-    const getResumeContext = () => {
-        const experience = ExperienceData.map(exp =>
-            `${exp.role} at ${exp.company} (${exp.duration}): ${exp.experience.join(' ')}`
-        ).join('\n\n');
-
-        const skills = SkillsData.map(category =>
-            `${category.type}: ${category.skills.join(', ')}`
-        ).join('\n');
-
-        const education = EducationData.map(edu =>
-            `${edu.course} from ${edu.university} (${edu.duration})`
-        ).join('\n');
-
-        return `Resume Summary for ${BannerContent.name}:
-Role: ${BannerContent.role}
-Location: ${BannerContent.location}
-
-EXPERIENCE:
-${experience}
-
-SKILLS:
-${skills}
-
-EDUCATION:
-${education}
-
-Please answer questions about this resume and provide insights about the candidate's background, skills, and experience.`;
-    };
 
     // Simple AI chat function using Hugging Face API (free tier)
     const sendMessage = async (message: string) => {
@@ -124,10 +95,6 @@ Please answer questions about this resume and provide insights about the candida
         setIsLoading(true);
 
         try {
-            // Use a simple approach with context about the resume
-            const context = getResumeContext();
-            const prompt = `Context: ${context}\n\nUser Question: ${message}\n\nAssistant: I'll help you understand Abhijith's background. Based on his resume,`;
-
             // For now, provide predefined responses based on common questions
             // This can be replaced with actual API calls later
             let response = '';
