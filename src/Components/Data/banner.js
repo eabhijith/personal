@@ -8,5 +8,7 @@ export const BannerContent = {
   location: "Berlin, Germany",
   linkedin: "https://linkedin.com/in/eabhijith",
   github: "https://github.com/eabhijith",
+  website: "https://eabhijith.github.io/personal/",
+  huggingface: "https://huggingface.co/eabhijith",
   displayPic: profilePic,
 };

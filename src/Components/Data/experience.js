@@ -1,6 +1,7 @@
 import zalandoLogo from '../Assets/zalando.jpg';
 import adidasLogo from '../Assets/adidas.jpg';
 import infosysLogo from '../Assets/infosys.jpg';
+import lemonOneLogo from '../Assets/lemonOne.jpg';
 
 export const ExperienceData = [
   {
@@ -22,7 +23,7 @@ export const ExperienceData = [
     duration: "Feb 2020 – Jul 2020",
     location: "Berlin, Germany",
     role: "Senior Technical Specialist",
-    logo: null,
+    logo: lemonOneLogo,
     experience: [
       "Developed and maintained full-stack applications using the **MERN stack** (MongoDB, Express, React, Node.js).",
       "Led complex system integrations, ensuring seamless data flow and interoperability between disparate platforms.",
