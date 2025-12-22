@@ -1164,6 +1164,23 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
                             </div>
                         </header>
 
+                        {/* Professional Summary Section */}
+                        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 p-6 md:p-8 relative z-10 border-b border-gray-200 dark:border-gray-700">
+                            <div className="max-w-4xl mx-auto">
+                                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+                                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                                        <i className="fas fa-user-tie text-white text-sm"></i>
+                                    </div>
+                                    Professional Summary
+                                </h2>
+                                <div className="bg-white dark:bg-slate-700 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-600">
+                                    <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed font-medium">
+                                        {BannerContent.professionalSummary}
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
                         <main className="p-6 md:p-10 relative z-10">
                             {/* Swipe indicators for mobile */}
                             {isSwipeMode && (
