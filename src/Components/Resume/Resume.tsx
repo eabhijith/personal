@@ -6,7 +6,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { Card, CardContent, Typography, Chip, Box, Avatar, Collapse, IconButton, Button, LinearProgress, Rating, Dialog, DialogTitle, DialogContent, DialogActions, Divider } from '@mui/material';
+import { Card, CardContent, Typography, Chip, Box, Avatar, Collapse, IconButton, Button, Dialog, DialogTitle, DialogContent, Divider } from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
 import BusinessIcon from '@mui/icons-material/Business';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -31,8 +31,6 @@ const Resume: React.FC<ResumeProps> = ({ toggleTheme, mode = 'light' }) => {
     const [isSwipeMode, setIsSwipeMode] = useState(false);
     const [showAIChat, setShowAIChat] = useState(false);
     const [expandedExperience, setExpandedExperience] = useState<{[key: number]: boolean}>({});
-    const [expandedSkills, setExpandedSkills] = useState<{[key: number]: boolean}>({});
-    const [expandedEducation, setExpandedEducation] = useState<{[key: number]: boolean}>({});
     const [expandedCertifications, setExpandedCertifications] = useState(false);
     const [showAllProjects, setShowAllProjects] = useState(false);
     const [selectedProject, setSelectedProject] = useState<string | null>(null);
