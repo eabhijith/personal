@@ -4,6 +4,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Route, Routes } from "react-router-dom";
 import Resume from './Components/Resume/Resume';
+import Home from './Components/Home/Home';
+import TerminalHeader from './Components/Header/TerminalHeader';
 
 function App() {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
@@ -31,8 +33,10 @@ function App() {
     <div>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <TerminalHeader />
         <Routes>
-          <Route path="/" element={<Resume toggleTheme={colorMode.toggleColorMode} mode={mode} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Resume toggleTheme={colorMode.toggleColorMode} mode={mode} />} />
         </Routes>
       </ThemeProvider>
     </div>
